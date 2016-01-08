@@ -1,17 +1,17 @@
 # EECR
 Home/App para el clan **Elite España** de **Clash Royale**  
-Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
+Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.  
 
 ____
-#TLDR Tech
-- JS:Babel  
-- Markup:HTML
-- Style:Sass+UIBootstrap
-- Router:ngRouter
-- BBDD:Mongoose
-- Auth:Passport
-- socket.io
-- Test:Jasmine
+#TLDR Tech  
+- JS:Babel
+- Markup:HTML  
+- Style:Sass+UIBootstrap  
+- Router:ngRouter  
+- BBDD:Mongoose  
+- Auth:Passport  
+- socket.io  
+- Test:Jasmine  
 ____
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0-beta.0.
