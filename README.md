@@ -2,6 +2,23 @@
 Home/App para el clan **Elite España** de **Clash Royale**  
 Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.  
 
+## TO-DO
+- [ ] Home  
+  - [ ] Chat Stream  
+  - [ ] Admim System  
+  - [ ] VIP System  
+- [ ] Login/Signup w/Perfil  
+- [ ] Deck Editor  
+- [ ] Deck Ranking  
+  - [ ] Top10 & MostUsed10  
+  - [ ] +1 vote  
+  - [ ] Full List, shortable  
+  - [ ] Comments on 
+  - [ ] Deck Admin Editor
+- [ ] Tweeter Stream  
+- [ ] Retweet Bot  
+- [ ] Multilanguage  
+
 ____
 #TLDR Tech  
 - JS:Babel
