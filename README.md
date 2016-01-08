@@ -6,6 +6,7 @@ Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
 - [ ] Home  
   - [ ] Chat Stream  
   - [ ] Admim System  
+    - [ ] Deck Admin Editor
   - [ ] VIP System  
 - [ ] Login/Signup w/Perfil  
 - [ ] Deck Editor  
@@ -14,7 +15,6 @@ Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
   - [ ] +1 vote  
   - [ ] Full List, shortable  
   - [ ] Comments on 
-  - [ ] Deck Admin Editor
 - [ ] Tweeter Stream  
 - [ ] Retweet Bot  
 - [ ] Multilanguage  
