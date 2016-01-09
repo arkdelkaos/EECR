@@ -1,14 +1,42 @@
 <navbar></navbar>
 
-<div class="container">
-  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group user-list">
-    <li class="list-group-item" ng-repeat="user in admin.users">
-	    <div class="user-info">
-	        <strong>{{user.name}}</strong><br>
-	        <span class="text-muted">{{user.email}}</span>
-	    </div>
-        <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
-    </li>
-  </ul>
+<div class="container admin">
+  <h1><i class="fa fa-lock"></i> Panel de Administrador</h1>
+  <div class="row">
+    <div class="col-sm-3 opcionesAdmin">
+      <h3><i class="fa fa-list-alt"></i> Opciones</h3>
+        <ul>
+          <li><i class="fa fa-pencil-square-o"></i>
+            <a href="#infoClanAdmin">Info del clan</a></li>
+          <li><i class="fa fa-users"></i>
+            <a href="#listaUsuariosAdmin">Lista de usuarios</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-12 infoClanAdmin">
+          <h3 id="infoClanAdmin"><i class="fa fa-pencil-square-o"></i> Info del clan</h3>
+          <form class="editor">
+            <div text-angular ng-model="htmlVariable"></div>
+            <button class="btn btn-success " aria-haspopup="true"  aria-expanded="false">
+            <i class="fa fa-floppy-o"></i>  Guardar
+            </button>
+          </form>
+        </div>
+        <div class="col-sm-12 listaUsuariosAdmin">
+          <h3 id="listaUsuariosAdmin"><i class="fa fa-users"></i> Lista de usuarios</h3>
+          <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
+          <ul class="list-group user-list">
+            <li class="list-group-item" ng-repeat="user in admin.users">
+        	    <div class="user-info">
+        	        <strong>{{user.name}}</strong><br>
+        	        <span class="text-muted">{{user.email}}</span>
+        	    </div>
+                <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

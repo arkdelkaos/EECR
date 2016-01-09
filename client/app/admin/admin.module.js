@@ -2,5 +2,6 @@
 
 angular.module('eecrApp.admin', [
   'eecrApp.auth',
-  'ngRoute'
+  'ngRoute',
+  'textAngular'
 ]);

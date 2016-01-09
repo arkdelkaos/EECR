@@ -18,3 +18,30 @@
 		}
 	}
 }
+
+
+.admin {
+	background: #fff;
+	border: 1px lightgray solid;
+	padding: 15px;
+	border-radius: 4px;
+
+	h1 {
+		border-bottom: 1px lightgray solid;
+	}
+
+	.opcionesAdmin {
+		li {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.42857;
+			color: #333333;
+			list-style-type: none;
+			margin-left: -27px;
+		}
+	}
+
+	.listaUsuariosAdmin{
+		margin-top: 10px;
+	}
+}

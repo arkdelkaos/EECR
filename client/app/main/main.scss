@@ -70,18 +70,15 @@
   a {
     color: $twitter;
   }
+}
 
-  .tweet {
-    border-bottom: $twitter 2px dotted;
-    margin-top: 7px;
-  }
-  .tweet:last-child{
-    border: none;
-  }
+.SandboxRoot button{
+  border-color: $twitter !important;
 }
 
 .ranking {
   color: white;
+  margin: none;
 
   .votadas {
     h1 {
