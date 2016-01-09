@@ -15,8 +15,17 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+body {
+  background: #ccc url("../assets/images/bg.jpg") repeat;
+}
+
 $amarillo: #feee00;
 $rojo: #ff0101;
+$fondo-boton-rojo: #d9534f;
+$fondo-boton-amarillo: #d9ce4f;
+$twitter: #4099FF;
+$fondo-negro: #333;
+$fondo-negro-semitrans: rgba(51,51,51,0.75);
 
 // Component styles are injected through grunt
 // injector

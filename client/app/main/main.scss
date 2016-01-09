@@ -3,7 +3,6 @@
 }
 
 #banner {
-  border-bottom: none;
   margin-top: -20px;
 }
 
@@ -20,17 +19,19 @@
   color: #F5F5F5;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #333;
+  background: $fondo-negro-semitrans url("../assets/images/banner.png") no-repeat center bottom;
+  border-bottom: $fondo-boton-rojo 2px solid;
+  margin-bottom: 10px;
 
   img {
     width: 150px;
     height: 150px;
   }
+}
 
-  p {
-    color: $rojo;
-    font-weight: bold;
-    margin-top: -15px;
+@media screen and (max-width: 768px) {
+  .hero-unit {
+    background-image: none;
   }
 }
 
@@ -39,9 +40,76 @@
 }
 
 .info-clan {
-  margin-top: 5px;
+  margin: 5px 0px 15px 0px;
+
+  .btn {
+    width: 100% !important;
+  }
 
   b {
     color: $amarillo;
+  }
+
+  span {
+    color: $amarillo;
+  }
+}
+
+.twitterBar {
+  background: $fondo-negro-semitrans;
+  padding: 0px;
+  border: $twitter 1px solid;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  color: white;
+
+  h4 {
+    color: $twitter;
+  }
+  a {
+    color: $twitter;
+  }
+
+  .tweet {
+    border-bottom: $twitter 2px dotted;
+    margin-top: 7px;
+  }
+  .tweet:last-child{
+    border: none;
+  }
+}
+
+.ranking {
+  color: white;
+
+  .votadas {
+    h1 {
+      color: white;
+    }
+    .panel {
+      background-color: $fondo-negro-semitrans;
+      border: $fondo-boton-rojo 1px solid;
+    }
+
+    .panel-heading {
+      background-color: $fondo-boton-rojo;
+      border-bottom: $fondo-boton-rojo 1px solid;
+    }
+  }
+  .usadas {
+    h1 {
+      color: white;
+    }
+
+    .panel {
+      background-color: $fondo-negro-semitrans;
+      border: $fondo-boton-amarillo 1px solid;
+    }
+
+    .panel-heading {
+      background-color: $fondo-boton-amarillo;
+      border-bottom: $fondo-boton-amarillo 1px solid;
+    }
   }
 }
