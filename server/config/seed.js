@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import Infoclan from '../api/infoclan/infoclan.model';
 
 Thing.find({}).removeAsync()
   .then(() => {
@@ -55,5 +56,18 @@ User.find({}).removeAsync()
     })
     .then(() => {
       console.log('finished populating users');
+    });
+  });
+
+Infoclan.find({}).removeAsync()
+  .then(() => {
+    Infoclan.createAsync({
+      identificador: '1',
+      nombre: 'Elite España',
+      twitter: 'EliteEspanaCR',
+      texto: 'Cambiar!test'
+    })
+    .then(() => {
+      console.log('finished populating infoclan');
     });
   });
