@@ -14,11 +14,19 @@
     </div>
     <div class="col-sm-9">
       <div class="row">
-        <div class="col-sm-12 infoClanAdmin" ng-model="admin.newTexto">
+        <div class="col-sm-12 infoClanAdmin">
           <h3 id="infoClanAdmin"><i class="fa fa-pencil-square-o"></i> Info del clan</h3>
           <form class="editor">
-            <div text-angular ng-model="htmlVariable">{{texto}}</div>
-            <button class="btn btn-success " aria-haspopup="true"  aria-expanded="false">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Nombre del Clan</span>
+              <input type="text" class="form-control" placeholder="Elite España" ng-model="admin.nombre" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Twitter: @</span>
+              <input type="text" class="form-control" placeholder="EliteEspanaCR" ng-model="admin.twitter" aria-describedby="basic-addon1">
+            </div>
+            <div text-angular ng-model="admin.texto"></div>
+            <button class="btn btn-success " aria-haspopup="true"  aria-expanded="false" ng-click="admin.save()">
             <i class="fa fa-floppy-o"></i>  Guardar
             </button>
           </form>

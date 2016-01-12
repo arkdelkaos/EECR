@@ -4,7 +4,7 @@ var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 import {Schema} from 'mongoose';
 
 var InfoclanSchema = new mongoose.Schema({
-  identificador: { //Pra que siempre se guarde en el mismo
+  identificador: { //Para que siempre se guarde en el mismo
     type: String,
     default: '1'
   },

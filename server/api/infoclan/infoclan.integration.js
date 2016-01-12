@@ -47,6 +47,7 @@ describe('Infoclan API:', function() {
         .end((err, res) => {
           res.body.nombre.should.equal(Infoclan.nombre);
           res.body.twitter.should.equal(Infoclan.twitter);
+          res.body.texto.should.equal(Infoclan.texto);
           done();
         });
     });

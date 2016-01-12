@@ -1,9 +1,7 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/infoclan              ->  info
- * PUT     /api/infoclan              ->  updateInfo
- * GET     /api/infoclan/texto/       ->  texto
- * PUT     /api/infoclan/texto/       ->  updateTexto
+ * GET     /api/infoclan              ->  index
+ * PUT     /api/infoclan              ->  update
  */
 
 'use strict';
@@ -58,36 +56,16 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets nombre and twitter of Infoclans
-export function info(req, res) {
-  Infoclan.findOneAsync({'identificador': '1'}, '-_id nombre twitter')
+// Gets Infoclans
+export function index(req, res) {
+  Infoclan.findOneAsync({'identificador': '1'}, '-_id nombre twitter texto')
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Updates an existing ombre ad twitter of Infoclan in the DB
-export function updateInfo(req, res) {
-  if (req.body._id) {
-    delete req.body._id;
-  }
-  Infoclan.findOneAsync({'identificador': '1'})
-    .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
-    .then(respondWithResult(res))
-    .catch(handleError(res));
-}
-
-// Gets texto of Infoclans
-export function texto(req, res) {
-  Infoclan.findOneAsync({'identificador': '1'}, '-_id texto')
-    .then(handleEntityNotFound(res))
-    .then(respondWithResult(res))
-    .catch(handleError(res));
-}
-
-// Updates an existing texto of Infoclan in the DB
-export function updateTexto(req, res) {
+// Updates an existing Infoclan in the DB
+export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }

@@ -1,14 +1,13 @@
 'use strict';
 
-var express = require('express');
-var controller = require('./infoclan.controller');
+import {Router} from 'express';
+import * as controller from './infoclan.controller';
+import * as auth from '../../auth/auth.service';
 
-var router = express.Router();
+var router = new Router();
 
-router.get('/', controller.info);
-router.put('/', controller.updateInfo);
-router.get('/texto/', controller.texto);
-router.put('/texto/', controller.updateTexto);
+router.get('/', controller.index);
+router.put('/', auth.hasRole('admin'), controller.update);
 router.post('/', controller.create);
 
-module.exports = router;
+export default router;

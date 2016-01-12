@@ -3,10 +3,8 @@
 var proxyquire = require('proxyquire').noPreserveCache();
 
 var infoclanCtrlStub = {
-  info: 'infoclanCtrl.info',
-  updateInfo: 'infoclanCtrl.updateInfo',
-  texto: 'infoclanCtrl.texto',
-  updateTexto: 'infoclanCtrl.updateTexto',
+  info: 'infoclanCtrl.index',
+  updateInfo: 'infoclanCtrl.update',
   create: 'infoclanCtrl.create'
 };
 
@@ -33,9 +31,9 @@ describe('Infoclan API Router:', function() {
 
   describe('GET /api/infoclan', function() {
 
-    it('should route to infoclan.controller.info', function() {
+    it('should route to infoclan.controller.index', function() {
       routerStub.get
-        .withArgs('/', 'infoclanCtrl.info')
+        .withArgs('/', 'infoclanCtrl.index')
         .should.have.been.calledOnce;
     });
 
@@ -43,29 +41,9 @@ describe('Infoclan API Router:', function() {
 
   describe('PUT /api/infoclan', function() {
 
-    it('should route to infoclan.controller.updateInfo', function() {
+    it('should route to infoclan.controller.update', function() {
       routerStub.put
-        .withArgs('/', 'infoclanCtrl.updateInfo')
-        .should.have.been.calledOnce;
-    });
-
-  });
-
-  describe('GET /api/infoclan/texto', function() {
-
-    it('should route to infoclan.controller.texto', function() {
-      routerStub.get
-        .withArgs('/', 'infoclanCtrl.texto')
-        .should.have.been.calledOnce;
-    });
-
-  });
-
-  describe('PUT /api/infoclan/texto', function() {
-
-    it('should route to infoclan.controller.updateTexto', function() {
-      routerStub.put
-        .withArgs('/', 'infoclanCtrl.updateTexto')
+        .withArgs('/', 'infoclanCtrl.update')
         .should.have.been.calledOnce;
     });
 

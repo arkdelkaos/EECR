@@ -16,27 +16,27 @@ class AdminController {
     $http.get('/api/infoclan').then(response => {
       this.nombre = response.data.nombre;
       this.twitter = response.data.twitter;
+      this.texto = response.data.texto;
       socket.syncUpdates('nombre', this.nombre);
       socket.syncUpdates('twitter', this.nombre);
-    });
-
-    $http.get('/api/infoclan/texto').then(response => {
-      this.texto = response.data.texto;
       socket.syncUpdates('texto', this.texto);
     });
 
-    $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('nombre');
-      socket.unsyncUpdates('twitter');
-      socket.unsyncUpdates('texto');
-    });
+    $scope.newHtmlContent = this.texto;
   }
 
   delete(user) {
     user.$remove();
     this.users.splice(this.users.indexOf(user), 1);
   }
-}
+
+  save() {
+      this.$http.put('/api/infoclan/', {
+        nombre: this.nombre,
+        twitter: this.twitter,
+        texto: this.texto});
+    }
+  }
 
 
 
