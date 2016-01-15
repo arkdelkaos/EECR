@@ -1,0 +1,1 @@
+sips -Z 100 client/assets/cartas/*.png --out client/assets/cartas/100/

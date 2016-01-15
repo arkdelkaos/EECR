@@ -9,10 +9,9 @@ class AdminController {
 
     // Infoclan
     this.$http = $http;
-    this.nombre = "";
-    this.twitter = "";
-    this.texto = "";
-
+    this.nombre = '';
+    this.twitter = '';
+    this.texto = '';
     $http.get('/api/infoclan').then(response => {
       this.nombre = response.data.nombre;
       this.twitter = response.data.twitter;
@@ -21,8 +20,14 @@ class AdminController {
       socket.syncUpdates('twitter', this.nombre);
       socket.syncUpdates('texto', this.texto);
     });
-
     $scope.newHtmlContent = this.texto;
+
+    // Cards
+    this.cartas = []
+    $http.get('/api/cards').then(response => {
+      this.cartas = response.data;
+      socket.syncUpdates('cartas', this.cartas);
+    });
   }
 
   delete(user) {

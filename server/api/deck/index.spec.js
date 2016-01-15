@@ -2,12 +2,12 @@
 
 var proxyquire = require('proxyquire').noPreserveCache();
 
-var deckCtrlStub = {
-  index: 'deckCtrl.index',
-  show: 'deckCtrl.show',
-  create: 'deckCtrl.create',
-  update: 'deckCtrl.update',
-  destroy: 'deckCtrl.destroy'
+var DeckControllerStub = {
+  index: 'DeckController.index',
+  show: 'DeckController.show',
+  create: 'DeckController.create',
+  update: 'DeckController.update',
+  destroy: 'DeckController.destroy'
 };
 
 var routerStub = {
@@ -25,7 +25,7 @@ var deckIndex = proxyquire('./index.js', {
       return routerStub;
     }
   },
-  './deck.controller': deckCtrlStub
+  './deck.controller': DeckControllerStub
 });
 
 describe('Deck API Router:', function() {
@@ -38,7 +38,7 @@ describe('Deck API Router:', function() {
 
     it('should route to deck.controller.index', function() {
       routerStub.get
-        .withArgs('/', 'deckCtrl.index')
+        .withArgs('/', 'DeckController.index')
         .should.have.been.calledOnce;
     });
 
@@ -48,7 +48,7 @@ describe('Deck API Router:', function() {
 
     it('should route to deck.controller.show', function() {
       routerStub.get
-        .withArgs('/:id', 'deckCtrl.show')
+        .withArgs('/:id', 'DeckController.show')
         .should.have.been.calledOnce;
     });
 
@@ -58,7 +58,7 @@ describe('Deck API Router:', function() {
 
     it('should route to deck.controller.create', function() {
       routerStub.post
-        .withArgs('/', 'deckCtrl.create')
+        .withArgs('/', 'DeckController.create')
         .should.have.been.calledOnce;
     });
 
@@ -68,7 +68,7 @@ describe('Deck API Router:', function() {
 
     it('should route to deck.controller.update', function() {
       routerStub.put
-        .withArgs('/:id', 'deckCtrl.update')
+        .withArgs('/:id', 'DeckController.update')
         .should.have.been.calledOnce;
     });
 
@@ -78,7 +78,7 @@ describe('Deck API Router:', function() {
 
     it('should route to deck.controller.update', function() {
       routerStub.patch
-        .withArgs('/:id', 'deckCtrl.update')
+        .withArgs('/:id', 'DeckController.update')
         .should.have.been.calledOnce;
     });
 
@@ -88,7 +88,7 @@ describe('Deck API Router:', function() {
 
     it('should route to deck.controller.destroy', function() {
       routerStub.delete
-        .withArgs('/:id', 'deckCtrl.destroy')
+        .withArgs('/:id', 'DeckController.destroy')
         .should.have.been.calledOnce;
     });
 

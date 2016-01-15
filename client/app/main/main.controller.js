@@ -19,9 +19,9 @@ class MainController {
 
     // Infoclan
     this.$http = $http;
-    this.nombre = "";
-    this.twitter = "";
-    this.texto = "";
+    this.nombre = '';
+    this.twitter = '';
+    this.texto = '';
 
     $http.get('/api/infoclan').then(response => {
       this.nombre = response.data.nombre;

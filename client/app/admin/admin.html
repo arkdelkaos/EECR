@@ -1,6 +1,6 @@
 <navbar></navbar>
 
-<div class="container admin">
+<div class="container admin whiteBox">
   <h1><i class="fa fa-lock"></i> Panel de Administrador</h1>
   <div class="row">
     <div class="col-sm-3 opcionesAdmin">
@@ -8,6 +8,8 @@
         <ul>
           <li><i class="fa fa-pencil-square-o"></i>
             <a href="#infoClanAdmin">Info del clan</a></li>
+          <li><i class="fa fa-odnoklassniki-square"></i>
+            <a href="#cartasAdmin">Lista de cartas</a></li>
           <li><i class="fa fa-users"></i>
             <a href="#listaUsuariosAdmin">Lista de usuarios</a></li>
         </ul>
@@ -30,6 +32,45 @@
             <i class="fa fa-floppy-o"></i>  Guardar
             </button>
           </form>
+        </div>
+        <div class="col-sm-12 cartasAdmin">
+          <h3 id="cartasAdmin"><i class="fa fa-odnoklassniki-square"></i> Lista de cartas</h3>
+          <div class="row">
+
+              <div ng-repeat="carta in admin.cartas">
+                <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <span class="label label-info">{{ carta._id }}</span>
+                  <img src="../assets/cartas/100/{{ carta.nombre }}.png" alt="{{ carta.name }}.png">
+                  <div class="caption">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Nombre:</span>
+                      <input type="text" class="form-control" placeholder="Carta" ng-model="carta.nombre" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Tipo:</span>
+                      <input type="text" class="form-control" placeholder="Carta" ng-model="carta.tipo" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Calidad:</span>
+                      <input type="text" class="form-control" placeholder="Carta" ng-model="carta.calidad" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Arena:</span>
+                      <input type="text" class="form-control" placeholder="Carta" ng-model="carta.arena" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Coste:</span>
+                      <input type="text" class="form-control" placeholder="Carta" ng-model="carta.coste" aria-describedby="basic-addon1">
+                    </div>
+                    <button class="btn btn-success " aria-haspopup="true"  aria-expanded="false" ng-click="admin.cartaSave(carta)">
+                    <i class="fa fa-floppy-o"></i>  Guardar
+                    </button>
+                  </div>
+                </div>
+
+            </div>
+          </div>
         </div>
         <div class="col-sm-12 listaUsuariosAdmin">
           <h3 id="listaUsuariosAdmin"><i class="fa fa-users"></i> Lista de usuarios</h3>

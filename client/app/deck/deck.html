@@ -1,0 +1,28 @@
+<navbar></navbar>
+
+<div class="container whiteBox">
+  <h1><i class="fa fa-archive"></i> Editor de Mazos de {{ deck.me.name }}</h1>
+    <h3 class="">Mazo Activo<h4>
+    <div>
+      <div ng-repeat="carta in deck.deck">
+        <p>{{ carta.nombre }}</p>
+      </div>
+    </div>
+    <h3 id="newDeck" class="">Nuevo Mazo<h4>
+    <div>
+      <div ng-repeat="carta in deck.newDeck">
+        <div class="carta">
+          <a href="#Cartas" ng-click="deck.delCarta(carta, $index)"><img src="../assets/cartas/100/{{ carta.nombre }}.png" alt="{{ carta.name }}.png"></a>
+        </div>
+      </div>
+    </div>
+    <h3 id="#Cartas" class="">Cartas Seleccionables<h4>
+    <div>
+        <div ng-repeat="carta in deck.cartas">
+          <div class="carta">
+            <a href="#newDeck" ng-click="deck.addCarta(carta, $index)"><img src="../assets/cartas/100/{{ carta.nombre }}.png" alt="{{ carta.name }}.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

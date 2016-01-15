@@ -3,7 +3,10 @@
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var CardSchema = new mongoose.Schema({
-  nombre: String,
+  nombre: {
+    type: String,
+    unique: true
+  },
   tipo: String,
   calidad: String,
   arena: String,
@@ -12,6 +15,7 @@ var CardSchema = new mongoose.Schema({
     min: 1,
     max: 10
   },
+  uso: Number,
   comentarios: [{
     usuario: {
     type: mongoose.Schema.Types.ObjectId, ref: 'User'

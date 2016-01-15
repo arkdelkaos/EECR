@@ -22,7 +22,12 @@ var UserSchema = new Schema({
   facebook: {},
   twitter: {},
   google: {},
-  github: {}
+  github: {},
+  mazo: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Card',
+    limit: 6
+  }]
 });
 
 /**

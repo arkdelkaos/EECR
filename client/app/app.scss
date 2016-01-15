@@ -19,6 +19,13 @@ body {
   background: #ccc url("../assets/images/bg.jpg") repeat;
 }
 
+.whiteBox{
+  background: #fff;
+  border: 1px lightgray solid;
+  padding: 15px;
+  border-radius: 4px;
+}
+
 $amarillo: #feee00;
 $rojo: #ff0101;
 $fondo-boton-rojo: #d9534f;
@@ -29,7 +36,9 @@ $fondo-negro-semitrans: rgba(51,51,51,0.75);
 
 // Component styles are injected through grunt
 // injector
+@import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'deck/deck.scss';
 @import 'main/main.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
