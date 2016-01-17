@@ -3,5 +3,6 @@
 angular.module('eecrApp.deck', [
   'eecrApp.auth',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'underscore'
 ]);

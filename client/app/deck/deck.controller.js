@@ -3,7 +3,7 @@
 (function() {
 
   class DeckController {
-    constructor(Auth, $scope, $http, socket, $log) {
+    constructor(Auth, $scope, $http, socket, _, $log) {
       this.$http = $http;
       this.$log = $log;
       this.$scope = $scope;
@@ -23,14 +23,24 @@
       $scope.arenaFiltroTexto = 'Arena: Todos';
       this.arenas = ['Training Camp', 'Goblin Stadium', 'Bone Pit', 'Barbarian Bowl', "P.E.K.K.A's Playhouse", 'Spell Valley', 'Royal Arena'];
 
+      // Cards
+      this.cartas = [];
+      this.$http.get('/api/cards').then(response => {
+        this.cartas = response.data;
+        socket.syncUpdates('cartas', this.cartas);
+      });
+
       // Mazo Actual
       this.me = Auth.getCurrentUser();
       var id = Auth.getCurrentUser()._id;
       $http.get('/api/users/'+id+'/deck').then(response => {
         this.deck = [];
         for(var i in response.data){
-          this.$http.get('/api/cards/'+response.data[i]).then(response => {
-            this.deck.push(response.data);
+          // this.$http.get('/api/cards/'+response.data[i]).then(response => {
+          //   this.deck.push(response.data);
+          // });
+          this.deck.push({
+            _.findWhere(this.cartas, {_id: response.data[i]});
           });
         };
         this.$log.info(response.data);
@@ -39,13 +49,6 @@
       $scope.me = this.me;
       this.newDeck = [];
       $scope.total = 8;
-
-      // Cards
-      this.cartas = [];
-      this.$http.get('/api/cards').then(response => {
-        this.cartas = response.data;
-        socket.syncUpdates('cartas', this.cartas);
-      });
 
       $scope.hideVaciar = true;
       $scope.hideGuardar = true;

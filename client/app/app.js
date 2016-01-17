@@ -11,7 +11,8 @@ angular.module('eecrApp', [
   'ngRoute',
   'btford.socket-io',
   'ui.bootstrap',
-  'validation.match'
+  'validation.match',
+  'underscore'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

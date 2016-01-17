@@ -361,15 +361,20 @@ User.find({}).removeAsync()
   .then(() => {
     var cartas = ['Freeze', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
     var cartas2 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+    var cartas3 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+    var cartas4 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
+    var cartas5 = ['Arrows', 'Archers', 'Knight', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
     var newMazo = [];
     var newMazo2 = [];
+    var newMazo3 = [];
+    var newMazo4 = [];
+    var newMazo5 = [];
 
     function crearMazo(c, m) {
       return new Promise((resolve) => setTimeout(resolve, 0))
       .then(() => {
         var promises = c.map(n =>
           Card.findOne({'nombre': n}, '_id').then(carta => {
-            console.log(carta._id);
             return carta._id;
           })
         );
@@ -381,10 +386,11 @@ User.find({}).removeAsync()
 
     Promise.all([
       crearMazo(cartas, []),
-      crearMazo(cartas2, [])
-    ]).then(([newMazo, newMazo2]) => {
-        console.log('mazo1: '+ newMazo);
-        console.log('mazo2: '+ newMazo2);
+      crearMazo(cartas2, []),
+      crearMazo(cartas3, []),
+      crearMazo(cartas4, []),
+      crearMazo(cartas5, [])
+    ]).then(([newMazo, newMazo2, newMazo3, newMazo4, newMazo5]) => {
         User.createAsync({
             provider: 'local',
             name: 'Test User',
@@ -398,6 +404,24 @@ User.find({}).removeAsync()
             email: 'admin@example.com',
             password: 'admin',
             mazo: newMazo2
+          }, {
+            provider: 'local',
+            name: 'Pepe',
+            email: 'pepe@example.com',
+            password: 'pepe',
+            mazo: newMazo3
+          }, {
+            provider: 'local',
+            name: 'Paco',
+            email: 'paco@example.com',
+            password: 'paco',
+            mazo: newMazo4
+          }, {
+            provider: 'local',
+            name: 'Antonio',
+            email: 'antonio@example.com',
+            password: 'antoio',
+            mazo: newMazo5
           })
           .then(() => {
             console.log('finished populating users');
