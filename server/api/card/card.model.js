@@ -15,7 +15,10 @@ var CardSchema = new mongoose.Schema({
     min: 1,
     max: 10
   },
-  uso: Number,
+  uso: {
+    type: Number,
+    default: 0
+  },
   comentarios: [{
     usuario: {
     type: mongoose.Schema.Types.ObjectId, ref: 'User'

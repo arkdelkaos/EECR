@@ -100,6 +100,40 @@ export function changePassword(req, res, next) {
 }
 
 /**
+ * Change a users deck
+ */
+export function changeDeck(req, res, next) {
+  var userId = req.user._id;
+  var newDeck = req.body;
+
+  User.findByIdAsync(userId)
+    .then(user => {
+        user.mazo = newDeck;
+        return user.saveAsync()
+          .then(() => {
+            res.status(204).end();
+          })
+          .catch(validationError(res));
+    });
+}
+
+/**
+ * Get a user deck
+ */
+export function getDeck(req, res, next) {
+  var userId = req.params.id;
+
+  User.findByIdAsync(userId)
+    .then(user => {
+      if (!user) {
+        return res.status(404).end();
+      }
+      res.json(user.mazo);
+    })
+    .catch(err => next(err));
+}
+
+/**
  * Get my info
  */
 export function me(req, res, next) {

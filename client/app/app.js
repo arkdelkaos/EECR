@@ -3,6 +3,7 @@
 angular.module('eecrApp', [
   'eecrApp.auth',
   'eecrApp.admin',
+  'eecrApp.deck',
   'eecrApp.constants',
   'ngCookies',
   'ngResource',

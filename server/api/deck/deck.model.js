@@ -1,16 +1,26 @@
 'use strict';
 
+import {Schema} from 'mongoose';
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
-var DeckSchema = new mongoose.Schema({
-  name: String,
-  info: String,
-  active: Boolean,
+var DeckSchema = new Schema({
+  mazo: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Card',
+    limit: 8
+  }],
+  users: [{
+    type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  }],
+  votos: {
+    type: Number,
+    default: 0
+  },
   comentarios: [{
-    usuario: {
+    user: {
     type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
-    cometario: String,
+    text: String,
     date: {
       type: Date,
       default: Date.now

@@ -102,6 +102,34 @@ export function destroy(req, res) {
 }
 
 //
+export function usoGet(req, res) {
+  Card.findByIdAsync(req.params.id, '-_id uso')
+    .then(handleEntityNotFound(res))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+//
+export function usoUpdate(req, res) {
+  Card.findByIdAsync(req.params.id)
+    .then(handleEntityNotFound(res))
+    .then(card => {
+        if(req.body.voto==0){
+          card.uso--;
+        }else{
+          card.uso++;
+        }
+        return card.saveAsync()
+          .then(() => {
+            res.status(204).end();
+          })
+          .catch(validationError(res));
+    })
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+//
 export function msgIndex(req, res) {
 }
 

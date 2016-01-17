@@ -26,7 +26,7 @@ var UserSchema = new Schema({
   mazo: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Card',
-    limit: 6
+    limit: 8
   }]
 });
 

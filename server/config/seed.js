@@ -48,13 +48,15 @@ User.find({}).removeAsync()
       provider: 'local',
       name: 'Test User',
       email: 'test@example.com',
-      password: 'test'
+      password: 'test',
+      mazo: []
     }, {
       provider: 'local',
       role: 'admin',
       name: 'Admin',
       email: 'admin@example.com',
-      password: 'admin'
+      password: 'admin',
+      mazo: []
     })
     .then(() => {
       console.log('finished populating users');
@@ -217,7 +219,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
-      nombre: 'Toobstone',
+      nombre: 'Tombstone',
       tipo: 'Building',
       calidad: 'Rare',
       arena: 'Bone Pit',
@@ -357,7 +359,7 @@ Card.find({}).removeAsync()
       coste: 6,
       comentarios: []
     }, {
-      nombre: 'Elixir Colector',
+      nombre: 'Elixir Collector',
       tipo: 'Building',
       calidad: 'Rare',
       arena: 'Royal Arena',

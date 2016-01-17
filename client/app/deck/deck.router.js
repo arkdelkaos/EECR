@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('eecrApp')
+angular.module('eecrApp.deck')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/deck', {

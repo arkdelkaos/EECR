@@ -19,12 +19,7 @@ body {
   background: #ccc url("../assets/images/bg.jpg") repeat;
 }
 
-.whiteBox{
-  background: #fff;
-  border: 1px lightgray solid;
-  padding: 15px;
-  border-radius: 4px;
-}
+
 
 $amarillo: #feee00;
 $rojo: #ff0101;
@@ -33,6 +28,24 @@ $fondo-boton-amarillo: #d9ce4f;
 $twitter: rgb(135, 194, 237);
 $fondo-negro: #333;
 $fondo-negro-semitrans: rgba(51,51,51,0.75);
+
+.whiteBox{
+  background: #fff;
+  border: 1px lightgray solid;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.semitransBox{
+  background: $fondo-negro-semitrans;
+  border: 1px $rojo solid;
+  padding: 15px;
+  border-radius: 4px;
+
+  h1,h2,h3,h4 {
+    color: $amarillo;
+  }
+}
 
 // Component styles are injected through grunt
 // injector
