@@ -42,27 +42,6 @@ Thing.find({}).removeAsync()
     });
   });
 
-User.find({}).removeAsync()
-  .then(() => {
-    User.createAsync({
-      provider: 'local',
-      name: 'Test User',
-      email: 'test@example.com',
-      password: 'test',
-      mazo: []
-    }, {
-      provider: 'local',
-      role: 'admin',
-      name: 'Admin',
-      email: 'admin@example.com',
-      password: 'admin',
-      mazo: []
-    })
-    .then(() => {
-      console.log('finished populating users');
-    });
-  });
-
 Infoclan.find({}).removeAsync()
   .then(() => {
     Infoclan.createAsync({
@@ -375,5 +354,53 @@ Card.find({}).removeAsync()
     })
     .then(() => {
       console.log('finished populating cards');
+    });
+  });
+
+User.find({}).removeAsync()
+  .then(() => {
+    var cartas = ['Freeze', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+    var cartas2 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+    var newMazo = [];
+    var newMazo2 = [];
+
+    function crearMazo(c, m) {
+      return new Promise((resolve) => setTimeout(resolve, 0))
+      .then(() => {
+        var promises = c.map(n =>
+          Card.findOne({'nombre': n}, '_id').then(carta => {
+            console.log(carta._id);
+            return carta._id;
+          })
+        );
+        return Promise.all(promises);
+      }).then(res =>
+        m.concat(res)
+      );
+    }
+
+    Promise.all([
+      crearMazo(cartas, []),
+      crearMazo(cartas2, [])
+    ]).then(([newMazo, newMazo2]) => {
+        console.log('mazo1: '+ newMazo);
+        console.log('mazo2: '+ newMazo2);
+        User.createAsync({
+            provider: 'local',
+            name: 'Test User',
+            email: 'test@example.com',
+            password: 'test',
+            mazo: newMazo
+          }, {
+            provider: 'local',
+            role: 'admin',
+            name: 'Admin',
+            email: 'admin@example.com',
+            password: 'admin',
+            mazo: newMazo2
+          })
+          .then(() => {
+            console.log('finished populating users');
+          });
     });
   });

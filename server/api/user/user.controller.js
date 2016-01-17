@@ -108,6 +108,20 @@ export function changeDeck(req, res, next) {
 
   User.findByIdAsync(userId)
     .then(user => {
+      var oldDeck = user.mazo;
+      
+      //Borrar baraja de la api deck
+
+      //Borrar uso de las cartas a la api cartas
+      //Añadir baraja a la api deck
+
+      //Añadir uso de las cartas a la api cartas
+
+      //Añadir baraja
+
+
+
+
         user.mazo = newDeck;
         return user.saveAsync()
           .then(() => {

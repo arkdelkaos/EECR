@@ -114,6 +114,7 @@
     }
 
     guardarNewDeck(){
+      //Nueva Baraja
       this.deck = [];
       this.clonar(this.newDeck,this.deck);
       this.$http.put('/api/users/'+this.me._id+'/deck', this.deck)
