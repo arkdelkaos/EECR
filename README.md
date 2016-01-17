@@ -6,16 +6,16 @@ Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
 - [ ] Home  
   - [ ] Chat Stream  
   - [ ] Admim System  
-    - [ ] Deck Admin Editor
+    - [x] Deck Admin Editor
   - [ ] VIP System  
-- [ ] Login/Signup w/Perfil  
-- [ ] Deck Editor  
+- [x] Login/Signup w/Perfil  
+- [x] Deck Editor  
 - [ ] Deck Ranking  
   - [ ] Top10 & MostUsed10  
   - [ ] +1 vote  
   - [ ] Full List, shortable  
   - [ ] Comments on 
-- [ ] Tweeter Stream  
+- [x] Tweeter Stream  
 - [ ] Retweet Bot  
 - [ ] Multilanguage  
 
