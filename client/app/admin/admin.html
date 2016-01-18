@@ -63,6 +63,10 @@
                       <span class="input-group-addon" id="basic-addon1">Coste:</span>
                       <input type="text" class="form-control" placeholder="Carta" ng-model="carta.coste" aria-describedby="basic-addon1">
                     </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Uso:</span>
+                      <label type="text" class="form-control" placeholder="Carta" ng-model="carta.uso" aria-describedby="basic-addon1">{{ carta.uso }}</label>
+                    </div>
                     <button class="btn btn-success " aria-haspopup="true"  aria-expanded="false" ng-click="admin.cartaSave(carta)">
                     <i class="fa fa-floppy-o"></i>  Guardar
                     </button>

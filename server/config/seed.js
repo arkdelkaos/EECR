@@ -361,7 +361,7 @@ User.find({}).removeAsync()
   .then(() => {
     var cartas = ['Freeze', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
     var cartas2 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
-    var cartas3 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+    var cartas3 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Witch'];
     var cartas4 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
     var cartas5 = ['Arrows', 'Archers', 'Knight', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
     var newMazo = [];
@@ -374,9 +374,8 @@ User.find({}).removeAsync()
       return new Promise((resolve) => setTimeout(resolve, 0))
       .then(() => {
         var promises = c.map(n =>
-          Card.findOne({'nombre': n}, '_id').then(carta => {
-            return carta._id;
-          })
+          Card.findOneAndUpdate({'nombre': n}, {$inc: { uso: +1 }})
+              .then(carta => carta._id)
         );
         return Promise.all(promises);
       }).then(res =>
@@ -420,7 +419,7 @@ User.find({}).removeAsync()
             provider: 'local',
             name: 'Antonio',
             email: 'antonio@example.com',
-            password: 'antoio',
+            password: 'antonio',
             mazo: newMazo5
           })
           .then(() => {

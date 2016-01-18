@@ -10,7 +10,8 @@ var infoclanCtrlStub = {
 
 var routerStub = {
   get: sinon.spy(),
-  put: sinon.spy()
+  put: sinon.spy(),
+  post: sinon.spy()
 };
 
 // require the index with our stubbed out modules

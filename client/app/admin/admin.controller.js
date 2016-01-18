@@ -3,7 +3,7 @@
 (function() {
 
 class AdminController {
-  constructor(User, $http, $scope, socket) {
+  constructor(User, $http, $scope, socket, cartas) {
     // Use the User $resource to fetch all users
     this.users = User.query();
 
@@ -23,9 +23,8 @@ class AdminController {
     $scope.newHtmlContent = this.texto;
 
     // Cards
-    this.cartas = []
-    $http.get('/api/cards').then(response => {
-      this.cartas = response.data;
+    cartas.getCartas.then(response => {
+      this.cartas = response;
       socket.syncUpdates('cartas', this.cartas);
     });
   }
