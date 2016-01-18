@@ -3,11 +3,12 @@
 (function() {
 
   class DeckController {
-    constructor(Auth, $scope, $http, socket, _, $log) {
+    constructor(Auth, $scope, $http, socket, _, $log, $filter, cartas) {
+      this.$filter = $filter;
       this.$http = $http;
       this.$log = $log;
       this.$scope = $scope;
-      $scope.action_full = false;
+      $scope.actionFull = false;
       $scope.allFiltro = {
         calidad: '',
         coste: '',
@@ -23,27 +24,21 @@
       $scope.arenaFiltroTexto = 'Arena: Todos';
       this.arenas = ['Training Camp', 'Goblin Stadium', 'Bone Pit', 'Barbarian Bowl', "P.E.K.K.A's Playhouse", 'Spell Valley', 'Royal Arena'];
 
-      // Cards
-      this.cartas = [];
-      this.$http.get('/api/cards').then(response => {
-        this.cartas = response.data;
-        socket.syncUpdates('cartas', this.cartas);
-      });
-
       // Mazo Actual
       this.me = Auth.getCurrentUser();
       var id = Auth.getCurrentUser()._id;
-      $http.get('/api/users/'+id+'/deck').then(response => {
-        this.deck = [];
-        for(var i in response.data){
-          // this.$http.get('/api/cards/'+response.data[i]).then(response => {
-          //   this.deck.push(response.data);
-          // });
-          this.deck.push({
-            _.findWhere(this.cartas, {_id: response.data[i]});
-          });
-        };
-        this.$log.info(response.data);
+      this.deck = [];
+
+      cartas.getCartas.then(response => {
+        this.cartas = response;
+        $http.get('/api/users/'+id+'/deck').then(response => {
+          var deckX = response.data;
+          for(var i in deckX){
+            var carta = $filter('filter')(this.cartas, {'_id': deckX[i]});
+            this.deck.push(carta[0]);
+            //  key: _.findWhere(this.cartas, {'_id': deckX[i]})
+          }
+        });
       });
 
       $scope.me = this.me;
@@ -68,7 +63,7 @@
         this.$scope.total--;
         this.$scope.hideVaciar = false;
         if(this.newDeck.length==8){
-          this.$scope.action_full = true;
+          this.$scope.actionFull = true;
           this.$scope.hideGuardar = false;
         }
       }
@@ -80,12 +75,12 @@
         this.cartas.push(carta);
         this.newDeck.splice(this.newDeck.indexOf(carta),1);
         this.$scope.total++;
-        if(this.newDeck.length==8){
+        if(this.$scope.total==8){
           this.$scope.hideVaciar = true;
         }
-        if(this.newDeck.length!=8){
-          this.$scope.action_full = false;
-          this.$scope.hideGurdar = true;
+        if(this.$scope.total>0){
+          this.$scope.actionFull = false;
+          this.$scope.hideGuardar = true;
         }
       }
     }
@@ -95,7 +90,7 @@
         this.cartas.push(this.newDeck[i]);
       }
       this.newDeck = [];
-      this.$scope.action_full = false;
+      this.$scope.actionFull = false;
       this.$scope.hideVaciar = true;
       this.$scope.hideGuardar = true;
       this.$scope.total=8;

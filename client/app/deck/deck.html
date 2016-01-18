@@ -77,7 +77,7 @@
         <div ng-repeat="carta in deck.cartas | filter:allFiltro">
           <div class="carta"><div class="imagen">
             <a href="#cartas" ng-mousedown="deck.addCarta(carta)" title="{{ carta.nombre }}"><img src="../assets/cartas/100/{{ carta.nombre }}.png" alt="{{ carta.nombre }}.png">
-            <div class="action_add" ng-hide="action_full" /><div class="action_full" ng-hide="!action_full" />
+            <div class="action_add" ng-hide="actionFull" /><div class="action_full" ng-hide="!actionFull" />
             <h5 class="{{carta.calidad}} text-center"><span>{{ carta.nombre }}</span></h5></a>
           </div></div>
         </div>
