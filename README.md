@@ -19,6 +19,8 @@ Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
 - [ ] Retweet Bot  
 - [ ] Multilanguage  
 
+[![Feature Requests](http://feathub.com/arkdelkaos/EECR?format=svg)](http://feathub.com/arkdelkaos/EECR)
+
 ____
 #TLDR Tech  
 - JS:Babel

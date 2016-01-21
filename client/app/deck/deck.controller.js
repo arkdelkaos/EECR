@@ -3,7 +3,8 @@
 (function() {
 
   class DeckController {
-    constructor(Auth, $scope, $http, socket, _, $log, $filter, cartas) {
+    constructor(Auth, $scope, $http, socket, $log, $filter, cartas, mazos) {
+      this.mazos = mazos;
       this.$filter = $filter;
       this.$http = $http;
       this.$log = $log;
@@ -29,17 +30,19 @@
       var id = Auth.getCurrentUser()._id;
       this.deck = [];
 
-      cartas.getCartas.then(response => {
-        this.cartas = response;
-        $http.get('/api/users/'+id+'/deck').then(response => {
-          var deckX = response.data;
-          for(var i in deckX){
-            var carta = $filter('filter')(this.cartas, {'_id': deckX[i]});
+      this.cartas = cartas.listCartas();
+      $log.info(this.cartas);
+      // $http.get('/api/users/'+id+'/deck').then(response => {
+      //   var deckX = response.data;
+      $scope.userMazo = mazos.getUserMazo();
+      $scope.userMazo.$promise.then(m => {
+          var m2 = JSON.parse(angular.toJson(m));
+          for(var i in m2){
+            var carta = $filter('filter')(this.cartas, {'_id': m2[i]});
             this.deck.push(carta[0]);
-            //  key: _.findWhere(this.cartas, {'_id': deckX[i]})
-          }
-        });
+          };
       });
+
 
       $scope.me = this.me;
       this.newDeck = [];
@@ -115,10 +118,12 @@
       //Nueva Baraja
       this.deck = [];
       this.clonar(this.newDeck,this.deck);
-      this.$http.put('/api/users/'+this.me._id+'/deck', this.deck)
+      this.$http.post('/api/users/'+this.me._id+'/deck', this.deck)
       .then(response => {
         this.$log.info(response.data);
       });
+      this.$log.info(this.deck);
+      // this.$log.info(this.mazos.putUserMazo(this.deck));
       this.vaciarNewDeck();
     }
 

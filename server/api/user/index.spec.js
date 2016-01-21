@@ -84,10 +84,10 @@ describe('User API Router:', function() {
 
   });
 
-  describe('PUT /api/users/:id/deck', function() {
+  describe('POST /api/users/:id/deck', function() {
 
     it('should be authenticated and route to user.controller.changeDeck', function() {
-      routerStub.put
+      routerStub.post
         .withArgs('/:id/deck', 'authService.isAuthenticated', 'userCtrl.changeDeck')
         .should.have.been.calledOnce;
     });

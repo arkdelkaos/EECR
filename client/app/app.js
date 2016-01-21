@@ -1,10 +1,5 @@
 'use strict';
 
-var underscore = angular.module('underscore', []);
-        underscore.factory('_', function() {
-            return window._; //Underscore should be loaded on the page
-        });
-
 angular.module('eecrApp', [
   'eecrApp.auth',
   'eecrApp.admin',
@@ -16,8 +11,7 @@ angular.module('eecrApp', [
   'ngRoute',
   'btford.socket-io',
   'ui.bootstrap',
-  'validation.match',
-  'underscore'
+  'validation.match'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

@@ -8,6 +8,8 @@ import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Infoclan from '../api/infoclan/infoclan.model';
 import Card from '../api/card/card.model';
+import Deck from '../api/deck/deck.model';
+
 
 
 Thing.find({}).removeAsync()
@@ -354,76 +356,99 @@ Card.find({}).removeAsync()
     })
     .then(() => {
       console.log('finished populating cards');
-    });
-  });
+      User.find({}).removeAsync()
+        .then(() => {
+          var cartas = ['Freeze', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+          var cartas2 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+          var cartas3 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Witch'];
+          var cartas4 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
+          var cartas5 = ['Arrows', 'Archers', 'Knight', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
+          var newMazo = [];
+          var newMazo2 = [];
+          var newMazo3 = [];
+          var newMazo4 = [];
+          var newMazo5 = [];
 
-User.find({}).removeAsync()
-  .then(() => {
-    var cartas = ['Freeze', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
-    var cartas2 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
-    var cartas3 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Witch'];
-    var cartas4 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
-    var cartas5 = ['Arrows', 'Archers', 'Knight', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
-    var newMazo = [];
-    var newMazo2 = [];
-    var newMazo3 = [];
-    var newMazo4 = [];
-    var newMazo5 = [];
+          function crearMazo(c, m) {
+            return new Promise((resolve) => setTimeout(resolve, 0))
+            .then(() => {
+              var promises = c.map(n =>
+                Card.findOneAndUpdate({'nombre': n}, {$inc: { uso: +1 }})
+                    .then(carta => carta._id)
+              );
+              return Promise.all(promises);
+            }).then(res =>
+              m.concat(res)
+            );
+          }
 
-    function crearMazo(c, m) {
-      return new Promise((resolve) => setTimeout(resolve, 0))
-      .then(() => {
-        var promises = c.map(n =>
-          Card.findOneAndUpdate({'nombre': n}, {$inc: { uso: +1 }})
-              .then(carta => carta._id)
-        );
-        return Promise.all(promises);
-      }).then(res =>
-        m.concat(res)
-      );
-    }
-
-    Promise.all([
-      crearMazo(cartas, []),
-      crearMazo(cartas2, []),
-      crearMazo(cartas3, []),
-      crearMazo(cartas4, []),
-      crearMazo(cartas5, [])
-    ]).then(([newMazo, newMazo2, newMazo3, newMazo4, newMazo5]) => {
-        User.createAsync({
-            provider: 'local',
-            name: 'Test User',
-            email: 'test@example.com',
-            password: 'test',
-            mazo: newMazo
-          }, {
-            provider: 'local',
-            role: 'admin',
-            name: 'Admin',
-            email: 'admin@example.com',
-            password: 'admin',
-            mazo: newMazo2
-          }, {
-            provider: 'local',
-            name: 'Pepe',
-            email: 'pepe@example.com',
-            password: 'pepe',
-            mazo: newMazo3
-          }, {
-            provider: 'local',
-            name: 'Paco',
-            email: 'paco@example.com',
-            password: 'paco',
-            mazo: newMazo4
-          }, {
-            provider: 'local',
-            name: 'Antonio',
-            email: 'antonio@example.com',
-            password: 'antonio',
-            mazo: newMazo5
-          })
-          .then(() => {
-            console.log('finished populating users');
+          Promise.all([
+            crearMazo(cartas, []),
+            crearMazo(cartas2, []),
+            crearMazo(cartas3, []),
+            crearMazo(cartas4, []),
+            crearMazo(cartas5, [])
+          ]).then(([newMazo, newMazo2, newMazo3, newMazo4, newMazo5]) => {
+              User.createAsync({
+                  provider: 'local',
+                  name: 'Test User',
+                  email: 'test@example.com',
+                  password: 'test',
+                  mazo: newMazo
+                }, {
+                  provider: 'local',
+                  role: 'admin',
+                  name: 'Admin',
+                  email: 'admin@example.com',
+                  password: 'admin',
+                  mazo: newMazo2
+                }, {
+                  provider: 'local',
+                  name: 'Pepe',
+                  email: 'pepe@example.com',
+                  password: 'pepe',
+                  mazo: newMazo3
+                }, {
+                  provider: 'local',
+                  name: 'Paco',
+                  email: 'paco@example.com',
+                  password: 'paco',
+                  mazo: newMazo4
+                }, {
+                  provider: 'local',
+                  name: 'Antonio',
+                  email: 'antonio@example.com',
+                  password: 'antonio',
+                  mazo: newMazo5
+                })
+                .then(() => {
+                  console.log('finished populating users');
+                  Deck.find({}).removeAsync()
+                    .then(() => {
+                      User.find({}).then(users => {
+                        Deck.createAsync({
+                          mazo: users[0].mazo,
+                          users: users[0]._id
+                        },{
+                          mazo: users[1].mazo,
+                          users: users[1]._id
+                        },{
+                          mazo: users[2].mazo,
+                          users: users[2]._id
+                        },{
+                          mazo: users[3].mazo,
+                          users: users[3]._id
+                        },{
+                          mazo: users[4].mazo,
+                          users: users[4]._id
+                        });
+                      })
+                      .then(() => {
+                          console.log('finished populating deck');
+                      });
+                    });
+                });
           });
+        });
     });
   });

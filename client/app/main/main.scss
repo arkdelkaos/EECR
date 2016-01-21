@@ -6,6 +6,10 @@
   margin-top: -20px;
 }
 
+#chat {
+  background: white;
+}
+
 #banner h1 {
   font-size: 60px;
   line-height: 1;
@@ -20,8 +24,8 @@
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   background: $fondo-negro-semitrans url("../assets/images/banner.png") no-repeat center bottom;
-  border-bottom: $fondo-boton-rojo 2px solid;
-  margin-bottom: 10px;
+  border-bottom: $fondo-boton-rojo 5px solid;
+  margin-bottom: 0px;
 
   img {
     width: 150px;
@@ -39,105 +43,136 @@
   margin-left: 15px;
 }
 
-.info-clan {
-  margin: 5px 0px 15px 0px;
 
-  .btn {
-    width: 100% !important;
+.topCartas{
+  h2 {
+
   }
 
-  b {
-    color: $amarillo;
-  }
-
-  span {
-    color: $amarillo;
-  }
-}
-
-.twitterBar {
-  background: $fondo-negro-semitrans;
+  .carta {
   padding: 0px;
-  border: $twitter 1px solid;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  color: white;
-
-  h4 {
-    color: $twitter;
-  }
-  a {
-    color: $twitter;
   }
 }
 
-.cartasBar {
-  background: $fondo-negro-semitrans;
-  padding: 5px;
-  border: white 1px solid;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  color: white;
-  min-width: 97px;
+//
+// Nuevo Estilo
+//
 
-  .img-responsive {
-    margin: 0 auto;
-  }
+.wrapper{
+  width: 100%;
 
-  .cartasSeparador {
-    margin-bottom: 7px;
-  }
-
-  hr {
-    margin-bottom: 2px;
-    margin-top: 2px;
-  }
-
-  h4 {
-    color: white;
-  }
-  a {
-    color: white;
-  }
-}
-
-.SandboxRoot button{
-  border-color: $twitter !important;
-}
-
-.ranking {
-  color: white;
-  margin: none;
-
-  .votadas {
-    h1 {
-      color: white;
-    }
-    .panel {
-      background-color: $fondo-negro-semitrans;
-      border: $fondo-boton-rojo 1px solid;
-    }
-
-    .panel-heading {
-      background-color: $fondo-boton-rojo;
-      border-bottom: $fondo-boton-rojo 1px solid;
-    }
-  }
-  .usadas {
-    h1 {
-      color: white;
-    }
+  .contenedor_blanco{
+    background: trasparent;
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
 
     .panel {
-      background-color: $fondo-negro-semitrans;
-      border: $fondo-boton-amarillo 1px solid;
+      margin-bottom: 10px;
+      background: $fondo-negro-semitrans;
+      border: $fondo-boton-amarillo 3px solid;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 15px;
+    }
+    .panel:first-child {
+      margin-top: 10px;
     }
 
-    .panel-heading {
-      background-color: $fondo-boton-amarillo;
-      border-bottom: $fondo-boton-amarillo 1px solid;
+    #top_usadas_vista{
+      width: 365px;
+    }
+
+    #top_votadas_vista{
+      width: 365px;
+    }
+
+    #about_us{
+      padding:10px;
+
+      h1{
+        font-size: 32px !important;
+      }
+
+      h3 {
+        color: white;
+        font-size: 26px;
+        text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.75);
+      }
+
+      p,li {
+        color: white;
+        font-size: 18px;
+        padding-left: 15px;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+
+        b {
+          color: $amarillo;
+        }
+        strong {
+          color: $rojo;
+          font-size: 22px;
+        }
+      }
+    }
+
+    h1 {
+      font-family: sc;
+      font-size: 45px;
+      color: $rojo;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  .subheader{
+    height: 200px;
+    width: 100%;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: $fondo-negro-semitrans;
+    border-bottom: $fondo-boton-rojo 5px solid;
+    border-top: $fondo-boton-rojo 5px solid;
+    margin-bottom: 0px;
+    display: block;
+
+    #top_usadas{
+      padding-top: 12px;
+    }
+
+    #top_votadas{
+      padding-top: 8px;
+      strong {
+        color: $rojo;
+        font-size: 32px;
+        font-weight: bold;
+      }
+    }
+
+    h1 {
+      font-family: sc;
+      font-size: 45px;
+      margin-bottom: -20px;
+      color: $amarillo;
+      text-shadow: 0 10px 0 rgba(0, 0, 0, 0.75);
+    }
+    h3{
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.75);
+    }
+    p {
+      color: $rojo;
+      font-size: 18px;
+      padding-left: 218px;
+      margin-top: -20px;
+      font-style: italic;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.75);
     }
   }
 }

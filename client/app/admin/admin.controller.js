@@ -23,10 +23,9 @@ class AdminController {
     $scope.newHtmlContent = this.texto;
 
     // Cards
-    cartas.getCartas.then(response => {
-      this.cartas = response;
-      socket.syncUpdates('cartas', this.cartas);
-    });
+    this.cartas = cartas.listCartas();
+    socket.syncUpdates('cartas', this.cartas);
+
   }
 
   delete(user) {

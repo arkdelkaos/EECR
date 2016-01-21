@@ -4,9 +4,12 @@
 
 class MainController {
 
-  constructor($http, $scope, socket) {
+  constructor($http, $scope, socket, mazos, cartas, $log, $filter, Auth) {
+    this.$log = $log;
+    this.$filter = $filter;
     this.$http = $http;
     this.awesomeThings = [];
+    this.isAdmin = Auth.isAdmin;
 
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
@@ -31,6 +34,19 @@ class MainController {
       socket.syncUpdates('twitter', this.nombre);
       socket.syncUpdates('texto', this.texto);
     });
+
+    // Mazos
+    this.mazos = mazos.listMazos();
+    this.cartas = cartas.listCartas();
+  }
+
+  getCarta(id){
+    var carta = this.$filter('filter')(this.cartas, {'_id': id});
+    return carta[0];
+  }
+
+  perUsers(length){
+
   }
 
   addThing() {

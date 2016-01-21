@@ -1,6 +1,6 @@
 <navbar></navbar>
 
-<div class="container semitransBox">
+<div class="container semitransBox editorMazos">
   <h1><i class="fa fa-archive"></i> Editor de Mazos de {{ deck.me.name }}</h1>
     <h3 id="deck" class=""><i class="fa fa-check-circle"></i> Mazo Activo<h4>
     <div class="row"><div class="filtros">
@@ -8,7 +8,7 @@
       </div>
       <div ng-repeat="carta in deck.deck">
         <div class="carta"><div class="imagen">
-          <img src="../assets/cartas/100/{{ carta.nombre }}.png" alt="{{ carta.nombre }}.png">
+          <img src="../assets/images/cartas/{{ carta.nombre }}.100.png" alt="{{ carta.nombre }}.png">
           <h5 class="{{carta.calidad}} text-center"><span>{{ carta.nombre }}</span></h5></a>
         </div></div>
       </div>
@@ -22,7 +22,7 @@
     <div class="row">
       <div ng-repeat="carta in deck.newDeck">
         <div class="carta"><div class="imagen">
-          <a href="#newDeck" ng-mousedown="deck.delCarta(carta)" title="{{ carta.nombre }}"><img src="../assets/cartas/100/{{ carta.nombre }}.png" alt="{{ carta.nombre }}.png">
+          <a href="#newDeck" ng-mousedown="deck.delCarta(carta)" title="{{ carta.nombre }}"><img src="../assets/images/cartas/{{ carta.nombre }}.100.png" alt="{{ carta.nombre }}.png">
           <div class="action_del" />
           <h5 class="{{carta.calidad}} text-center"><span>{{ carta.nombre }}</span></h5></a>
         </div></div>
@@ -76,7 +76,7 @@
     <div class="row">
         <div ng-repeat="carta in deck.cartas | filter:allFiltro">
           <div class="carta"><div class="imagen">
-            <a href="#cartas" ng-mousedown="deck.addCarta(carta)" title="{{ carta.nombre }}"><img src="../assets/cartas/100/{{ carta.nombre }}.png" alt="{{ carta.nombre }}.png">
+            <a href="#cartas" ng-mousedown="deck.addCarta(carta)" title="{{ carta.nombre }}"><img src="../assets/images/cartas/{{ carta.nombre }}.100.png" alt="{{ carta.nombre }}.png">
             <div class="action_add" ng-hide="actionFull" /><div class="action_full" ng-hide="!actionFull" />
             <h5 class="{{carta.calidad}} text-center"><span>{{ carta.nombre }}</span></h5></a>
           </div></div>
