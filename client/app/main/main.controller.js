@@ -9,6 +9,7 @@ class MainController {
     this.$filter = $filter;
     this.$http = $http;
     this.awesomeThings = [];
+    this.me = Auth.getCurrentUser().name;
     this.isAdmin = Auth.isAdmin;
 
     $http.get('/api/things').then(response => {
@@ -51,7 +52,12 @@ class MainController {
 
   addThing() {
     if (this.newThing) {
-      this.$http.post('/api/things', { name: this.newThing });
+      if(angular.isString(this.me)){
+        this.msg = this.me+': '+this.newThing;
+      }else{
+        this.msg = 'Anónimo: '+this.newThing;
+      };
+      this.$http.post('/api/things', { name: this.msg });
       this.newThing = '';
     }
   }

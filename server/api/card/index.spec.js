@@ -10,6 +10,15 @@ var cardCtrlStub = {
   destroy: 'cardCtrl.destroy'
 };
 
+var authServiceStub = {
+  isAuthenticated() {
+    return 'authService.isAuthenticated';
+  },
+  hasRole(role) {
+    return 'authService.hasRole.' + role;
+  }
+};
+
 var routerStub = {
   get: sinon.spy(),
   put: sinon.spy(),
@@ -25,7 +34,8 @@ var cardIndex = proxyquire('./index.js', {
       return routerStub;
     }
   },
-  './card.controller': cardCtrlStub
+  './card.controller': cardCtrlStub,
+  '../../auth/auth.service': authServiceStub
 });
 
 describe('Card API Router:', function() {
@@ -58,7 +68,7 @@ describe('Card API Router:', function() {
 
     it('should route to card.controller.create', function() {
       routerStub.post
-        .withArgs('/', 'cardCtrl.create')
+        .withArgs('/', 'authService.hasRole.admin', 'cardCtrl.create')
         .should.have.been.calledOnce;
     });
 
@@ -68,7 +78,7 @@ describe('Card API Router:', function() {
 
     it('should route to card.controller.update', function() {
       routerStub.put
-        .withArgs('/:id', 'cardCtrl.update')
+        .withArgs('/:id', 'authService.hasRole.admin', 'cardCtrl.update')
         .should.have.been.calledOnce;
     });
 
@@ -78,7 +88,7 @@ describe('Card API Router:', function() {
 
     it('should route to card.controller.update', function() {
       routerStub.patch
-        .withArgs('/:id', 'cardCtrl.update')
+        .withArgs('/:id', 'authService.hasRole.admin', 'cardCtrl.update')
         .should.have.been.calledOnce;
     });
 
@@ -88,7 +98,7 @@ describe('Card API Router:', function() {
 
     it('should route to card.controller.destroy', function() {
       routerStub.delete
-        .withArgs('/:id', 'cardCtrl.destroy')
+        .withArgs('/:id', 'authService.hasRole.admin', 'cardCtrl.destroy')
         .should.have.been.calledOnce;
     });
 

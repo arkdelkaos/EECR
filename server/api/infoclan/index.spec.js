@@ -3,9 +3,18 @@
 var proxyquire = require('proxyquire').noPreserveCache();
 
 var infoclanCtrlStub = {
-  info: 'infoclanCtrl.index',
-  updateInfo: 'infoclanCtrl.update',
+  index: 'infoclanCtrl.index',
+  update: 'infoclanCtrl.update',
   create: 'infoclanCtrl.create'
+};
+
+var authServiceStub = {
+  isAuthenticated() {
+    return 'authService.isAuthenticated';
+  },
+  hasRole(role) {
+    return 'authService.hasRole.' + role;
+  }
 };
 
 var routerStub = {
@@ -21,7 +30,8 @@ var infoclanIndex = proxyquire('./index.js', {
       return routerStub;
     }
   },
-  './infoclan.controller': infoclanCtrlStub
+  './infoclan.controller': infoclanCtrlStub,
+  '../../auth/auth.service': authServiceStub
 });
 
 describe('Infoclan API Router:', function() {
@@ -44,7 +54,7 @@ describe('Infoclan API Router:', function() {
 
     it('should route to infoclan.controller.update', function() {
       routerStub.put
-        .withArgs('/', 'infoclanCtrl.update')
+        .withArgs('/', 'authService.hasRole.admin', 'infoclanCtrl.update')
         .should.have.been.calledOnce;
     });
 

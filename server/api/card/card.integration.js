@@ -1,6 +1,7 @@
 'use strict';
 
 var app = require('../..');
+import Card from './card.model';
 import request from 'supertest';
 
 var newCard;

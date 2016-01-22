@@ -13,7 +13,7 @@
   <div class="contenedor_blanco">
     <div class="container">
     <div class="panel panel-default" id="about_us">
-      <h1>Estamos en beta!...</h1>
+      <h1>Estamos en SUPER ALPHA!...</h1>
       <h3>Bienvenido a nuestra web y aplicación de gestión de mazos</h3>
       <p>Aquí podrás encotrar toda la <b>información sobre nuestro clan, sus normas y fucionamiento</b></p>
       <p>Pero, sobre todo, te invitamos a que pruebes nuestro <strong>Gestor de Mazos</strong>. Con él podrás:</p>
@@ -112,18 +112,24 @@
 <div class="container" id="chat">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="page-header">Features:</h1>
-        <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
+        <h1 class="page-header">Test de chat en tiempo real:</h1>
+        <div class="chat-box" id="chat-box-main">
+          <p ng-repeat="thing in main.awesomeThings">
+            {{thing.name}}
+            <button type="button" class="close" ng-click="main.deleteThing(thing)" ng-show="main.isAdmin()">&times;</button>
+          </p>
+        </div>
+        <!-- <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
           <li><a href="#" uibtooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)" ng-show="main.isAdmin()"
 >&times;</button></a></li>
-        </ul>
+        </ul> -->
       </div>
     </div>
 
     <form class="thing-form">
-      <label>Syncs in realtime across clients</label>
+      <label>Los mensajes se trasmiten en tiempo real entre todos los clientes ;)</label>
       <p class="input-group">
-        <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="main.newThing">
+        <input type="text" class="form-control" placeholder="Añade un nuevo mensaje" ng-model="main.newThing">
         <span class="input-group-btn">
           <button type="submit" class="btn btn-primary" ng-click="main.addThing()">Add New</button>
         </span>

@@ -20,4 +20,16 @@ find 'client/assets/images/cartas' -type f -name '*.png' |\
     done
   done
 
+  # convert ../../Juegos/Elite\ España/eeavatar-512.png -resize 256x256 client/favicon-256.png
+  #
+  # convert ../../Juegos/Elite\ España/eeavatar-512.png -resize 128x128 client/favicon-128.png
+  #
+  # convert ../../Juegos/Elite\ España/eeavatar-512.png -resize 64x64 client/favicon-64.png
+  #
+  # convert ../../Juegos/Elite\ España/eeavatar-512.png -resize 32x32 client/favicon-32.png
+  #
+  # convert ../../Juegos/Elite\ España/eeavatar-512.png -resize 16x16 client/favicon-16.png
+  #
+  # convert favicon-16.png favicon-32.png favicon-64.png favicon-128.png favicon-256.png -colors 256 favicon.ico
+
 # "${FILENAME%.*}"

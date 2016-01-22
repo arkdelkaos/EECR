@@ -1,7 +1,0 @@
-sips -Z 100 client/assets/cartas/*.png --out client/assets/cartas/100/ &&
-sips -Z 25 client/assets/cartas/*.png --out client/assets/cartas/25/ &&
-sips -Z 50 client/assets/cartas/*.png --out client/assets/cartas/50/ &&
-sips -Z 60 client/assets/cartas/*.png --out client/assets/cartas/60/ &&
-sips -Z 75 client/assets/cartas/*.png --out client/assets/cartas/75/ &&
-sips -Z 80 client/assets/cartas/*.png --out client/assets/cartas/80/ &&
-sips -Z 90 client/assets/cartas/*.png --out client/assets/cartas/90/ &&

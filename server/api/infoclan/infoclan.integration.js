@@ -1,22 +1,22 @@
 'use strict';
 
 var app = require('../..');
-import User from './Infoclan.model';
+import Infoclan from './infoclan.model';
 import request from 'supertest';
 
 describe('Infoclan API:', function() {
-  var user;
+  var infoclan;
 
   // Clear Infoclan before testing
   before(function() {
     return Infoclan.removeAsync().then(function() {
-      Infoclan = new Infoclan({
+      infoclan = new Infoclan({
         nombre: 'Clan Cataclan',
         twitter: 'twitterfalso',
         texto: 'Asereje Ja Deje'
       });
 
-      return Infoclan.saveAsync();
+      return infoclan.saveAsync();
     });
   });
 
@@ -45,9 +45,9 @@ describe('Infoclan API:', function() {
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
-          res.body.nombre.should.equal(Infoclan.nombre);
-          res.body.twitter.should.equal(Infoclan.twitter);
-          res.body.texto.should.equal(Infoclan.texto);
+          res.body.nombre.should.equal(infoclan.nombre);
+          res.body.twitter.should.equal(infoclan.twitter);
+          res.body.texto.should.equal(infoclan.texto);
           done();
         });
     });

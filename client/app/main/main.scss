@@ -8,6 +8,14 @@
 
 #chat {
   background: white;
+
+  .chat-box{
+    padding: 5px 5px 5px 15px;
+    display: block;
+    overflow-y: scroll;
+    max-height: 500px;
+    border: grey 1px solid;
+  }
 }
 
 #banner h1 {
