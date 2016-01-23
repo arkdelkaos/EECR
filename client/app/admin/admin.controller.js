@@ -3,28 +3,26 @@
 (function() {
 
 class AdminController {
-  constructor(User, $http, $scope, socket, cartas) {
+  constructor(User, $http, $scope, socket, cartas, $log) {
+    this.$log = $log;
+    this.socket = socket;
+
     // Use the User $resource to fetch all users
     this.users = User.query();
 
     // Infoclan
     this.$http = $http;
-    this.nombre = '';
-    this.twitter = '';
-    this.texto = '';
+    this.info = [];
     $http.get('/api/infoclan').then(response => {
-      this.nombre = response.data.nombre;
-      this.twitter = response.data.twitter;
-      this.texto = response.data.texto;
-      socket.syncUpdates('nombre', this.nombre);
-      socket.syncUpdates('twitter', this.nombre);
-      socket.syncUpdates('texto', this.texto);
+      this.info.push(response.data);
+      socket.syncUpdates('infoclan', this.info);
+      $scope.newHtmlContent = this.info[0].texto;
     });
-    $scope.newHtmlContent = this.texto;
+
 
     // Cards
     this.cartas = cartas.listCartas();
-    socket.syncUpdates('cartas', this.cartas);
+    socket.syncUpdates('carta', this.cartas);
 
   }
 
@@ -34,14 +32,10 @@ class AdminController {
   }
 
   save() {
-      this.$http.put('/api/infoclan/', {
-        nombre: this.nombre,
-        twitter: this.twitter,
-        texto: this.texto});
-    }
+      this.$http.post('/api/infoclan/update', this.info[0]);
   }
 
-
+}
 
 angular.module('eecrApp.admin')
   .controller('AdminController', AdminController);

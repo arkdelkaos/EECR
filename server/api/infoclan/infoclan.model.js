@@ -16,9 +16,13 @@ var InfoclanSchema = new mongoose.Schema({
     type: String,
     default: 'EliteEspanaCR'
   },
-  texto: {
+  homeTexto: {
     type: String,
     default: 'Cambiar!test'
+  },
+  clanTexto: {
+    type: String,
+    default: 'Normas BlaBlaBla'
   }
 });
 
@@ -33,7 +37,8 @@ InfoclanSchema
     return {
       'nombre': this.nombre,
       'twitter': this.twitter,
-      'texto': this.texto
+      'homeTexto': this.homeTexto,
+      'clanTexto': this.clanTexto
     };
   });
 

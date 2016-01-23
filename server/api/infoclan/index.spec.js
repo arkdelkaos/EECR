@@ -50,11 +50,11 @@ describe('Infoclan API Router:', function() {
 
   });
 
-  describe('PUT /api/infoclan', function() {
+  describe('POST /api/infoclan/update', function() {
 
     it('should route to infoclan.controller.update', function() {
-      routerStub.put
-        .withArgs('/', 'authService.hasRole.admin', 'infoclanCtrl.update')
+      routerStub.post
+        .withArgs('/update', 'authService.hasRole.admin', 'infoclanCtrl.update')
         .should.have.been.calledOnce;
     });
 

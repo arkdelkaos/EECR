@@ -58,7 +58,7 @@ function handleError(res, statusCode) {
 
 // Gets Infoclans
 export function index(req, res) {
-  Infoclan.findOneAsync({'identificador': '1'}, '-_id nombre twitter texto')
+  Infoclan.findOneAsync({'identificador': '1'})
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
@@ -84,7 +84,8 @@ export function create(req, res, next) {
   newInfoclan.identificador = '1';
   newInfoclan.nombre = 'Elite España';
   newInfoclan.twitter = 'EliteEspanaCR';
-  newInfoclan.texto = 'Cambiar!test';
+  newInfoclan.homeTexto = 'Cambiar!test';
+  newInfoclan.clanTexto = 'Cambiar!test';
   newInfoclan.saveAsync()
     .catch(validationError(res));
 }

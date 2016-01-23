@@ -50,7 +50,8 @@ Infoclan.find({}).removeAsync()
       identificador: '1',
       nombre: 'Elite España',
       twitter: 'EliteEspanaCR',
-      texto: 'Cambiar!test'
+      homeTexto: "<p></p><h1>Estamos en SUPER ALPHA!...</h1><h3>Bienvenido a nuestra web y aplicación de gestión de mazos</h3><p>Aquí podrás encotrar toda la <b>información sobre nuestro clan, sus normas y funcionamiento</b></p><p>Pero, sobre todo, te invitamos a que pruebes nuestro <strong><a href=\"/deck\">Gestor de Mazos</a></strong>. Con él podrás:</p><ul><li>Ver cuales son los mazos <b>mas usados</b>, y los mazos <b>mas votados</b>.<span>        </span></li></ul><ul><li><b>Comentar cada mazo<b>, y poder conocer las mejores estratégias para sacarle el máximo partido</b></b><span>        </span></li><li>Ver cuales son las <b>cartas mas usadas</b>...y comentar sobre ellas, individualmente</li></ul><p>Si quieres recomendar mejoras, dínoslas en <a href=\"http://feathub.com/arkdelkaos/EECR\">FeatHub</a>. Si has encotrado errores en la app, el diseño, o quieres ayudarnos con el código, usa <a href=\"https://github.com/arkdelkaos/EECR/issues\">Github - EECR/issues</a></p><p></p>",
+      clanTexto: 'Normas'
     })
     .then(() => {
       console.log('finished populating infoclan');

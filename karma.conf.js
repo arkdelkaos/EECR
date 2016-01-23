@@ -32,6 +32,8 @@ module.exports = function(config) {
       'client/bower_components/textAngular/dist/textAngular-sanitize.js',
       'client/bower_components/textAngular/dist/textAngularSetup.js',
       'client/bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js',
+      'client/bower_components/showdown/src/showdown.js',
+      'client/bower_components/angular-markdown-directive/markdown.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

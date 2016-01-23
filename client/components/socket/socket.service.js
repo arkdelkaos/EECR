@@ -48,6 +48,33 @@ angular.module('eecrApp')
           cb(event, item, array);
         });
 
+        // socket.on(modelName + ':save', function (item) {
+        //   var oldItem;
+        //   var index;
+        //   var event;
+        //   if (typeof array.length === 'undefined'){
+        //       array = item;
+        //       event = 'updated';
+        //   } else {
+        //     oldItem = _.find(array, {_id: item._id});
+        //     index = array.indexOf(oldItem);
+        //     event = 'created';
+        //
+        //     // replace oldItem if it exists
+        //     // otherwise just add item to the collection
+        //     if (oldItem) {
+        //       array.splice(index, 1, item);
+        //       event = 'updated';
+        //     } else {
+        //       array.push(item);
+        //     }
+        //   }
+        //   cb(event, item, array);
+        // });
+
+
+
+
         /**
          * Syncs removed items on 'model:remove'
          */

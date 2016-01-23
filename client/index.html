@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <base href="/">
-    <title>Raking de Mazos - Clan Elite España de Clash Royale</title>
+    <title>Ranking de Mazos - Clan Elite España de Clash Royale</title>
     <meta name="description" content="Home y Rankig de Mazos, del clan Elite España del juego Clash Royale">
     <meta name="keywords" content="Clash Royale, Supercell, España, Spain, Deck, Mazo, Cards, Cartas, Clan, Elite España">
     <meta name="viewport" content="width=device-width">
@@ -68,28 +68,32 @@
       <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
       <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
       <script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+      <script src="bower_components/showdown/src/showdown.js"></script>
+      <script src="bower_components/angular-markdown-directive/markdown.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
     <!-- build:js(.tmp) app/app.js -->
       <script src="app/app.js"></script>
       <!-- injector:js -->
-      <script src="components/auth/auth.module.js"></script>
       <script src="app/admin/admin.module.js"></script>
       <script src="app/deck/deck.module.js"></script>
+      <script src="components/auth/auth.module.js"></script>
       <script src="components/util/util.module.js"></script>
-      <script src="app/admin/admin.controller.js"></script>
+      <script src="app/services/mazos/mazos.service.js"></script>
       <script src="app/account/account.js"></script>
       <script src="app/admin/admin.router.js"></script>
       <script src="app/app.constant.js"></script>
+      <script src="app/clan/clan.controller.js"></script>
+      <script src="app/clan/clan.js"></script>
       <script src="app/deck/deck.controller.js"></script>
       <script src="app/account/settings/settings.controller.js"></script>
       <script src="app/deck/deck.router.js"></script>
       <script src="app/main/main.controller.js"></script>
       <script src="app/main/main.js"></script>
       <script src="app/services/cartas/cartas.service.js"></script>
-      <script src="app/services/mazos/mazos.service.js"></script>
       <script src="app/account/login/login.controller.js"></script>
+      <script src="app/account/signup/signup.controller.js"></script>
       <script src="components/auth/auth.service.js"></script>
       <script src="components/auth/interceptor.service.js"></script>
       <script src="components/auth/router.decorator.js"></script>
@@ -102,7 +106,7 @@
       <script src="components/oauth-buttons/oauth-buttons.controller.js"></script>
       <script src="components/oauth-buttons/oauth-buttons.directive.js"></script>
       <script src="components/socket/socket.service.js"></script>
-      <script src="app/account/signup/signup.controller.js"></script>
+      <script src="app/admin/admin.controller.js"></script>
       <script src="components/util/util.service.js"></script>
       <!-- endinjector -->
     <!-- endbuild -->

@@ -2,7 +2,7 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>{{ main.nombre }}</h1>
+    <h1>{{ main.info[0].nombre }}</h1>
     <h2>Ranking de Mazos</h2>
     <img src="assets/images/eeavatar.png" alt="@EliteEspanaCR">
   </div>
@@ -12,17 +12,7 @@
 
   <div class="contenedor_blanco">
     <div class="container">
-    <div class="panel panel-default" id="about_us">
-      <h1>Estamos en SUPER ALPHA!...</h1>
-      <h3>Bienvenido a nuestra web y aplicación de gestión de mazos</h3>
-      <p>Aquí podrás encotrar toda la <b>información sobre nuestro clan, sus normas y fucionamiento</b></p>
-      <p>Pero, sobre todo, te invitamos a que pruebes nuestro <strong>Gestor de Mazos</strong>. Con él podrás:</p>
-      <ul>
-        <li>Ver cuales son los mazos <b>mas usados</b>, y los mazos <b>mas votados</b>.</li>
-        <li><b>Comentar cada mazo<b>, y poder conocer las mejores estratégias para sacarle el máximo partido</li>
-        <li>Ver cuales son las <b>cartas mas usadas</b>...y comentar sobre ellas, individualmente</li>
-      </ul>
-      <p>Si quieres recomendar mejoras, dínoslas en <a href="http://feathub.com/arkdelkaos/EECR">FeatHub</a>. Si has encotrado errores en la app, el diseño, o quieres ayudarnos con el código, usa <a href="https://github.com/arkdelkaos/EECR/issues">Github - EECR/issues</a></p>
+    <div class="panel panel-default" id="about_us" ng-bind-html="main.info[0].homeTexto">
     </div>
     </div>
   </div>

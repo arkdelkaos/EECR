@@ -13,7 +13,8 @@ describe('Infoclan API:', function() {
       infoclan = new Infoclan({
         nombre: 'Clan Cataclan',
         twitter: 'twitterfalso',
-        texto: 'Asereje Ja Deje'
+        homeTexto: 'Asereje Ja Deje',
+        clantexto: 'Normas'
       });
 
       return infoclan.saveAsync();
@@ -47,7 +48,8 @@ describe('Infoclan API:', function() {
         .end((err, res) => {
           res.body.nombre.should.equal(infoclan.nombre);
           res.body.twitter.should.equal(infoclan.twitter);
-          res.body.texto.should.equal(infoclan.texto);
+          res.body.homeTexto.should.equal(infoclan.homeTexto);
+          res.body.clanTexto.should.equal(infoclan.clanTexto);
           done();
         });
     });
