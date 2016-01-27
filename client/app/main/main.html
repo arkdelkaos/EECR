@@ -2,8 +2,8 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>{{ main.info[0].nombre }}</h1>
-    <h2>Ranking de Mazos</h2>
+    <h1>{{ main.infoclan.info().nombre }}</h1>
+    <h2>Ranking + Torneos</h2>
     <img src="assets/images/eeavatar.png" alt="@EliteEspanaCR">
   </div>
 </header>
@@ -12,87 +12,70 @@
 
   <div class="contenedor_blanco">
     <div class="container">
-    <div class="panel panel-default" id="about_us" ng-bind-html="main.info[0].homeTexto">
-    </div>
+      <div class="panel panel-default" id="about_us" ng-bind-html="main.infoclan.info().homeTexto">
+      </div>
     </div>
   </div>
 
   <div class="subheader">
-    <div class="container" id="top_usadas">
-      <h1>TOP</h1>
-      <h1>USADAS</h1>
-      <h3>Por nuestros <strong>315</strong> usuarios</h3>
-      <p>...¡y subiendo!</p>
+    <div class="container">
+      <h2>Top y Editor de</h2>
+      <h1>Mazos</h1>
     </div>
   </div>
 
   <div class="contenedor_blanco">
-    <div class="container">
+    <div class="container" id="about_editor">
       <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" id="top_usadas">
-        <div ng-repeat="deck in main.mazos">
-          <a href="/list/top/{{ deck._id }}" title="">
-            <div class="row panel panel-default topCartas">
-            <div class="col-xs-3">
-              <h1>TOP #{{ $index+1 }}</h1>
-              <span class="label label-primary">Uso: {{ deck.users.length }}</span>
-              <span class="label label-success">Total: {{ main.getStatUsuarios(deck.users.length) }}%</span>
-              <span class="label label-warning">Coste Medio: {{ main.getCosteMedio(deck) }}</span>
-            </div>
-            <div class="col-xs-7 pull-right" id="top_usadas_vista">
-              <div ng-repeat="carta in deck.mazo">
-                  <div class="carta"><div class="imagen">
-                  <img src="../assets/images/cartas/{{ main.getCarta(carta).nombre }}.100.png" alt="{{ main.getCarta(carta).nombre }}.png">
-                  <div class="" />
-                    <h5 class="{{main.getCarta(carta).calidad}} text-center"><span>{{ main.getCarta(carta).nombre }}</span></h5>
-                  </div>
-                  </div></div>
-              </div>
-            </div>
-            </div>
-          </a>
+        <div class="hidden-sm hidden-xs col-md-4">
+          <div class="pull-right"><img src="../../assets/images/info_mazos.png" class="img-responsive" /></div>
         </div>
-      </div>
+        <div class="col-sm-12 col-md-8">
+          <div class="panel panel-default" id="about_us">
+            <h1>En obras</h1>
+            <p>Aún no está e condiciones de ser testado</p>
+            <p>La RC incluirá las siguientes opciones:</p>
+            <ul>
+              <li>Editor de mazo própio, filtrable por cada característica de las cartas</li>
+              <li>Visor de TOP25, de mazos mas usados, con estadísticas</li>
+              <li>Visor de TOP25, de mazos mas votados, con estadísticas</li>
+              <li>Visor de TOP10, de cartas mas y menos usadas, con estadísticas</li>
+              <li>Lista completa de mazos, ordenable por cada criterio</li>
+              <li>Vista de cada mazo, con chat-foro en tiempo real</li>
+              <li>Imágenes de alta definición de las cartas</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="wrapper">
   <div class="subheader">
-    <div class="container" id="top_votadas">
-      <h1>TOP</h1>
-      <h1>VOTADAS</h1>
-      <h3><strong>123456789</strong> votos registrados</h3>
+    <div class="container">
+      <h2>Generador de</h2>
+      <h1>Torneos</h1>
     </div>
   </div>
 
   <div class="contenedor_blanco">
-    <div class="container">
+    <div class="container" id="about_editor">
       <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" id="top_votadas">
-        <div ng-repeat="deck in main.mazos">
-          <a href="/list/top/{{ deck._id }}" title="">
-            <div class="row panel panel-default topCartas">
-            <div class="col-xs-3">
-              <h1>TOP #{{ $index+1 }}</h1>
-              <span class="label label-primary">X usuarios</span>
-              <span class="label label-success">X% total</span>
-            </div>
-            <div class="col-xs-7 pull-right" id="top_votadas_vista">
-              <div ng-repeat="carta in deck.mazo">
-                  <div class="carta"><div class="imagen">
-                  <img src="../assets/images/cartas/{{ main.getCarta(carta).nombre }}.100.png" alt="{{ main.getCarta(carta).nombre }}.png">
-                  <div class="" />
-                    <h5 class="{{main.getCarta(carta).calidad}} text-center"><span>{{ main.getCarta(carta).nombre }}</span></h5>
-                  </div>
-                  </div></div>
-              </div>
-            </div>
-            </div>
-          </a>
+        <div class="col-sm-12 col-md-8">
+          <div class="panel panel-default" id="about_us">
+            <h1>En obras</h1>
+            <p>Aún no está en condiciones de ser testado</p>
+            <p>La RC incluirá las siguientes opciones:</p>
+            <ul>
+              <li>Generador de torneos, con sistema de inscripción</li>
+              <li>Sistema de Karma y herramientas de arbitraje</li>
+              <li>Logros y Trofeos, con vitrina virtual en el perfil de cada usuario</li>
+              <li>Lista de Torneos activos, torneos de la semana, e histórico de torneos</li>
+            </ul>
+          </div>
         </div>
-      </div>
+        <div class="hidden-sm hidden-xs col-md-4">
+          <img src="../../assets/images/info_mazos.png" />
+        </div>
       </div>
     </div>
   </div>

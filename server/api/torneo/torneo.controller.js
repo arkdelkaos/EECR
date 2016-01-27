@@ -1,16 +1,16 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/decks              ->  index
- * POST    /api/decks              ->  create
- * GET     /api/decks/:id          ->  show
- * PUT     /api/decks/:id          ->  update
- * DELETE  /api/decks/:id          ->  destroy
+ * GET     /api/torneos              ->  index
+ * POST    /api/torneos              ->  create
+ * GET     /api/torneos/:id          ->  show
+ * PUT     /api/torneos/:id          ->  update
+ * DELETE  /api/torneos/:id          ->  destroy
  */
 
 'use strict';
 
 import _ from 'lodash';
-import Deck from './deck.model';
+import Torneo from './torneo.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -59,44 +59,43 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Decks
+// Gets a list of Torneos
 export function index(req, res) {
-  Deck.findAsync()
+  Torneo.findAsync()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Deck from the DB
+// Gets a single Torneo from the DB
 export function show(req, res) {
-  Deck.findByIdAsync(req.params.id)
+  Torneo.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Deck in the DB
+// Creates a new Torneo in the DB
 export function create(req, res) {
-  console.log(req.body);
-  // Deck.createAsync(req.body)
-  //   .then(respondWithResult(res, 201))
-  //   .catch(handleError(res));
+  Torneo.createAsync(req.body)
+    .then(respondWithResult(res, 201))
+    .catch(handleError(res));
 }
 
-// Updates an existing Deck in the DB
+// Updates an existing Torneo in the DB
 export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  Deck.findByIdAsync(req.params.id)
+  Torneo.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Deck from the DB
+// Deletes a Torneo from the DB
 export function destroy(req, res) {
-  Deck.findByIdAsync(req.params.id)
+  Torneo.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

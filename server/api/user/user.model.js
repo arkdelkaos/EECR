@@ -1,6 +1,7 @@
 'use strict';
 
 import crypto from 'crypto';
+import config from '../../config/environment';
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 import {Schema} from 'mongoose';
 
@@ -8,6 +9,8 @@ const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
   name: String,
+  nickJuego: String,
+  clan: Number,
   email: {
     type: String,
     lowercase: true
@@ -23,10 +26,43 @@ var UserSchema = new Schema({
   twitter: {},
   google: {},
   github: {},
-  mazo: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Card',
-    limit: 8
+  rango: {
+    type: String,
+    enum: config.userRangos,
+    default: 'invitado'
+  },
+  torneos: [{
+    numTorneos: {
+      type: Number,
+      default: 0
+    },
+    numGanadas: {
+      type: Number,
+      default: 0
+    },
+    numPerdidas: {
+      type: Number,
+      default: 0
+    },
+    numEmpatadas: {
+      type: Number,
+      default: 0
+    },
+    karma: {
+      type: Number,
+      default: 10
+    },
+    trofeos: [{
+      date: {
+        type: Date,
+        default: Date.now
+      },
+      calidad: {
+        type: String,
+        enum: config.trofeoCalidades
+      },
+      titulo: String
+    }]
   }]
 });
 

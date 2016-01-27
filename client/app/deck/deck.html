@@ -27,7 +27,7 @@
       <h3 id="newDeck" class=""><i class="fa fa-check-circle-o"></i> Nuevo Mazo ({{ total }} huecos libres)</h3>
       <div class="filtros">
         <button id="single-button" type="button" class="btn btn-danger" ng-click="deck.vaciarNewDeck()" ng-hide="hideVaciar">Vaciar</button>
-        <button id="single-button" type="button" class="btn btn-success" ng-click="deck.guardarNewDeck()" ng-hide="hideGuardar">Guardar</button>
+        <button id="single-button" type="button" class="btn btn-success" ng-click="deck.guardarNewDeck(deck.deck,deck.newDeck)" ng-hide="hideGuardar">Guardar</button>
       </div>
     </div>
 
@@ -110,6 +110,97 @@
             </div>
           </div>
         </a>
+      </div>
+    </div>
+
+    <!-- TOPS -->
+    <div class="wrapper">
+
+      <div class="contenedor_blanco">
+        <div class="container">
+        <div class="panel panel-default" id="about_us" ng-bind-html="main.infoclan.info().homeTexto">
+        </div>
+        </div>
+      </div>
+
+      <div class="subheader">
+        <div class="container" id="top_usadas">
+          <h1>TOP</h1>
+          <h1>USADAS</h1>
+          <h3>Por nuestros <strong>315</strong> usuarios</h3>
+          <p>...¡y subiendo!</p>
+        </div>
+      </div>
+
+      <div class="contenedor_blanco">
+        <div class="container">
+          <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" id="top_usadas">
+            <div ng-repeat="deck in main.mazos">
+              <a href="/list/top/{{ deck._id }}" title="">
+                <div class="row panel panel-default topCartas">
+                <div class="col-xs-3">
+                  <h1>TOP #{{ $index+1 }}</h1>
+                  <span class="label label-primary">Uso: {{ deck.users.length }}</span>
+                  <span class="label label-success">Total: {{ main.getStatUsuarios(deck.users.length) }}%</span>
+                  <span class="label label-warning">Coste Medio: {{ main.getCosteMedio(deck) }}</span>
+                </div>
+                <div class="col-xs-7 pull-right" id="top_usadas_vista">
+                  <div ng-repeat="carta in deck.mazo">
+                      <div class="carta"><div class="imagen">
+                      <img src="../assets/images/cartas/{{ main.getCarta(carta).nombre }}.100.png" alt="{{ main.getCarta(carta).nombre }}.png">
+                      <div class="" />
+                        <h5 class="{{main.getCarta(carta).calidad}} text-center"><span>{{ main.getCarta(carta).nombre }}</span></h5>
+                      </div>
+                      </div></div>
+                  </div>
+                </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="subheader">
+        <div class="container" id="top_votadas">
+          <h1>TOP</h1>
+          <h1>VOTADAS</h1>
+          <h3><strong>123456789</strong> votos registrados</h3>
+        </div>
+      </div>
+
+      <div class="contenedor_blanco">
+        <div class="container">
+          <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" id="top_votadas">
+            <div ng-repeat="deck in main.mazos">
+              <a href="/list/top/{{ deck._id }}" title="">
+                <div class="row panel panel-default topCartas">
+                <div class="col-xs-3">
+                  <h1>TOP #{{ $index+1 }}</h1>
+                  <span class="label label-primary">X usuarios</span>
+                  <span class="label label-success">X% total</span>
+                </div>
+                <div class="col-xs-7 pull-right" id="top_votadas_vista">
+                  <div ng-repeat="carta in deck.mazo">
+                      <div class="carta"><div class="imagen">
+                      <img src="../assets/images/cartas/{{ main.getCarta(carta).nombre }}.100.png" alt="{{ main.getCarta(carta).nombre }}.png">
+                      <div class="" />
+                        <h5 class="{{main.getCarta(carta).calidad}} text-center"><span>{{ main.getCarta(carta).nombre }}</span></h5>
+                      </div>
+                      </div></div>
+                  </div>
+                </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -3,7 +3,7 @@
 }
 
 #banner {
-  margin-top: -20px;
+  margin-top: 20px;
 }
 
 #chat {
@@ -52,16 +52,6 @@
 }
 
 
-.topCartas{
-  h2 {
-
-  }
-
-  .carta {
-  padding: 0px;
-  }
-}
-
 //
 // Nuevo Estilo
 //
@@ -89,14 +79,6 @@
     }
     .panel:first-child {
       margin-top: 10px;
-    }
-
-    #top_usadas_vista{
-      width: 365px;
-    }
-
-    #top_votadas_vista{
-      width: 365px;
     }
 
     #about_us{
@@ -137,10 +119,10 @@
   }
 
   .subheader{
-    height: 200px;
+    height: 150px;
     width: 100%;
     position: relative;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-bottom: 5px;
     color: #F5F5F5;
     text-align: center;
@@ -151,19 +133,6 @@
     margin-bottom: 0px;
     display: block;
 
-    #top_usadas{
-      padding-top: 12px;
-    }
-
-    #top_votadas{
-      padding-top: 8px;
-      strong {
-        color: $rojo;
-        font-size: 32px;
-        font-weight: bold;
-      }
-    }
-
     h1 {
       font-family: sc;
       font-size: 45px;
@@ -171,8 +140,12 @@
       color: $amarillo;
       text-shadow: 0 10px 0 rgba(0, 0, 0, 0.75);
     }
-    h3{
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.75);
+    h2{
+      font-family: sc;
+      font-size: 32px;
+      color: $rojo;
+      margin-bottom: -20px;
+      text-shadow: 0 8px 0 rgba(0, 0, 0, 0.75);
     }
     p {
       color: $rojo;

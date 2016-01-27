@@ -3,7 +3,7 @@
 
 angular.module('eecrApp.constants', [])
 
-.constant('appConfig', {userRoles:['guest','user','admin']})
+.constant('appConfig', {userRoles:['guest','user','admin'],userRangos:['invitado','miembro','elder','colider','lider'],trofeoCalidades:['bronce','plata','oro']})
 
 ;
 })(angular);

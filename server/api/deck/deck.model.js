@@ -5,8 +5,8 @@ var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var DeckSchema = new Schema({
   mazo: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Card',
+    type: Number,
+    unique: true,
     limit: 8
   }],
   users: [{

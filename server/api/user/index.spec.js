@@ -8,9 +8,7 @@ var userCtrlStub = {
   me: 'userCtrl.me',
   changePassword: 'userCtrl.changePassword',
   show: 'userCtrl.show',
-  create: 'userCtrl.create',
-  changeDeck: 'userCtrl.changeDeck',
-  getDeck: 'userCtrl.getDeck'
+  create: 'userCtrl.create'
 };
 
 var authServiceStub = {
@@ -81,26 +79,6 @@ describe('User API Router:', function() {
     it('should be authenticated and route to user.controller.changePassword', function() {
       routerStub.put
         .withArgs('/:id/password', 'authService.isAuthenticated', 'userCtrl.changePassword')
-        .should.have.been.calledOnce;
-    });
-
-  });
-
-  describe('POST /api/users/:id/deck', function() {
-
-    it('should be authenticated and route to user.controller.changeDeck', function() {
-      routerStub.post
-        .withArgs('/:id/deck', 'authService.isAuthenticated', 'userCtrl.changeDeck')
-        .should.have.been.calledOnce;
-    });
-
-  });
-
-  describe('GET /api/users/:id/deck', function() {
-
-    it('should be authenticated and route to user.controller.getDeck', function() {
-      routerStub.get
-        .withArgs('/:id/deck', 'authService.isAuthenticated', 'userCtrl.getDeck')
         .should.have.been.calledOnce;
     });
 

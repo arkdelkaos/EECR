@@ -3,7 +3,7 @@
 (function() {
 
   class DeckController {
-    constructor(Auth, $scope, $http, socket, $log, $filter, cartas, mazos) {
+    constructor($scope, $http, socket, $log, $filter, cartas, mazos, User) {
       this.mazos = mazos;
       this.$filter = $filter;
       this.$http = $http;
@@ -26,19 +26,31 @@
       this.arenas = ['Training Camp', 'Goblin Stadium', 'Bone Pit', 'Barbarian Bowl', "P.E.K.K.A's Playhouse", 'Spell Valley', 'Royal Arena'];
 
       // Mazo Actual
-      this.me = Auth.getCurrentUser();
-      var id = Auth.getCurrentUser()._id;
       this.deck = [];
 
       this.cartas = cartas.listCartas();
       $log.info(this.cartas);
       // $http.get('/api/users/'+id+'/deck').then(response => {
       //   var deckX = response.data;
-      $scope.userMazo = mazos.getUserMazo();
-      $scope.userMazo.$promise.then(m => {
-          var m2 = JSON.parse(angular.toJson(m));
-          for(var i in m2){
-            var carta = $filter('filter')(this.cartas, {'_id': m2[i]});
+      // $scope.userMazo = mazos.getUserMazo();
+      // $scope.userMazo.$promise.then(m => {
+      //     var m2 = JSON.parse(angular.toJson(m));
+      //     for(var i in m2){
+      //       var carta = $filter('filter')(this.cartas, {'_id': m2[i]});
+      //       this.deck.push(carta[0]);
+      //     };
+      // });
+
+      // Mazos
+      this.mazos = mazos;
+      $scope.userMazo = [];
+      User.get().$promise.then(res => {
+          // $log.info(res);
+          // var resJSON = JSON.parse(angular.toJson(res));
+          $log.info(res);
+          socket.syncUpdates('user', res);
+          for(var i in res.mazo){
+            var carta = $filter('filter')(this.cartas, {'_id': res.mazo[i]});
             this.deck.push(carta[0]);
           };
       });
@@ -114,16 +126,19 @@
       this.$scope.hideVaciar = false;
     }
 
-    guardarNewDeck(){
+    guardarNewDeck(o,n){
       //Nueva Baraja
-      this.deck = [];
-      this.clonar(this.newDeck,this.deck);
-      this.$http.post('/api/users/'+this.me._id+'/deck', this.deck)
-      .then(response => {
-        this.$log.info(response.data);
-      });
-      this.$log.info(this.deck);
-      // this.$log.info(this.mazos.putUserMazo(this.deck));
+      this.mazos.saveUserMazo(o,n);
+      this.me.mazo = n;
+      this.me.$save;
+      // this.deck = [];
+      // this.clonar(this.newDeck,this.deck);
+      // this.$http.post('/api/users/'+this.me._id+'/deck', this.deck)
+      // .then(response => {
+      //   this.$log.info(response.data);
+      // });
+      // this.$log.info(this.deck);
+
       this.vaciarNewDeck();
     }
 

@@ -3,20 +3,16 @@
 (function() {
 
 class ClanController {
-  constructor(Auth, $scope, $http, socket) {
+  constructor(Auth, $scope, socket, infoclan) {
     this.isAdmin = Auth.isAdmin;
     // Infoclan
-    this.$http = $http;
-    this.info = [];
-    $http.get('/api/infoclan').then(response => {
-      this.info.push(response.data);
-      socket.syncUpdates('infoclan', this.info);
-      $scope.newHtmlContent = this.info[0].texto;
-    });
+    // Infoclan
+    this.infoclan = infoclan;
+    infoclan.get().then();
   }
 
   save() {
-    this.$http.post('/api/infoclan/update', this.info[0]);
+    this.infoclan.save();
   }
 }
 

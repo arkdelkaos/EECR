@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-inverse navbar-static-top" ng-controller="NavbarController">
+<div class="navbar navbar-default navbar-inverse navbar-fixed-top" ng-controller="NavbarController">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
@@ -7,21 +7,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">{{ nav.info[0].nombre }}</a>
+      <a href="/" class="navbar-brand"><img alt="Brand" src="/favicon-64.png"></a>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li ng-repeat="item in nav.menu" ng-class="{active: nav.isActive(item.link)}">
             <a ng-href="{{item.link}}">{{item.title}}</a>
         </li>
-        <li ng-show="nav.isLoggedIn()" ng-class="{active: nav.isActive('/deck')}"><a href="/deck">Mi Mazo</a></li>
-        <li ng-show="nav.isAdmin()" ng-class="{active: nav.isActive('/admin')}"><a href="/admin">Admin</a></li>
+        <li class="disabled"><a href="#">Mazos</a></li>
+        <li class="disabled"><a href="#">Torneos</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/signup')}"><a href="/signup">Sign up</a></li>
         <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/login')}"><a href="/login">Login</a></li>
-        <li ng-show="nav.isLoggedIn()"><p class="navbar-text"><span class="glyphicon glyphicon-user"></span> Hola, {{ nav.getCurrentUser().name }}</p> </li>
+        <li ng-show="nav.isAdmin()" ng-class="{active: nav.isActive('/admin')}"><a href="/admin"><span class="glyphicon glyphicon-user"></span> {{ nav.getCurrentUser().name }}</a> </li>
+        <li ng-show="nav.isLoggedIn() && !nav.isAdmin()"><p class="navbar-text"><span class="glyphicon glyphicon-user"></span> Hola, {{ nav.getCurrentUser().name }}</p> </li>
         <li ng-show="nav.isLoggedIn()" ng-class="{active: nav.isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span> Opciones</a></li>
         <li ng-show="nav.isLoggedIn()"><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Desconectar</a></li>
       </ul>

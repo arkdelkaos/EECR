@@ -4,7 +4,7 @@
 
 class MainController {
 
-  constructor($http, $scope, socket, mazos, cartas, $log, $filter, Auth) {
+  constructor($http, $scope, socket, $log, $filter, Auth, infoclan) {
     this.$log = $log;
     this.$filter = $filter;
     this.$http = $http;
@@ -23,22 +23,22 @@ class MainController {
     });
 
     // Infoclan
-    this.$http = $http;
-    this.info = [];
-    $http.get('/api/infoclan').then(response => {
-      this.info.push(response.data);
-      socket.syncUpdates('infoclan', this.info);
+    this.infoclan = infoclan;
+    infoclan.get().then(res => {
+      $log.info(res);
     });
 
-    // Mazos
-    this.mazos = mazos.listMazos();
-    this.cartas = cartas.listCartas();
+    // // Mazos
+    // mazos.listMazos().then(res => {
+    //   this.mazos = res;
+    // });
+    // this.cartas = cartas.listCartas();
   }
 
-  getCarta(id){
-    var carta = this.$filter('filter')(this.cartas, {'_id': id});
-    return carta[0];
-  }
+  // getCarta(id){
+  //   var carta = this.$filter('filter')(this.cartas, {'_id': id});
+  //   return carta[0];
+  // }
 
   perUsers(length){
 

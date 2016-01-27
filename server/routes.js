@@ -9,6 +9,7 @@ import path from 'path';
 
 export default function(app) {
   // Insert routes below
+  app.use('/api/torneos', require('./api/torneo'));
   app.use('/api/cards', require('./api/card'));
   app.use('/api/decks', require('./api/deck'));
   app.use('/api/infoclan', require('./api/infoclan'));

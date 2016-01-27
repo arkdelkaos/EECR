@@ -61,6 +61,7 @@ Infoclan.find({}).removeAsync()
 Card.find({}).removeAsync()
   .then(() => {
     Card.createAsync({
+      num: 1,
       nombre: 'Arrows',
       tipo: 'Spell',
       calidad: 'Common',
@@ -68,6 +69,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
+      num: 2,
       nombre: 'Bomber',
       tipo: 'Troop',
       calidad: 'Common',
@@ -75,6 +77,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
+      num: 3,
       nombre: 'Archers',
       tipo: 'Troop',
       calidad: 'Common',
@@ -82,6 +85,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
+      num: 4,
       nombre: 'Knight',
       tipo: 'Troop',
       calidad: 'Common',
@@ -89,6 +93,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
+      num: 5,
       nombre: 'Fireball',
       tipo: 'Spell',
       calidad: 'Rare',
@@ -96,6 +101,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 6,
       nombre: 'Mini P.E.K.K.A',
       tipo: 'Troop',
       calidad: 'Rare',
@@ -103,6 +109,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 7,
       nombre: 'Musketeer',
       tipo: 'Troop',
       calidad: 'Rare',
@@ -110,6 +117,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 8,
       nombre: 'Giant',
       tipo: 'Troop',
       calidad: 'Rare',
@@ -117,6 +125,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 9,
       nombre: 'Prince',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -124,6 +133,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 10,
       nombre: 'Baby Dragon',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -131,6 +141,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 11,
       nombre: 'Skeleton Army',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -138,6 +149,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 12,
       nombre: 'Witch',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -145,6 +157,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 13,
       nombre: 'Spear Goblins',
       tipo: 'Troop',
       calidad: 'Common',
@@ -152,6 +165,7 @@ Card.find({}).removeAsync()
       coste: 2,
       comentarios: []
     }, {
+      num: 14,
       nombre: 'Goblins',
       tipo: 'Troop',
       calidad: 'Common',
@@ -159,6 +173,7 @@ Card.find({}).removeAsync()
       coste: 2,
       comentarios: []
     }, {
+      num: 15,
       nombre: 'Goblin Hut',
       tipo: 'Building',
       calidad: 'Rare',
@@ -166,6 +181,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 16,
       nombre: 'Valkyrie',
       tipo: 'Troop',
       calidad: 'Rare',
@@ -173,6 +189,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 17,
       nombre: 'Lightning',
       tipo: 'Spell',
       calidad: 'Epic',
@@ -180,6 +197,7 @@ Card.find({}).removeAsync()
       coste: 6,
       comentarios: []
     }, {
+      num: 18,
       nombre: 'Goblin Barrel',
       tipo: 'Spell',
       calidad: 'Epic',
@@ -187,6 +205,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 19,
       nombre: 'Skeletons',
       tipo: 'Troop',
       calidad: 'Common',
@@ -194,6 +213,7 @@ Card.find({}).removeAsync()
       coste: 1,
       comentarios: []
     }, {
+      num: 20,
       nombre: 'Minions',
       tipo: 'Troop',
       calidad: 'Common',
@@ -201,6 +221,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
+      num: 21,
       nombre: 'Tombstone',
       tipo: 'Building',
       calidad: 'Rare',
@@ -208,6 +229,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
+      num: 22,
       nombre: 'Bomb Tower',
       tipo: 'Building',
       calidad: 'Rare',
@@ -215,6 +237,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 23,
       nombre: 'Giant Skeleton',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -222,6 +245,7 @@ Card.find({}).removeAsync()
       coste: 6,
       comentarios: []
     }, {
+      num: 24,
       nombre: 'Balloon',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -229,6 +253,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 25,
       nombre: 'Cannon',
       tipo: 'Building',
       calidad: 'Common',
@@ -236,6 +261,7 @@ Card.find({}).removeAsync()
       coste: 6,
       comentarios: []
     }, {
+      num: 26,
       nombre: 'Barbarians',
       tipo: 'Troop',
       calidad: 'Common',
@@ -243,6 +269,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 27,
       nombre: 'Rocket',
       tipo: 'Spell',
       calidad: 'Rare',
@@ -250,6 +277,7 @@ Card.find({}).removeAsync()
       coste: 6,
       comentarios: []
     }, {
+      num: 28,
       nombre: 'Barbarian Hut',
       tipo: 'Building',
       calidad: 'Rare',
@@ -257,6 +285,7 @@ Card.find({}).removeAsync()
       coste: 7,
       comentarios: []
     }, {
+      num: 29,
       nombre: 'Rage',
       tipo: 'Spell',
       calidad: 'Epic',
@@ -264,6 +293,7 @@ Card.find({}).removeAsync()
       coste: 3,
       comentarios: []
     }, {
+      num: 30,
       nombre: 'X-Bow',
       tipo: 'Building',
       calidad: 'Epic',
@@ -271,6 +301,7 @@ Card.find({}).removeAsync()
       coste: 6,
       comentarios: []
     }, {
+      num: 31,
       nombre: 'Tesla',
       tipo: 'Building',
       calidad: 'Common',
@@ -278,6 +309,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 32,
       nombre: 'Minion Horde',
       tipo: 'Troop',
       calidad: 'Common',
@@ -285,6 +317,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 33,
       nombre: 'Inferno Tower',
       tipo: 'Building',
       calidad: 'Rare',
@@ -292,6 +325,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 34,
       nombre: 'Hog Rider',
       tipo: 'Troop',
       calidad: 'Rare',
@@ -299,6 +333,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 35,
       nombre: 'Freeze',
       tipo: 'Spell',
       calidad: 'Epic',
@@ -306,6 +341,7 @@ Card.find({}).removeAsync()
       coste: 4,
       comentarios: []
     }, {
+      num: 36,
       nombre: 'P.E.K.K.A',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -313,6 +349,7 @@ Card.find({}).removeAsync()
       coste: 8,
       comentarios: []
     }, {
+      num: 37,
       nombre: 'Zap',
       tipo: 'Spell',
       calidad: 'Common',
@@ -320,6 +357,7 @@ Card.find({}).removeAsync()
       coste: 2,
       comentarios: []
     }, {
+      num: 38,
       nombre: 'Wizard',
       tipo: 'Troop',
       calidad: 'Rare',
@@ -327,6 +365,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 39,
       nombre: 'Mirror',
       tipo: 'Spell',
       calidad: 'Epic',
@@ -334,6 +373,7 @@ Card.find({}).removeAsync()
       coste: 1,
       comentarios: []
     }, {
+      num: 40,
       nombre: 'Mortar',
       tipo: 'Building',
       calidad: 'Common',
@@ -341,6 +381,7 @@ Card.find({}).removeAsync()
       coste: 6,
       comentarios: []
     }, {
+      num: 41,
       nombre: 'Elixir Collector',
       tipo: 'Building',
       calidad: 'Rare',
@@ -348,6 +389,7 @@ Card.find({}).removeAsync()
       coste: 5,
       comentarios: []
     }, {
+      num: 42,
       nombre: 'Golem',
       tipo: 'Troop',
       calidad: 'Epic',
@@ -359,97 +401,72 @@ Card.find({}).removeAsync()
       console.log('finished populating cards');
       User.find({}).removeAsync()
         .then(() => {
-          var cartas = ['Freeze', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
-          var cartas2 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
-          var cartas3 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Witch'];
-          var cartas4 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
-          var cartas5 = ['Arrows', 'Archers', 'Knight', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
-          var newMazo = [];
-          var newMazo2 = [];
-          var newMazo3 = [];
-          var newMazo4 = [];
-          var newMazo5 = [];
+          // var cartas = ['Freeze', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+          // var cartas2 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Golem'];
+          // var cartas3 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Mortar', 'Elixir Collector', 'Witch'];
+          // var cartas4 = ['Arrows', 'P.E.K.K.A', 'Zap', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
+          // var cartas5 = ['Arrows', 'Archers', 'Knight', 'Wizard', 'Mirror', 'Balloon', 'Witch', 'Golem'];
+          // var newMazo = [];
+          // var newMazo2 = [];
+          // var newMazo3 = [];
+          // var newMazo4 = [];
+          // var newMazo5 = [];
+          //
+          // function crearMazo(c, m) {
+          //   return new Promise((resolve) => setTimeout(resolve, 0))
+          //   .then(() => {
+          //     var promises = c.map(n =>
+          //       Card.findOneAndUpdate({'nombre': n}, {$inc: { uso: +1 }})
+          //           .then(carta => carta._id)
+          //     );
+          //     return Promise.all(promises);
+          //   }).then(res =>
+          //     m.concat(res)
+          //   );
+          // }
 
-          function crearMazo(c, m) {
-            return new Promise((resolve) => setTimeout(resolve, 0))
-            .then(() => {
-              var promises = c.map(n =>
-                Card.findOneAndUpdate({'nombre': n}, {$inc: { uso: +1 }})
-                    .then(carta => carta._id)
-              );
-              return Promise.all(promises);
-            }).then(res =>
-              m.concat(res)
-            );
-          }
-
-          Promise.all([
-            crearMazo(cartas, []),
-            crearMazo(cartas2, []),
-            crearMazo(cartas3, []),
-            crearMazo(cartas4, []),
-            crearMazo(cartas5, [])
-          ]).then(([newMazo, newMazo2, newMazo3, newMazo4, newMazo5]) => {
+          // Promise.all([
+          //   crearMazo(cartas, []),
+          //   crearMazo(cartas2, []),
+          //   crearMazo(cartas3, []),
+          //   crearMazo(cartas4, []),
+          //   crearMazo(cartas5, [])
+          // ]).then(([newMazo, newMazo2, newMazo3, newMazo4, newMazo5]) => {
               User.createAsync({
                   provider: 'local',
                   name: 'Test User',
                   email: 'test@example.com',
                   password: 'test',
-                  mazo: newMazo
+                  // mazo: newMazo
                 }, {
                   provider: 'local',
                   role: 'admin',
                   name: 'Admin',
                   email: 'admin@example.com',
                   password: 'admin',
-                  mazo: newMazo2
+                  // mazo: newMazo2
                 }, {
                   provider: 'local',
                   name: 'Pepe',
                   email: 'pepe@example.com',
                   password: 'pepe',
-                  mazo: newMazo3
+                  // mazo: newMazo3
                 }, {
                   provider: 'local',
                   name: 'Paco',
                   email: 'paco@example.com',
                   password: 'paco',
-                  mazo: newMazo4
+                  // mazo: newMazo4
                 }, {
                   provider: 'local',
                   name: 'Antonio',
                   email: 'antonio@example.com',
                   password: 'antonio',
-                  mazo: newMazo5
+                  // mazo: newMazo5
                 })
                 .then(() => {
                   console.log('finished populating users');
-                  Deck.find({}).removeAsync()
-                    .then(() => {
-                      User.find({}).then(users => {
-                        Deck.createAsync({
-                          mazo: users[0].mazo,
-                          users: users[0]._id
-                        },{
-                          mazo: users[1].mazo,
-                          users: users[1]._id
-                        },{
-                          mazo: users[2].mazo,
-                          users: users[2]._id
-                        },{
-                          mazo: users[3].mazo,
-                          users: users[3]._id
-                        },{
-                          mazo: users[4].mazo,
-                          users: users[4]._id
-                        });
-                      })
-                      .then(() => {
-                          console.log('finished populating deck');
-                      });
-                    });
                 });
-          });
         });
     });
-  });
+});

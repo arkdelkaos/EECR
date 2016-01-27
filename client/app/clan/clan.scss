@@ -1,3 +1,7 @@
+.clan{
+  margin-top: 65px;
+}
+
 #md_visor_clanTexto {
   padding: 15px;
   color: white;
@@ -5,6 +9,7 @@
   h1,h2,h3,h4,h5 {
     color: $rojo;
     font-family: sc;
+    text-shadow: 0 7px 0 rgba(0, 0, 0, 0.75);
   }
 
   p,li {
@@ -17,8 +22,13 @@
   }
 }
 
-#md_editor_clanTexto{
- textarea {
-   width: 100%;
- }
+.clanTexto{
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+  #md_editor_clanTexto{
+   textarea {
+     width: 100%;
+   }
+  }
 }

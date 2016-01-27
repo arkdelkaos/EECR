@@ -3,7 +3,7 @@
 (function() {
 
 class AdminController {
-  constructor(User, $http, $scope, socket, cartas, $log) {
+  constructor(User, $scope, socket, cartas, $log, infoclan) {
     this.$log = $log;
     this.socket = socket;
 
@@ -11,12 +11,9 @@ class AdminController {
     this.users = User.query();
 
     // Infoclan
-    this.$http = $http;
-    this.info = [];
-    $http.get('/api/infoclan').then(response => {
-      this.info.push(response.data);
-      socket.syncUpdates('infoclan', this.info);
-      $scope.newHtmlContent = this.info[0].texto;
+    this.infoclan = infoclan;
+    infoclan.get().then(res => {
+      $scope.newHtmlContent = infoclan.info().homeTexto;
     });
 
 
@@ -31,8 +28,9 @@ class AdminController {
     this.users.splice(this.users.indexOf(user), 1);
   }
 
+
   save() {
-      this.$http.post('/api/infoclan/update', this.info[0]);
+    this.infoclan.save();
   }
 
 }

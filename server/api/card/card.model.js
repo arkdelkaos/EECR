@@ -3,6 +3,10 @@
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var CardSchema = new mongoose.Schema({
+  num: {
+    type: Number,
+    unique: true
+  },
   nombre: {
     type: String,
     unique: true

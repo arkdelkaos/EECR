@@ -96,3 +96,40 @@
 .filtros {
   padding: 7px;
 }
+
+.topCartas{
+  h2 {
+
+  }
+
+  .carta {
+  padding: 0px;
+  }
+}
+
+//
+// Nuevo Estilo
+//
+
+.wrapper{
+    #top_usadas_vista{
+      width: 365px;
+    }
+
+    #top_votadas_vista{
+      width: 365px;
+    }
+
+    #top_usadas{
+      padding-top: 12px;
+    }
+
+    #top_votadas{
+      padding-top: 8px;
+      strong {
+        color: $rojo;
+        font-size: 32px;
+        font-weight: bold;
+      }
+    }
+}

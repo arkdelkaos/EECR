@@ -3,30 +3,30 @@
 class NavbarController {
   //start-non-standard
   menu = [{
-    'title': 'Top',
-    'link': '/'
-  },
-  {
+  //   'title': 'Top',
+  //   'link': '/'
+  // },
+  // {
     'title': 'Clan',
     'link': '/clan'
+  // },
+  // {
+  //   'title': 'Mazos',
+  //   'link': '/deck'
   }];
 
   isCollapsed = true;
   //end-non-standard
 
-  constructor($location, Auth, $http, socket) {
+  constructor($location, Auth, infoclan) {
     this.$location = $location;
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
 
-    this.$http = $http;
-    this.info = [];
-    $http.get('/api/infoclan').then(response => {
-      this.info.push(response.data);
-      socket.syncUpdates('infoclan', this.info);
-      $scope.newHtmlContent = this.info[0].texto;
-    });
+    // Infoclan
+    this.infoclan = infoclan;
+    infoclan.get().then();
   }
 
   isActive(route) {

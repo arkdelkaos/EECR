@@ -20,6 +20,12 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+.navbar {
+  .navbar-brand {
+    margin-top: -22px;
+  }
+}
+
 body {
   background: #ccc url("../assets/images/bg.jpg") repeat;
 }
@@ -58,6 +64,8 @@ $fondo-negro-semitrans: rgba(51,51,51,0.75);
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
+@import 'account/settings/settings.scss';
+@import 'account/signup/signup.scss';
 @import 'admin/admin.scss';
 @import 'clan/clan.scss';
 @import 'deck/deck.scss';

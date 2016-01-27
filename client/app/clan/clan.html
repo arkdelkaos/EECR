@@ -1,18 +1,18 @@
 <navbar></navbar>
 
-<div class="container">
+<div class="container clan">
   <div class="semitransBox">
-    <div btf-markdown="clan.info[0].clanTexto" id="md_visor_clanTexto">
+    <div btf-markdown="clan.infoclan.info().clanTexto" id="md_visor_clanTexto">
 
     </div>
   </div>
 </div>
 
-<div class="container" ng-show="clan.isAdmin()">
+<div class="container clanTexto" ng-show="clan.isAdmin()">
   <div class="semitransBox">
     <div id="md_editor_clanTexto">
       <h1>Editor de Normas</h1>
-      <textarea rows="15" ng-model="clan.info[0].clanTexto"></textarea>
+      <textarea rows="15" ng-model="clan.infoclan.info().clanTexto"></textarea>
       <button class="btn btn-success " aria-haspopup="true"  aria-expanded="false" ng-click="clan.save()">
       <i class="fa fa-floppy-o"></i>  Guardar
       </button>
