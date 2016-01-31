@@ -12,7 +12,10 @@ angular.module('eecrApp', [
   'btford.socket-io',
   'ui.bootstrap',
   'validation.match',
-  'btford.markdown'
+  'btford.markdown',
+  'duScroll',
+  'ui.scrollpoint',
+  'ngParallax'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

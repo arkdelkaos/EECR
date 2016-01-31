@@ -1,88 +1,114 @@
-<navbar></navbar>
-
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>{{ main.infoclan.info().nombre }}</h1>
-    <h2>Ranking + Torneos</h2>
-    <img src="assets/images/eeavatar.png" alt="@EliteEspanaCR">
-  </div>
+<header class="hero-unit" id="banner" ng-parallax pattern="'assets/images/bg/esp.jpg'" speed="10" reverse="false">
+    <!-- <div class="puntos"></div> -->
+    <div class="titulo">
+      <h2>Comunidad de jugadores de
+        <a href="http://clashroyale.com" target="_blank">
+          <img id="logo_cr" src="assets/images/ClashRoyale_logo_version_02.png" />
+        </a>
+      </h2>
+      <p>
+        <img id="logo" src="assets/images/eeavatarborjonudo.png" alt="@EliteEspanaCR" />
+        ELITE
+        <strong>ESPAÑA</strong>
+      </p>
+      <h3>Generador y Ranking de Mazos</h3>
+      <h3>Herramienta de gestión de Torneos</h3>
+    </div>
 </header>
 
-<div class="wrapper">
+<navbar></navbar>
 
-  <div class="contenedor_blanco">
+<section id="info">
+  <div class="container" ng-bind-html="main.infoclan.info().homeTexto">
+  </div>
+</section>
+
+
+
+<section id="mazos">
+  <div class="tapa_arriba" />
+  <div class="subheader" id="mazos_sh" >
+    <div class="container" id="mazos_ban">
+      <h3>Ranking: Usadas y Votadas</h3>
+    <p>
+      Generador de
+      <strong>Mazos</strong>
+    </p>
+    <h2>Comentarios y estadísticas, en cada mazo</h2>
+    </div>
+  </div>
+  <div class="tapa_abajo" />
+  <div id="mazos_content">
     <div class="container">
-      <div class="panel panel-default" id="about_us" ng-bind-html="main.infoclan.info().homeTexto">
-      </div>
+      <h1>En obras</h1>
+      <p>Aún no está en condiciones de ser testado</p>
+      <p>La RC incluirá las siguientes opciones:</p>
+      <ul>
+        <li>Editor de mazo própio, filtrable por cada característica de las cartas</li>
+        <li>Visor de TOP25, de mazos mas usados, con estadísticas</li>
+        <li>Visor de TOP25, de mazos mas votados, con estadísticas</li>
+        <li>Visor de TOP10, de cartas mas y menos usadas, con estadísticas</li>
+        <li>Lista completa de mazos, ordenable por cada criterio</li>
+        <li>Vista de cada mazo, con chat-foro en tiempo real</li>
+        <li>Imágenes de alta definición de las cartas</li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <div class="subheader">
+
+<section id="torneos">
+  <div class="tapa_arriba" />
+  <div class="subheader" id="torneos_sh" >
+    <div class="container" id="torneos_ban">
+    <p>
+      Gestor de
+      <strong>Torneos</strong>
+    </p>
+    <h3>Creación, inscripción, y disputa</h3>
+    <h2>¡Ranking de los mejores guerreros!</h2>
+    </div>
+  </div>
+  <div class="tapa_abajo" />
+  <div id="torneos_content">
     <div class="container">
-      <h2>Top y Editor de</h2>
-      <h1>Mazos</h1>
+      <h1>En obras</h1>
+      <p>Aún no está en condiciones de ser testado</p>
+      <p>La RC incluirá las siguientes opciones:</p>
+      <ul>
+        <li>Generador de torneos, con sistema de inscripción</li>
+        <li>Sistema de Karma y herramientas de arbitraje</li>
+        <li>Logros y Trofeos, con vitrina virtual en el perfil de cada usuario</li>
+        <li>Lista de Torneos activos, torneos de la semana, e histórico de torneos</li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <div class="contenedor_blanco">
-    <div class="container" id="about_editor">
-      <div class="row">
-        <div class="hidden-sm hidden-xs col-md-4">
-          <div class="pull-right"><img src="../../assets/images/info_mazos.png" class="img-responsive" /></div>
-        </div>
-        <div class="col-sm-12 col-md-8">
-          <div class="panel panel-default" id="about_us">
-            <h1>En obras</h1>
-            <p>Aún no está e condiciones de ser testado</p>
-            <p>La RC incluirá las siguientes opciones:</p>
-            <ul>
-              <li>Editor de mazo própio, filtrable por cada característica de las cartas</li>
-              <li>Visor de TOP25, de mazos mas usados, con estadísticas</li>
-              <li>Visor de TOP25, de mazos mas votados, con estadísticas</li>
-              <li>Visor de TOP10, de cartas mas y menos usadas, con estadísticas</li>
-              <li>Lista completa de mazos, ordenable por cada criterio</li>
-              <li>Vista de cada mazo, con chat-foro en tiempo real</li>
-              <li>Imágenes de alta definición de las cartas</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+
+<section id="clan">
+  <div class="tapa_arriba" />
+  <div class="subheader" id="about_us_sh" >
+    <div class="container" id="about_us_ban">
+    <h2>Sobre nosotros...</h2>
+    <p>
+      Normas del
+      <strong>Clan</strong>
+    </p>
+    <h3>Organización de nuestros clanes</h3>
+    <h3>Herramientas y Redes Sociales</h3>
     </div>
   </div>
-
-  <div class="subheader">
+  <div class="tapa_abajo" />
+  <div id="about_us">
     <div class="container">
-      <h2>Generador de</h2>
-      <h1>Torneos</h1>
+      <clan />
     </div>
   </div>
+</section>
 
-  <div class="contenedor_blanco">
-    <div class="container" id="about_editor">
-      <div class="row">
-        <div class="col-sm-12 col-md-8">
-          <div class="panel panel-default" id="about_us">
-            <h1>En obras</h1>
-            <p>Aún no está en condiciones de ser testado</p>
-            <p>La RC incluirá las siguientes opciones:</p>
-            <ul>
-              <li>Generador de torneos, con sistema de inscripción</li>
-              <li>Sistema de Karma y herramientas de arbitraje</li>
-              <li>Logros y Trofeos, con vitrina virtual en el perfil de cada usuario</li>
-              <li>Lista de Torneos activos, torneos de la semana, e histórico de torneos</li>
-            </ul>
-          </div>
-        </div>
-        <div class="hidden-sm hidden-xs col-md-4">
-          <img src="../../assets/images/info_mazos.png" />
-        </div>
-      </div>
-    </div>
-  </div>
 
-</div>
-
-<div class="container" id="chat">
+<div class="container" id="chat" ng-show="main.isAdmin()">
     <div class="row">
       <div class="col-lg-12">
         <h1 class="page-header">Test de chat en tiempo real:</h1>

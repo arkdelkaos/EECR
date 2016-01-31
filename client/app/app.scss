@@ -4,6 +4,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Exo+2:200,900");
 
 /**
  * App-wide Styles
@@ -27,16 +28,28 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 }
 
 body {
-  background: #ccc url("../assets/images/bg.jpg") repeat;
+  background: #fff;
 }
 
-h1,h2,h3,h4,h5,p,li {
+h1,h2,h3,h4,h5{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1{
+  font-size: 48px;
+  // text-shadow: 0 10px 0 rgba(0, 0, 0, 0.75);
+}
+
+p,li {
   font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 
-$amarillo: #feee00;
-$rojo: #ff0101;
+$amarillo: #ff9600;
+$rojo: #ff0054;
 $fondo-boton-rojo: #d9534f;
 $fondo-boton-amarillo: #d9ce4f;
 $twitter: rgb(135, 194, 237);
@@ -70,8 +83,10 @@ $fondo-negro-semitrans: rgba(51,51,51,0.75);
 @import 'clan/clan.scss';
 @import 'deck/deck.scss';
 @import 'main/main.scss';
+@import 'torneo/torneo.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
+@import '../components/navbar/navbar.scss';
 @import '../components/oauth-buttons/oauth-buttons.scss';
 // endinjector
 @import 'account/login/login.scss';

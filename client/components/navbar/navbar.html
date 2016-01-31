@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top" ng-controller="NavbarController">
+<div id="affix" ui-scrollpoint="" ui-scrollpoint-edge="['top']" ui-scrollpoint-class="affixed"><div class="navbar navbar-default" ng-controller="NavbarController">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
@@ -7,15 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand"><img alt="Brand" src="/favicon-64.png"></a>
+      <a href="/" class="navbar-brand"><img alt="Brand" src="assets/images/eeavatarborjonudo.png" width="50px" height="50px">
+      </a>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
-        <li ng-repeat="item in nav.menu" ng-class="{active: nav.isActive(item.link)}">
+        <!-- <li ng-repeat="item in nav.menu" ng-class="{active: nav.isActive(item.link)}">
             <a ng-href="{{item.link}}">{{item.title}}</a>
+        </li> -->
+        <li>
+          <a href="#mazos" ng-show="nav.isActive('/')" du-smooth-scroll>Mazos</a>
         </li>
-        <li class="disabled"><a href="#">Mazos</a></li>
-        <li class="disabled"><a href="#">Torneos</a></li>
+        <li>
+          <a href="#torneos" ng-show="nav.isActive('/')" du-smooth-scroll>Torneos</a>
+        </li>
+        <li><a href="#clan" ng-show="nav.isActive('/')" du-smooth-scroll>Clan</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -28,4 +34,4 @@
       </ul>
     </div>
   </div>
-</div>
+</div></div>

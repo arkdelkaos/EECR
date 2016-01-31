@@ -34,6 +34,9 @@ module.exports = function(config) {
       'client/bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js',
       'client/bower_components/showdown/src/showdown.js',
       'client/bower_components/angular-markdown-directive/markdown.js',
+      'client/bower_components/angular-scroll/angular-scroll.js',
+      'client/bower_components/angular-ui-scrollpoint/dist/scrollpoint.js',
+      'client/bower_components/ng-simple-parallax/js/ngParallax.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

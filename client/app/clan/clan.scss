@@ -1,20 +1,15 @@
-.clan{
-  margin-top: 65px;
-}
-
 #md_visor_clanTexto {
+  margin-top: 10px;
   padding: 15px;
-  color: white;
 
   h1,h2,h3,h4,h5 {
     color: $rojo;
     font-family: sc;
-    text-shadow: 0 7px 0 rgba(0, 0, 0, 0.75);
+    text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
   }
 
   p,li {
     font-size: 16px;
-
   }
 
   strong {
