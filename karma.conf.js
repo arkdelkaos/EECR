@@ -37,6 +37,7 @@ module.exports = function(config) {
       'client/bower_components/angular-scroll/angular-scroll.js',
       'client/bower_components/angular-ui-scrollpoint/dist/scrollpoint.js',
       'client/bower_components/ng-simple-parallax/js/ngParallax.js',
+      'client/bower_components/ng-lodash/build/ng-lodash.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

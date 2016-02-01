@@ -187,7 +187,7 @@ section#mazos {
     height: 75px;
     background: white;
     transform: skewY(-1deg);
-    z-index: 99999;
+    z-index: 99;
     margin-top: 0px;
   }
 
@@ -195,12 +195,14 @@ section#mazos {
     height: 125px;
     background: white;
     transform: skewY(3deg);
-    z-index: 99999;
+    z-index: 99;
     margin-top: 0px;
   }
 
   #mazos_content{
-
+    z-index: 999;
+    margin-top: -100px;
+    position: relative;
   }
 }
 
@@ -273,7 +275,7 @@ section#torneos {
     height: 75px;
     background: white;
     transform: skewY(1deg);
-    z-index: 99999;
+    z-index: 99;
     margin-top: 0px;
   }
 
@@ -281,14 +283,105 @@ section#torneos {
     height: 125px;
     background: white;
     transform: skewY(3deg);
-    z-index: 99999;
+    z-index: 99;
     margin-top: 0px;
   }
 
   #torneos_content{
-
+    z-index: 999;
+    margin-top: -100px;
+    position: relative;
   }
 }
+
+
+section#cofres {
+  #cofres_sh{
+    position: relative;
+    display: table;
+    height: 500px !important;
+    width: 100%;
+    background: url("../assets/images/bg/valencia.jpg");
+    background-repeat: no-repeat !important;
+      background-position: bottom center;
+      background-attachment: fixed !important;
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      -o-background-size: cover !important;
+      background-size: cover !important;
+    margin-top: -36px;
+    margin-bottom: -60px;
+    z-index: -1;
+    color: white;
+    vertical-align: middle;
+
+    #cofres_ban{
+      vertical-align: middle;
+      display: table-cell;
+      text-align: center;
+
+      p {
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 900;
+        font-size: 72px;
+        text-shadow: 0 10px 0 rgba(0, 0, 0, 0.75);
+        color: $amarillo;
+        margin-bottom: 0px;
+        transform: scale(1);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        z-index: 999;
+        strong{
+          color: $rojo;
+        }
+        &:hover{
+          font-size: 78px;
+        }
+      }
+
+      h2 {
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 200;
+        margin-left: -235px;
+        margin-bottom: -24px;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
+      }
+      h3 {
+        font-family: 'Ope Sans', sans-serif;
+        margin-top: -6px;
+        text-align: center;
+        margin-left: 150px;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+
+
+  .tapa_arriba{
+    height: 75px;
+    background: white;
+    transform: skewY(2deg);
+    z-index: 99;
+    margin-top: 0px;
+  }
+
+  .tapa_abajo{
+    height: 125px;
+    background: white;
+    transform: skewY(2deg);
+    z-index: 99;
+    margin-top: 0px;
+  }
+
+  #cofres_content{
+    margin-top: -100px;
+    position: relative;
+    z-index: 999;
+  }
+}
+
 
 
 section#clan {
@@ -372,6 +465,8 @@ section#clan {
   }
 
   #about_us{
+    margin-top: -100px;
+    position: relative;
     z-index: 999;
   }
 }

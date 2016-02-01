@@ -1,0 +1,31 @@
+#resultado {
+    display: inline;
+    padding: 2px;
+    margin-top: 15px;
+
+    #mejor {
+    background: #d6e9c6;
+    padding: 40px;
+    width: 550px;
+    height: 200px;
+    text-align: center;
+      h3{
+        margin: -12px;
+      }
+    }
+
+    #peor {
+    background: #ebccd1;
+    padding: 40px;
+    width: 550px;
+    height: 200px;
+    text-align: center;
+      h3{
+        margin: -12px;
+      }
+    }
+}
+
+#miCiclo {
+  margin-bottom: 15px;
+}

@@ -15,7 +15,8 @@ angular.module('eecrApp', [
   'btford.markdown',
   'duScroll',
   'ui.scrollpoint',
-  'ngParallax'
+  'ngParallax',
+  'ngLodash'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
