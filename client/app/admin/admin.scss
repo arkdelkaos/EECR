@@ -1,20 +1,33 @@
-.trash { color:rgb(209, 91, 71); }
-
 .user-list {
 	li {
 		display: flex;
-		border: none;
-		border-bottom: 1px lightgray solid;
+  	border-bottom: 1px lightgray solid;
 		margin-bottom: 0;
 		&:last-child { border-bottom: none; }
 
 		.user-info {
 			flex-grow: 1;
+			.input-group,.btn-group{
+				margin: 2px;
+			}
 		}
 		.trash {
 			display: flex;
 			align-items: center;
 			text-decoration: none;
+			color: rgb(209, 91, 71);
+			&:hover{
+				color: rgb(104, 45, 35);
+			}
+		}
+		.save {
+			color: green;
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			&:hover{
+				color: rgb(0, 90, 0);
+			}
 		}
 	}
 }
@@ -40,5 +53,12 @@
 
 	.listaUsuariosAdmin{
 		margin-top: 10px;
+		.glyphicon{
+			top: 0px;
+		}
+		#filtroNumusuarios{
+			margin-top: 5px;
+    	margin-bottom: 5px;
+		}
 	}
 }

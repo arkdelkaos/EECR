@@ -362,6 +362,96 @@ section#cofres {
   .tapa_arriba{
     height: 75px;
     background: white;
+    transform: skewY(-2deg);
+    z-index: 99;
+    margin-top: 0px;
+  }
+
+  .tapa_abajo{
+    height: 125px;
+    background: white;
+    transform: skewY(-2deg);
+    z-index: 99;
+    margin-top: 0px;
+  }
+
+  #cofres_content{
+    margin-top: -100px;
+    position: relative;
+    z-index: 999;
+  }
+}
+
+
+section#rrss {
+  #rrss_sh{
+    position: relative;
+    display: table;
+    height: 500px !important;
+    width: 100%;
+    background: url("../assets/images/bg/salamanca.jpg");
+    background-repeat: no-repeat !important;
+      background-position: bottom center;
+      background-attachment: fixed !important;
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      -o-background-size: cover !important;
+      background-size: cover !important;
+    margin-top: -36px;
+    margin-bottom: -60px;
+    z-index: -1;
+    color: white;
+    vertical-align: middle;
+
+    #rrss_ban{
+      vertical-align: middle;
+      display: table-cell;
+      text-align: center;
+
+      p {
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 900;
+        font-size: 72px;
+        text-shadow: 0 10px 0 rgba(0, 0, 0, 0.75);
+        color: $amarillo;
+        margin-bottom: 0px;
+        margin-top: -50px;
+        transform: scale(1);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        z-index: 999;
+        strong{
+          color: $rojo;
+        }
+        &:hover{
+          font-size: 78px;
+        }
+      }
+
+      h2 {
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 200;
+        margin-left: 135px;
+        margin-bottom: -24px;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
+      }
+      h3 {
+        font-family: 'Ope Sans', sans-serif;
+        margin-top: -6px;
+        text-align: center;
+        margin-left: -100px;
+        margin-bottom: -24px;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+
+
+  .tapa_arriba{
+    height: 75px;
+    background: white;
     transform: skewY(2deg);
     z-index: 99;
     margin-top: 0px;
@@ -375,13 +465,12 @@ section#cofres {
     margin-top: 0px;
   }
 
-  #cofres_content{
+  #rrss_content{
     margin-top: -100px;
     position: relative;
     z-index: 999;
   }
 }
-
 
 
 section#clan {

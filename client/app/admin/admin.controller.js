@@ -3,9 +3,14 @@
 (function() {
 
 class AdminController {
-  constructor(User, $scope, socket, cartas, $log, infoclan) {
+  constructor(User, $scope, socket, cartas, $log, infoclan, appConfig, $uibModal) {
     this.$log = $log;
     this.socket = socket;
+    this.appConfig = appConfig;
+
+    this.currentPage = 0; //primera página
+    this.paginaSize = 5;
+
 
     // Use the User $resource to fetch all users
     this.users = User.query();
@@ -16,11 +21,49 @@ class AdminController {
       $scope.newHtmlContent = infoclan.info().homeTexto;
     });
 
-
-    // Cards
+        // Cards
     this.cartas = cartas.listCartas();
     socket.syncUpdates('carta', this.cartas);
 
+    $scope.status = function(){
+      var status = [];
+      for(var i in users){
+          status.push({
+            isopen: false,
+            isopen2: false,
+            isopen3: false
+          });
+      }
+      return status
+    };
+  }
+
+  setClan(usr,clan) {
+    usr.clan = clan;
+  }
+
+  setRango(usr,rango) {
+    usr.rango = rango;
+  }
+
+  setRole(usr,role) {
+    usr.role = role;
+  }
+
+  setConfirmado(usr,confirmado) {
+    usr.clanConfirmado = confirmado;
+  }
+
+  setName(usr,name) {
+    usr.name = name;
+  }
+
+  setNickJuego(usr,nick) {
+    usr.nickJuego = nike;
+  }
+
+  saveUser(usr){
+    usr.$update();
   }
 
   delete(user) {
@@ -28,11 +71,9 @@ class AdminController {
     this.users.splice(this.users.indexOf(user), 1);
   }
 
-
   save() {
     this.infoclan.save();
   }
-
 }
 
 angular.module('eecrApp.admin')

@@ -8,7 +8,8 @@ var userCtrlStub = {
   me: 'userCtrl.me',
   changePassword: 'userCtrl.changePassword',
   show: 'userCtrl.show',
-  create: 'userCtrl.create'
+  create: 'userCtrl.create',
+  update: 'userCtrl.update'
 };
 
 var authServiceStub = {
@@ -24,7 +25,8 @@ var routerStub = {
   get: sinon.spy(),
   put: sinon.spy(),
   post: sinon.spy(),
-  delete: sinon.spy()
+  delete: sinon.spy(),
+  update: sinon.spy()
 };
 
 // require the index with our stubbed out modules
@@ -89,6 +91,16 @@ describe('User API Router:', function() {
     it('should be authenticated and route to user.controller.show', function() {
       routerStub.get
         .withArgs('/:id', 'authService.isAuthenticated', 'userCtrl.show')
+        .should.have.been.calledOnce;
+    });
+
+  });
+
+  describe('PUT /api/users/:id', function() {
+
+    it('should be admin and route to user.controller.update', function() {
+      routerStub.put
+        .withArgs('/:id', 'authService.hasRole.admin', 'userCtrl.update')
         .should.have.been.calledOnce;
     });
 

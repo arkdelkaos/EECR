@@ -16,7 +16,9 @@ angular.module('eecrApp', [
   'duScroll',
   'ui.scrollpoint',
   'ngParallax',
-  'ngLodash'
+  'ngLodash',
+  'ngtweet',
+  'eecrFilters'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

@@ -7,7 +7,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#banner" class="navbar-brand" du-smooth-scroll><img alt="Brand" src="assets/images/eeavatarborjonudo.png" width="50px" height="50px">
+      <a href="#banner" class="navbar-brand" du-smooth-scroll ng-show="nav.isActive('/')"><img alt="Brand" src="assets/images/eeavatarborjonudo.png" width="50px" height="50px">
+      </a>
+      <a href="/" class="navbar-brand" du-smooth-scroll ng-hide="nav.isActive('/')"><img alt="Brand" src="assets/images/eeavatarborjonudo.png" width="50px" height="50px">
       </a>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
@@ -23,6 +25,9 @@
         </li>
         <li>
           <a href="#cofres" ng-show="nav.isActive('/')" du-smooth-scroll>Cofres</a>
+        </li>
+        <li>
+          <a href="#rrss" ng-show="nav.isActive('/')" du-smooth-scroll><i class="fa fa-twitter"></i></a>
         </li>
         <li><a href="#clan" ng-show="nav.isActive('/')" du-smooth-scroll>Clan</a></li>
       </ul>

@@ -100,6 +100,18 @@ export function changePassword(req, res, next) {
 }
 
 /**
+ * Guarda cambios en el usuario
+ */
+export function update(req, res, next) {
+  var userId = req.body._id;
+  console.log(req.body);
+
+  User.findByIdAndUpdateAsync(userId, req.body)
+    .then(() => res.status(204).end())
+    .catch(validationError(res));
+}
+
+/**
  * Get my info
  */
 export function me(req, res, next) {
