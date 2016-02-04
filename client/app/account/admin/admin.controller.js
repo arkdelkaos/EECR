@@ -3,10 +3,11 @@
 (function() {
 
 class AdminController {
-  constructor(User, $scope, socket, cartas, $log, infoclan, appConfig, $uibModal) {
+  constructor(User, $scope, socket, cartas, $log, infoclan, appConfig, $window) {
     this.$log = $log;
     this.socket = socket;
     this.appConfig = appConfig;
+    this.$window = $window;
 
     this.currentPage = 0; //primera página
     this.paginaSize = 5;
@@ -50,8 +51,12 @@ class AdminController {
     usr.role = role;
   }
 
-  setConfirmado(usr,confirmado) {
-    usr.clanConfirmado = confirmado;
+  setConfirmado(usr) {
+    if(!usr.clanConfirmado){
+      usr.clanConfirmado = true;
+    }else{
+      usr.clanConfirmado = false;
+    }
   }
 
   setName(usr,name) {
@@ -64,6 +69,7 @@ class AdminController {
 
   saveUser(usr){
     usr.$update();
+    this.$window.alert(usr.name+' guardado.');
   }
 
   delete(user) {

@@ -33,12 +33,23 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/signup')}"><a href="/signup">Sign up</a></li>
-        <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/login')}"><a href="/login">Login</a></li>
-        <li ng-show="nav.isAdmin()" ng-class="{active: nav.isActive('/admin')}"><a href="/admin"><span class="glyphicon glyphicon-user"></span> {{ nav.getCurrentUser().name }}</a> </li>
-        <li ng-show="nav.isLoggedIn() && !nav.isAdmin()"><p class="navbar-text"><span class="glyphicon glyphicon-user"></span> Hola, {{ nav.getCurrentUser().name }}</p> </li>
-        <li ng-show="nav.isLoggedIn()" ng-class="{active: nav.isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span> Opciones</a></li>
-        <li ng-show="nav.isLoggedIn()"><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Desconectar</a></li>
+        <!-- <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/signup')}"><a href="/signup">Sign up</a></li>
+        <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/login')}"><a href="/login">Login</a></li> -->
+        <li ng-show="nav.isLoggedIn()" uib-dropdown on-toggle="toggled(open)"><a href="#" uib-dropdown-toggle>Hola, {{ nav.getCurrentUser().name }} <span class="glyphicon glyphicon-user"></span></a>
+          <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li ng-class="{disabled: nav.isActive('/settings')}">
+              <a href="/settings"><span class="glyphicon glyphicon-cog"></span> Opciones</a>
+            </li>
+            <li ng-show="nav.isColider()" ng-class="{disabled: nav.isActive('/colider')}">
+              <a href="/colider"><span class="glyphicon glyphicon-cog"></span> Panel de Colider</a>
+            </li>
+            <li ng-show="nav.isAdmin()" ng-class="{disabled: nav.isActive('/admin')}">
+              <a href="/admin"><span class="glyphicon glyphicon-cog"></span> Panel de Admin</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li ng-show="nav.isLoggedIn()"><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

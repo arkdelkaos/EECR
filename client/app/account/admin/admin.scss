@@ -49,6 +49,11 @@
 			list-style-type: none;
 			margin-left: -27px;
 		}
+		.affixed {
+	    display: block;
+	    position: fixed;
+	    top: 40px;
+		}
 	}
 
 	.listaUsuariosAdmin{
