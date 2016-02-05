@@ -97,4 +97,19 @@
         }
       }
   }
+
+  .alter {
+    .caption{
+      width: 80px !important;
+      height: 80px !important;
+    }
+    img{
+      width: 80px !important;
+      height: 80px !important;
+      border: 2px solid $twitter !important;
+    }
+    p,h5{
+      font-size: 11px !important;
+    }
+  }
 }
