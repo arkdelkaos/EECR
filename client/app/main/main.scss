@@ -191,6 +191,10 @@ section#mazos {
           font-size: 42px;
           text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
         }
+        @media (max-width: 500px){
+          font-size: 32px;
+          text-shadow: 0 5px 0 rgba(0, 0, 0, 0.75);
+        }
         strong{
           color: $rojo;
         }
@@ -199,6 +203,10 @@ section#mazos {
           @media (max-width: 767px){
             font-size: 46px;
             text-shadow: 0 7px 0 rgba(0, 0, 0, 0.75);
+          }
+          @media (max-width: 500px){
+            font-size: 36px;
+            text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
           }
         }
       }
@@ -220,7 +228,7 @@ section#mazos {
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
         @media (max-width: 767px){
           margin-top: 25px;
-          margin-bottom: -15px;
+          margin-bottom: -10px;
         }
       }
     }
@@ -413,6 +421,10 @@ section#cofres {
           font-size: 36px;
           text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
         }
+        @media (max-width: 500px){
+          font-size: 30px;
+          text-shadow: 0 5px 0 rgba(0, 0, 0, 0.75);
+        }
         strong{
           color: $rojo;
         }
@@ -421,6 +433,10 @@ section#cofres {
           @media (max-width: 767px){
             font-size: 42px;
             text-shadow: 0 7px 0 rgba(0, 0, 0, 0.75);
+          }
+          @media (max-width: 767px){
+            font-size: 36px;
+            text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
           }
         }
       }
@@ -434,6 +450,7 @@ section#cofres {
         @media (max-width: 767px){
           margin-top: -20px;
           margin-bottom: -10px;
+          margin-left: -200px;
         }
       }
       h3 {
