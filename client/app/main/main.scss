@@ -305,8 +305,8 @@ section#torneos {
         transition: .5s ease-in-out;
         z-index: 999;
         @media (max-width: 767px){
-          font-size: 42px;
-          text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
+          font-size: 38px;
+          text-shadow: 0 5px 0 rgba(0, 0, 0, 0.75);
           margin-top: 20px;
         }
         strong{
@@ -315,8 +315,8 @@ section#torneos {
         &:hover{
           font-size: 78px;
           @media (max-width: 767px){
-            font-size: 46px;
-            text-shadow: 0 7px 0 rgba(0, 0, 0, 0.75);
+            font-size: 42px;
+            text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
           }
         }
       }
@@ -670,6 +670,9 @@ section#clan {
         text-align: center;
         margin-left: 150px;
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+        @media (max-width: 767px){
+          margin-left: 100px;
+        }
       }
     }
   }
