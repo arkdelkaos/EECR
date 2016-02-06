@@ -32,9 +32,22 @@
   vertical-align: middle;
 
   @media (max-width: 767px){
-    background-image: none;
+    background-image: linear-gradient(35deg, #335baf, #600091);
     background-color: #335baf;
     min-height: 500px;
+  }
+
+  .parallax{
+    display: block;
+    position: absolute;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    min-height: 1000px;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   .titulo {
