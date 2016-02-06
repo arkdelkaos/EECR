@@ -660,6 +660,7 @@ section#clan {
         margin-bottom: -40px;
         text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
         @media (max-width: 767px){
+          margin-left: -200px;
           margin-top: -22px;
           margin-bottom: -18px;
         }
@@ -668,7 +669,7 @@ section#clan {
         font-family: 'Open Sans', sans-serif;
         margin-top: -6px;
         text-align: center;
-        margin-left: 150px;
+        margin-left: 50px;
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
         @media (max-width: 767px){
           margin-left: 100px;
