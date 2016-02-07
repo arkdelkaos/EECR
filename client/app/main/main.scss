@@ -37,6 +37,13 @@
     min-height: 500px;
   }
 
+  //Fix 4 cover+fixed = shit on iOS
+  .ios & {
+    background-image: linear-gradient(35deg, #335baf, #600091);
+    background-color: #335baf;
+    min-height: 500px;
+  }
+
   .parallax{
     display: block;
     position: absolute;
@@ -182,6 +189,12 @@ section#mazos {
       margin-bottom: -30px;
     }
 
+    //Fix 4 cover+fixed = shit on iOS
+    .ios & {
+      background-image: linear-gradient(35deg, #ba2828, #914b00);
+      background-color: #ba2828;
+    }
+
     #mazos_ban{
       vertical-align: middle;
       display: table-cell;
@@ -299,6 +312,12 @@ section#torneos {
       margin-bottom: -30px;
     }
 
+    //Fix 4 cover+fixed = shit on iOS
+    .ios & {
+      background-image: linear-gradient(35deg, #914b00, #918f00);
+      background-color: #914b00;
+    }
+
     #torneos_ban{
       vertical-align: middle;
       display: table-cell;
@@ -410,6 +429,12 @@ section#cofres {
       height: 250px !important;
       margin-top: -36px;
       margin-bottom: -60px;
+    }
+
+    //Fix 4 cover+fixed = shit on iOS
+    .ios & {
+      background-image: linear-gradient(35deg, #918f00, #007e91);
+      background-color: #918f00;
     }
 
     #cofres_ban{
@@ -529,6 +554,12 @@ section#rrss {
       height: 250px !important;
     }
 
+    //Fix 4 cover+fixed = shit on iOS
+    .ios & {
+      background-image: linear-gradient(35deg, #007e91, #600091);
+      background-color: #007e91;
+    }
+
     #rrss_ban{
       vertical-align: middle;
       display: table-cell;
@@ -632,6 +663,12 @@ section#clan {
       height: 250px !important;
     }
 
+        //Fix 4 cover+fixed = shit on iOS
+    .ios & {
+      background-image: linear-gradient(35deg, #600091, #ba2828);
+      background-color: #600091;
+    }
+
     #about_us_ban{
       vertical-align: middle;
       display: table-cell;
@@ -712,5 +749,13 @@ section#clan {
     margin-top: -100px;
     position: relative;
     z-index: 999;
+  }
+}
+
+
+//Fix 4 cover+fixed = shit on iOS
+.ios {
+  .parallax {
+    visibility: hidden;
   }
 }

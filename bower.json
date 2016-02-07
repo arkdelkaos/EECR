@@ -25,7 +25,8 @@
     "angular-ui-scrollpoint": "~2.1.0",
     "ng-simple-parallax": "*",
     "ng-lodash": "~0.4.0",
-    "ngtweet": "~0.3.1"
+    "ngtweet": "~0.3.1",
+    "device.js": "devicejs#~0.2.7"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
