@@ -1,16 +1,14 @@
-'use strict';
+  'use strict';
 
-angular.module('eecrApp')
-  .factory('torneos', function ($http, $q, $User) {
-    // Service logic
-    // ...
+  (function() {
 
-    var meaningOfLife = 42;
+  function TorneosResource($resource) {
+    return $resource('/api/torneos/:id', {
+      id: '@_id'
+    });
+  }
 
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+  angular.module('eecrApp')
+    .factory('Torneos', TorneosResource);
+
+  })();

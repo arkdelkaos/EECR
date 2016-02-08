@@ -1,3 +1,72 @@
 .torneos{
-  margin-top: 65px;
+  margin-top: 75px;
+  #torneo-nuevo{
+    padding: 15px;
+    h2 {
+      margin-top: -5px;
+    }
+    h3 {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .linea-arriba {
+      border-top: 1px #ddd solid;
+      margin-top: 15px;
+    }
+    .torneo-nuevo-opciones{
+      padding: 10px;
+      #torneo-nuevo-md_visor{
+        padding: 10px;
+      }
+      textarea{
+        margin-top: -15px;
+        padding: 10px;
+        width: 100%;
+      }
+    }
+  }
+  .torneos-lista{
+    display: inline-flex;
+    position: relative;
+    padding: 5px;
+    .panel {
+      display: inline-block;
+      padding: 15px;
+      margin-bottom: 2px;
+      h2,h3{
+        margin: 0px;
+      }
+      .progress{
+        margin: 0px;
+      }
+    }
+    .torneos-lista-botonera{
+      text-align: center;
+      margin-top: 15px;
+    }
+    .torneos-lista-finalizado {
+      h3 {
+        text-align: center;
+      }
+      h4 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+      }
+    }
+    .torneo-oficial{
+      background-color: #e6f2e6
+    }
+    .torneo-inactivo {
+      background-color: #e6e6e6
+    }
+    .torneo-trophy-oro{
+      color: gold;
+    }
+    .torneo-trophy-plata{
+      color: silver;
+    }
+    .torneo-trophy-bronce{
+      color: brown;
+    }
+  }
 }

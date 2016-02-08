@@ -1,5 +1,7 @@
 'use strict';
 
+import config from '../../config/environment';
+
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var TorneoSchema = new mongoose.Schema({
@@ -14,7 +16,10 @@ var TorneoSchema = new mongoose.Schema({
   },
   open: Boolean,
   official: Boolean,
-  clan: Number,
+  clan: {
+    type: String,
+    enum: config.clanes
+  },
   users: [{
     type: mongoose.Schema.Types.ObjectId, ref: 'User'
   }],
