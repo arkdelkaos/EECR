@@ -520,6 +520,15 @@ Card.find({}).removeAsync()
                         official: false,
                         clan: 'EE3',
                         users: [usr3._id],
+                      },{
+                        name: 'Aserejéjadejémejebeedurejebere',
+                        owner: usr3._id,
+                        info: 'Prueba Borjonuda Tocahuevos 1',
+                        active: true,
+                        open: true,
+                        official: true,
+                        clan: 'EE2',
+                        users: [usr3._id],
                       })
                       .then(() => {
                         console.log('finished populating torneos');

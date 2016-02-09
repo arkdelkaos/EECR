@@ -10,6 +10,7 @@ const authTypes = ['github', 'twitter', 'facebook', 'google'];
 var UserSchema = new Schema({
   name: String,
   nickJuego: String,
+  nickTelegram: String,
   clan: {
     type: String,
     enum: config.clanes,

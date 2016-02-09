@@ -29,6 +29,10 @@
             <span class="input-group-addon" id="user_nick">Nick en el Juego</span>
             <input type="text" class="form-control" placeholder="Vacio" aria-describedby="user_nick" ng-model="user.nickJuego">
           </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="user_nick">Nick en Telegram</span>
+            <input type="text" class="form-control" placeholder="Vacio" aria-describedby="user_telegram_nick" ng-model="user.nickTelegram">
+          </div>
           <div class="btn-group" uib-dropdown is-open="status.isopen">
             <button id="clanes-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
               Clan: {{ user.clan }} <span class="caret"></span>

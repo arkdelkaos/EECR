@@ -110,6 +110,10 @@
                     <span class="input-group-addon" id="nickJuego-{{$index}}">Nick (juego)</span>
                     <input type="text" class="form-control" ng-model="user.nickJuego">
                   </div>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="nickTelegram-{{$index}}">Nick (telegram)</span>
+                    <input type="text" class="form-control" ng-model="user.nickTelegram">
+                  </div>
 
                   <div class="btn-group" uib-dropdown is-open="status[$index].isopen">
                     <button id="clanes-button-{{$index}}" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">

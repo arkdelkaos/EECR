@@ -36,6 +36,12 @@
       h2,h3{
         margin: 0px;
       }
+      @media (max-width: 767px) {
+        h2{
+          overflow-wrap: break-word;
+          width: 420px;
+        }
+      }
       .progress{
         margin: 0px;
       }
