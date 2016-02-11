@@ -1,7 +1,8 @@
 <div class="container torneos">
   <!-- Generador de torneos -->
   <div class="row">
-    <div class="panel panel-default" id="torneo-nuevo">
+    <button type="button" class="btn" ng-click="torneo.switchMostrarNuevo()" ng-class="torneo.mostrarNuevo ? 'btn-warning' : ('btn-success')">{{ torneo. mostrarNuevoTexto }}</button>
+    <div class="panel panel-default" id="torneo-nuevo" ng-show="torneo.mostrarNuevo">
       <h2><i class="fa fa-plus-circle"></i>
         Editor: <span class="label label-warning">Torneo Nuevo</span></h2>
       <h3 class="linea-arriba">Instrucciones:</h3>

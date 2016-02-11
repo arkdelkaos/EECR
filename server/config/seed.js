@@ -471,67 +471,69 @@ Card.find({}).removeAsync()
 
                   Torneo.find({}).removeAsync()
                     .then(() => {
-                      var usr1 = User.findOne({'name': 'Antonio'});
-                      var usr2 = User.findOne({'name': 'Pepe'});
-                      var usr3 = User.findOne({'name': 'Admin'});
-
-                      Torneo.createAsync({
-                        name: 'Prueba 1',
-                        owner: usr1._id,
-                        info: 'Prueba 1',
-                        active: true,
-                        open: false,
-                        official: true,
-                        clan: 'EE1',
-                        users: [usr1._id],
-                      },{
-                        name: 'Prueba 2',
-                        owner: usr2._id,
-                        info: 'Prueba 2',
-                        active: true,
-                        open: true,
-                        official: true,
-                        clan: 'EE2',
-                        users: [usr2._id],
-                      },{
-                        name: 'Prueba 1.2',
-                        owner: usr3._id,
-                        info: 'Prueba 1.2',
-                        active: true,
-                        open: true,
-                        official: true,
-                        clan: 'EE1',
-                        users: [usr3._id],
-                      },{
-                        name: 'Inactivo 1',
-                        owner: usr3._id,
-                        info: 'Inactivo 1',
-                        active: false,
-                        open: true,
-                        official: true,
-                        clan: 'EE4',
-                        users: [usr3._id],
-                      },{
-                        name: 'No Oficial 1',
-                        owner: usr3._id,
-                        info: 'Prueba No Oficial 1',
-                        active: true,
-                        open: true,
-                        official: false,
-                        clan: 'EE3',
-                        users: [usr3._id],
-                      },{
-                        name: 'Aserejéjadejémejebeedurejebere',
-                        owner: usr3._id,
-                        info: 'Prueba Borjonuda Tocahuevos 1',
-                        active: true,
-                        open: true,
-                        official: true,
-                        clan: 'EE2',
-                        users: [usr3._id],
-                      })
-                      .then(() => {
-                        console.log('finished populating torneos');
+                      Promise.all([
+                        User.findOne({'name': 'Antonio'}),
+                        User.findOne({'name': 'Pepe'}),
+                        User.findOne({'name': 'Admin'})
+                      ]).then(([usr1,usr2,usr3]) => {
+                        Torneo.createAsync({
+                          name: 'Prueba 1',
+                          owner: usr1._id,
+                          info: 'Prueba 1',
+                          active: true,
+                          open: false,
+                          official: true,
+                          clan: 'EE1',
+                          users: [usr1._id],
+                        },{
+                          name: 'Prueba 2',
+                          owner: usr2._id,
+                          info: 'Prueba 2',
+                          active: true,
+                          open: true,
+                          official: true,
+                          clan: 'EE2',
+                          users: [usr2._id],
+                        },{
+                          name: 'Prueba 1.2',
+                          owner: usr3._id,
+                          info: 'Prueba 1.2',
+                          active: true,
+                          open: true,
+                          official: true,
+                          clan: 'EE1',
+                          users: [usr3._id],
+                        },{
+                          name: 'Inactivo 1',
+                          owner: usr3._id,
+                          info: 'Inactivo 1',
+                          active: false,
+                          open: true,
+                          official: true,
+                          clan: 'EE4',
+                          users: [usr3._id],
+                        },{
+                          name: 'No Oficial 1',
+                          owner: usr3._id,
+                          info: 'Prueba No Oficial 1',
+                          active: true,
+                          open: true,
+                          official: false,
+                          clan: 'EE3',
+                          users: [usr3._id],
+                        },{
+                          name: 'Aserejéjadejémejebeedurejebere',
+                          owner: usr3._id,
+                          info: 'Prueba Borjonuda Tocahuevos 1',
+                          active: true,
+                          open: true,
+                          official: true,
+                          clan: 'EE2',
+                          users: [usr3._id],
+                        })
+                        .then(() => {
+                          console.log('finished populating torneos');
+                        });
                       });
                   });
                 });

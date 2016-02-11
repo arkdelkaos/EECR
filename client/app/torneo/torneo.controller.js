@@ -6,9 +6,14 @@ class TorneoCtrl {
     this.$log = $log;
     this.$filter = $filter;
     this.torneos = Torneos.query();
+    socket.syncUpdates('torneo', this.torneos);
     $log.info(this.torneos);
     this.appConfig = appConfig;
+    this.user = Auth.getCurrentUser();
 
+    //nuevo torneo
+    this.mostrarNuevo = false;
+    this.mostrarNuevoTexto = 'Crear un Torneo';
     this.okNuevo = false;
     this.okNuevoName = false;
     this.nuevo = new Torneos();
@@ -18,6 +23,7 @@ class TorneoCtrl {
     this.nuevo.open = true;
     this.nuevo.official = true;
     this.nuevo.clan = "";
+    this.nuevo.owner = "";
     this.nuevo.users = [];
     this.nuevo.rounds = [];
 
@@ -38,6 +44,15 @@ class TorneoCtrl {
           user2: ""
         }
     };
+  }
+
+  switchMostrarNuevo(){
+    this.mostrarNuevo = !this.mostrarNuevo;
+    if(this.mostrarNuevo){
+      this.mostrarNuevoTexto = 'Ocultar el editor de Nuevo Torneo';
+    }else{
+      this.mostrarNuevoTexto = 'Crear un Torneo';
+    }
   }
 
   nuevoValidarName(){
@@ -65,8 +80,14 @@ class TorneoCtrl {
   };
 
   nuevoSave() {
+    this.nuevo.owner = this.user._id;
+    this.nuevo.users.push(this.user._id);
     this.$log.info(this.nuevo);
     this.nuevo.$save();
+    this.okNuevo = false;
+    this.okNuevoName = false;
+    this.nuevo.clan = "";
+    this.nuevo.name = "";
   }
 
   inscribirse(torneo){
