@@ -1,4 +1,6 @@
-# EECR
+# EECR  
+<a href='https://coveralls.io/github/arkdelkaos/EECR?branch=master'><img src='https://coveralls.io/repos/github/arkdelkaos/EECR/badge.svg?branch=master' alt='Coverage Status' /></a>  
+
 Home/App para el clan **Elite España** de **Clash Royale**  
 Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.  
 
@@ -14,7 +16,7 @@ Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
   - [ ] Top10 & MostUsed10  
   - [ ] +1 vote  
   - [ ] Full List, shortable  
-  - [ ] Comments on 
+  - [ ] Comments on
 - [x] Tweeter Stream  
 - [ ] Retweet Bot  
 - [ ] Multilanguage  
