@@ -7,9 +7,9 @@ Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
 ## TO-DO
 - [ ] Home  
   - [ ] Chat Stream  
-  - [ ] Admim System  
+  - [x] Admim System  
     - [x] Deck Admin Editor
-  - [ ] VIP System  
+  - [x] VIP System  
 - [x] Login/Signup w/Perfil  
 - [x] Deck Editor  
 - [ ] Deck Ranking  
@@ -17,6 +17,10 @@ Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.
   - [ ] +1 vote  
   - [ ] Full List, shortable  
   - [ ] Comments on
+- [ ] Tournament System  
+  - [ ] Editor
+  - [ ] Top  
+  - [ ] Achievements
 - [x] Tweeter Stream  
 - [ ] Retweet Bot  
 - [ ] Multilanguage  
