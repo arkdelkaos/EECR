@@ -89,8 +89,8 @@
         <!-- <p>open: {{ torneo.open }}</p> -->
         <div class="torneos-lista-botonera">
           <button type="button" class="btn btn-primary" ng-show="tor.open && torneo.mostrarInscrito(tor)" ng-click="torneo.inscribirse(tor)"><i class="fa fa-sign-in"></i> <strong>Inscríbete</strong> al Torneo ({{ tor.users.length }}/{{ tor.size }})</button>
-          <h3 ng-show="tor.open && !torneo.mostrarInscrito(tor) && tor.clan == torneo.user.clan"><span class="label label-success"><i class="fa fa-check"></i>OK: ({{ tor.users.length }}/{{ tor.size }})</span></h3>
-          <h3 ng-show="tor.open && !torneo.mostrarInscrito(tor) && tor.clan != torneo.user.clan"><span class="label label-danger"><i class="fa fa-close"></i>{{ tor.clan }} ({{ tor.users.length }}/{{ tor.size }})</span></h3>
+          <!-- <h3 ng-show="tor.open && !torneo.mostrarInscrito(tor) && tor.clan == torneo.user.clan"><span class="label label-success"><i class="fa fa-check"></i>OK: ({{ tor.users.length }}/{{ tor.size }})</span></h3>
+          <h3 ng-show="tor.open && !torneo.mostrarInscrito(tor) && tor.clan != torneo.user.clan"><span class="label label-danger"><i class="fa fa-close"></i>{{ tor.clan }} ({{ tor.users.length }}/{{ tor.size }})</span></h3> -->
           <uib-progressbar class="progress-striped active" value="dynamic" type="{{ tor.clan }}" ng-hide="tor.open">En juego: Fase 1/4</uib-progressbar>
         </div>
       </div>
