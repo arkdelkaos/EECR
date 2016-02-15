@@ -17,27 +17,18 @@
         <span class="label label-danger" ng-hide="torneo.currentTorneo.open">Inscripción Cerrada</span>
       </h4>
         <p>Fecha de inicio: <strong ng-bind="torneo.currentTorneo.date | date:'dd/MM/yy HH:mm'"></strong></p>
-        <p>Árbitro: <strong>{{ torneo.currentTorneoOwner }}</strong></p>
+        <p>Árbitro: <strong>{{ torneo.currentTorneo.owner.name }}</strong></p>
         <p><strong>Información:</strong></p>
         <div class="panel panel-default torneo-vista-info">
           {{ torneo.currentTorneo.info }}
         </div>
 
-        <div class="row" ng-hide="torneo.currentTorneo.open">
-          <div class="ronda" id="minimal">
+          <div class="ronda" id="minimal" ng-hide="torneo.currentTorneo.open">
             <div class="demo">
             </div>
           </div>
-        </row>
 
-        <p>{{ torneo.currentTorneo.rounds }}</p>
-        <p><strong>Participantes:</strong></p>
-        <ul>
-          <li ng-repeat="participante in torneo.currentTorneoUsers track by $index">
-            <p><strong>{{ participante.name }}</strong> ({{ participante.nickJuego }}) - G{{ participante.torneos.numGanadas }}|E{{ participante.torneos.numEmpatadas }}|P{{ participante.torneos.numPerdidas }}
-            </p>
-          </li>
-        </ul>
+
     </div>
   </div>
   <div class="row" ng-hide="torneo.validCurretId">

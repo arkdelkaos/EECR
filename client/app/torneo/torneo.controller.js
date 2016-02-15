@@ -16,8 +16,8 @@ class TorneoCtrl {
     this.currentId = $routeParams.id;
     this.validCurretId = false;
     this.currentTorneo = '';
-    this.currentTorneoOwner = '';
-    this.currentTorneoUsers = [];
+    // this.currentTorneoOwner = '';
+    // this.currentTorneoUsers = [];
 
     //nuevo torneo
     this.mostrarNuevo = false;
@@ -61,7 +61,7 @@ class TorneoCtrl {
             [[2,0], [2,1]]
           ],[
             [[1,2], [2,0]],
-            [[1,2]]
+            []
           ]
         ]
       }
@@ -199,18 +199,19 @@ class TorneoCtrl {
     this.torneos.$promise.then(torneo => {
          this.currentTorneo = this.$filter('filter')(torneo,{_id: this.currentId})[0];
          this.validCurretId = true;
-         this.users.$promise.then(users => {
-           var owner = this.$filter('filter')(users,{_id: this.currentTorneo.owner})[0];
-           this.currentTorneoOwner = owner.name + ' (' + owner.nickJuego +')';
-
-           for(var i in this.currentTorneo.users){
-             this.currentTorneoUsers.push(this.$filter('filter')(users,{_id: this.currentTorneo.users[i]})[0]);
-           }
-          //  this.currentTorneoUsers = _.shuffle(this.currentTorneoUsers);
-           if(!this.currentTorneo.open){
-             this.initJQueryBrackets();
-           }
-         });
+        //  this.users.$promise.then(users => {
+        //    var owner = this.$filter('filter')(users,{_id: this.currentTorneo.owner})[0];
+        //    this.currentTorneoOwner = owner.name + ' (' + owner.nickJuego +')';
+         //
+        //    for(var i in this.currentTorneo.users){
+        //      this.currentTorneoUsers.push(this.$filter('filter')(users,{_id: this.currentTorneo.users[i]})[0]);
+        //    }
+        //   //  this.currentTorneoUsers = _.shuffle(this.currentTorneoUsers);
+        //
+        //  });
+         if(!this.currentTorneo.open){
+           this.initJQueryBrackets();
+         }
     });
   }
 
