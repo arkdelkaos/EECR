@@ -11,9 +11,7 @@ class TorneoCtrl {
     this.user = Auth.getCurrentUser();
     this._ = lodash;
 
-    this.users = User.query();
-    $log.info(this.users);
-
+    // this.users = User.query();
 
     this.currentId = $routeParams.id;
     this.validCurretId = false;
@@ -158,7 +156,7 @@ class TorneoCtrl {
   //no es su clan, o está inscrito ya?
   mostrarInscrito(torneo){
     var found = this.$filter('filter')(torneo.users,this.user._id);
-    
+
     if(torneo.clan == this.user.clan && found.length<1){
       return true;
     }else{
