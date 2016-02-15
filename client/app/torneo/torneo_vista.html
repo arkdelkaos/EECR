@@ -23,12 +23,10 @@
           {{ torneo.currentTorneo.info }}
         </div>
 
-          <div class="ronda" id="minimal" ng-hide="torneo.currentTorneo.open">
-            <div class="demo">
-            </div>
-          </div>
-
-
+    </div>
+  </div>
+  <div class="ronda" id="minimal" ng-hide="!torneo.validCurretId && torneo.currentTorneo.open">
+    <div class="demo">
     </div>
   </div>
   <div class="row" ng-hide="torneo.validCurretId">
@@ -41,4 +39,5 @@
       <a href="/torneos"><strong>Elige otro torneo</strong></a>, o vuelve a la <a href="/"><strong>página principal</strong></a>
     </div>
   </div>
+
 </div>
