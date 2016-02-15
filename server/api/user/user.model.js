@@ -40,7 +40,7 @@ var UserSchema = new Schema({
     enum: config.userRangos,
     default: 'invitado'
   },
-  torneos: [{
+  torneos: {
     numTorneos: {
       type: Number,
       default: 0
@@ -72,7 +72,7 @@ var UserSchema = new Schema({
       },
       titulo: String
     }]
-  }]
+  }
 });
 
 /**

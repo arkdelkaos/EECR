@@ -1,3 +1,4 @@
+<navbar></navbar>
 <div class="container torneos">
   <!-- Generador de torneos -->
   <div class="row">
@@ -33,65 +34,34 @@
       <div class="torneo-nuevo-opciones">
         <span>Clan:</span>
         <div class="btn-group" id="torneo-clanes" role="group" aria-label="..." ng-repeat="clan in torneo.appConfig.clanes | filter:'!none'">
-          <button type="button" class="btn" ng-click="torneo.nuevoValidarClan(clan)" ng-class="torneo.nuevo.clan==clan ? 'btn-success' : ('btn-default')">{{ clan }}</button>
-        </div>
-      </div>
-      <div class="torneo-nuevo-opciones">
-        <span>Tamaño:</span>
-        <div class="btn-group" id="torneo-clanes" role="group" aria-label="..." ng-repeat="size in torneo.appConfig.torneoSize">
-          <button type="button" class="btn" ng-click="torneo.nuevoValidarSize(size)" ng-class="torneo.nuevo.size==size ? 'btn-success' : ('btn-default')">{{ size }}</button>
+          <button type="button" class="btn" ng-click="torneo.nuevoValidar(clan)" ng-class="torneo.nuevo.clan==clan ? 'btn-success' : ('btn-default')">{{ clan }}</button>
         </div>
       </div>
       <button type="button" class="btn btn-info" ng-show="torneo.okNuevo" ng-click="torneo.nuevoSave()">Crear el torneo: "{{ torneo.nuevo.name }}"</button>
     </div>
   </div>
   <!-- Torneos en los que participo -->
-  <h1 ng-show="torneo.myTorneos.length>0"><i class="fa fa-calendar-check-o"></i> Mis Torneos</h1>
-  <div class="row" ng-show="torneo.myTorneos.length>0">
-    <div class="torneos-lista" ng-repeat="tor in torneo.myTorneos | orderBy:'-open' | filter:{active:true}">
-      <div class="panel panel-success" ng-class="tor.official ? 'torneo-oficial' : ('')" id="torneo-{{ tor._id }}">
-        <h2>
-          <span class="label label-success" ng-show="{{ tor.official }}"><i class="fa fa-star"></i> Oficial</span>
-          <a href="/torneos/{{ tor._id }}">
-            {{ tor.name }}
-          </a>
-        </h2>
-        <h4>
-          <span class="label label-info">{{ tor.clan }}</span>
-          <span class="label label-warning" ng-bind="tor.date | date:'dd/MM/yy'" />
-        </h4>
-        <!-- <p>active: {{ torneo.active }}</p> -->
-        <!-- <p>open: {{ torneo.open }}</p> -->
-        <div class="torneos-lista-botonera">
-          <button type="button" class="btn btn-primary" ng-show="tor.open && torneo.mostrarInscrito(tor)" ng-click="torneo.inscribirse(tor)"><i class="fa fa-sign-in"></i> <strong>Inscríbete</strong> al Torneo ({{ tor.users.length }}/{{ tor.size }})</button>
-          <h3 ng-show="tor.open && !torneo.mostrarInscrito(tor)"><span class="label label-success"><i class="fa fa-check"></i>OK ({{ tor.users.length }}/{{ tor.size }})</span></h3>
-          <uib-progressbar class="progress-striped active" value="dynamic" type="{{ tor.clan }}" ng-hide="tor.open">En juego: Fase 1/4</uib-progressbar>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <!-- Torneos activos -->
   <h1><i class="fa fa-trophy"></i> Torneos Activos</h1>
   <div class="row">
-    <div class="torneos-lista" ng-repeat="tor in torneo.torneos | orderBy:'-open'">
-      <div class="panel panel-success" ng-class="tor.official ? 'torneo-oficial' : ('')" id="torneo-{{ tor._id }}">
+    <div class="torneos-lista" ng-repeat="torneo in torneo.torneos | orderBy:'-open'">
+      <div class="panel panel-success" ng-class="torneo.official ? 'torneo-oficial' : ('')" id="torneo-{{ torneo._id }}">
         <h2>
-          <span class="label label-success" ng-show="{{ tor.official }}"><i class="fa fa-star"></i> Oficial</span>
-          <a href="/torneos/{{ tor._id }}">
-            {{ tor.name }}
+          <span class="label label-success" ng-show="{{ torneo.official }}"><i class="fa fa-star"></i> Oficial</span>
+          <a href="/torneo/{{ torneo._id }}">
+            {{ torneo.name }}
           </a>
         </h2>
         <h4>
-          <span class="label label-info">{{ tor.clan }}</span>
-          <span class="label label-warning" ng-bind="tor.date | date:'dd/MM/yy'" />
+          <span class="label label-info">{{ torneo.clan }}</span>
+          <span class="label label-warning" ng-bind="torneo.date | date:'dd/MM/yy'" />
         </h4>
         <!-- <p>active: {{ torneo.active }}</p> -->
         <!-- <p>open: {{ torneo.open }}</p> -->
         <div class="torneos-lista-botonera">
-          <button type="button" class="btn btn-primary" ng-show="tor.open && torneo.mostrarInscrito(tor)" ng-click="torneo.inscribirse(tor)"><i class="fa fa-sign-in"></i> <strong>Inscríbete</strong> al Torneo ({{ tor.users.length }}/{{ tor.size }})</button>
-          <h3 ng-show="tor.open && !torneo.mostrarInscrito(tor) && tor.clan == torneo.user.clan"><span class="label label-success"><i class="fa fa-check"></i>OK: ({{ tor.users.length }}/{{ tor.size }})</span></h3>
-          <h3 ng-show="tor.open && !torneo.mostrarInscrito(tor) && tor.clan != torneo.user.clan"><span class="label label-danger"><i class="fa fa-close"></i>{{ tor.clan }} ({{ tor.users.length }}/{{ tor.size }})</span></h3>
-          <uib-progressbar class="progress-striped active" value="dynamic" type="{{ tor.clan }}" ng-hide="tor.open">En juego: Fase 1/4</uib-progressbar>
+          <button type="button" class="btn btn-primary" ng-show="torneo.open" ng-click="torneo.inscribirse(torneo)"><i class="fa fa-sign-in"></i> <strong>Inscríbete</strong> al Torneo</button>
+          <uib-progressbar class="progress-striped active" value="dynamic" type="{{ torneo.clan }}" ng-hide="torneo.open">En juego: Fase 1/4</uib-progressbar>
         </div>
       </div>
     </div>
@@ -104,14 +74,13 @@
     <div class="torneos-lista" ng-repeat="torneo in torneo.torneos | filter:{active:false}">
 
       <div class="panel panel-success torneos-lista-finalizado" ng-class="torneo.official ? 'torneo-oficial' : ('')" id="torneo-{{ torneo._id }}">
-        <h3><a href="/torneos/{{ torneo._id }}">
+        <h3><a href="/torneo/{{ torneo._id }}">
           {{ torneo.name }}
         </a></h3>
         <h5>
           <span class="label label-success" ng-show="{{ torneo.official }}"><i class="fa fa-star"></i></span>
           <span class="label label-info">{{ torneo.clan }}</span>
-          <span class="label label-warning"><i class="fa fa-users"></i> {{ torneo.size }}</span>
-          <span class="label label-primary" ng-bind="torneo.date | date:'dd/MM/yy'" />
+          <span class="label label-warning" ng-bind="torneo.date | date:'dd/MM/yy'" />
         </h5>
         <!-- <p>active: {{ torneo.active }}</p> -->
         <h4><i class="fa fa-trophy torneo-trophy-oro"></i> Kino der Puto-Nombre-Largo</h4>

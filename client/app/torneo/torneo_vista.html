@@ -1,0 +1,53 @@
+<navbar></navbar>
+<div class="container torneos" ng-init="torneo.getTorneo()">
+  <div class="row" ng-show="torneo.validCurretId">
+    <div class="panel panel-default torneo-vista">
+      <h2>
+        <label>Torneo:</label> {{ torneo.currentTorneo.name }}
+      </h2>
+      <h3>
+        <span class="label label-success" ng-show="torneo.currentTorneo.official"><i class="fa fa-star"></i></span>
+        Clan: {{ torneo.currentTorneo.clan }}
+      </h3>
+      <h4>
+        <span class="label label-info" ng-show="torneo.currentTorneo.active">Activo</span>
+        <span class="label label-danger" ng-hide="torneo.currentTorneo.active">Finalizado</span>
+        <span class="label label-warning">Tamaño: {{ torneo.currentTorneo.size }}</span>
+        <span class="label label-primary" ng-show="torneo.currentTorneo.open">Inscripción Abierta</span>
+        <span class="label label-danger" ng-hide="torneo.currentTorneo.open">Inscripción Cerrada</span>
+      </h4>
+        <p>Fecha de inicio: <strong ng-bind="torneo.currentTorneo.date | date:'dd/MM/yy HH:mm'"></strong></p>
+        <p>Árbitro: <strong>{{ torneo.currentTorneoOwner }}</strong></p>
+        <p><strong>Información:</strong></p>
+        <div class="panel panel-default torneo-vista-info">
+          {{ torneo.currentTorneo.info }}
+        </div>
+
+        <div class="row" ng-hide="torneo.currentTorneo.open">
+          <div class="ronda" id="minimal">
+            <div class="demo">
+            </div>
+          </div>
+        </row>
+
+        <p>{{ torneo.currentTorneo.rounds }}</p>
+        <p><strong>Participantes:</strong></p>
+        <ul>
+          <li ng-repeat="participante in torneo.currentTorneoUsers track by $index">
+            <p><strong>{{ participante.name }}</strong> ({{ participante.nickJuego }}) - G{{ participante.torneos.numGanadas }}|E{{ participante.torneos.numEmpatadas }}|P{{ participante.torneos.numPerdidas }}
+            </p>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div class="row" ng-hide="torneo.validCurretId">
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      El torneo que intentas abrir, no es válido.
+      <p>Esto se puede deber a un error en la URL, o que el torneo ha sido eliminado.</p>
+      <br>
+      <a href="/torneos"><strong>Elige otro torneo</strong></a>, o vuelve a la <a href="/"><strong>página principal</strong></a>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,10 @@ var TorneoSchema = new mongoose.Schema({
     type: String,
     enum: config.clanes
   },
+  size: {
+    type: String,
+    enum: config.torneoSize
+  },
   users: [{
     type: mongoose.Schema.Types.ObjectId, ref: 'User'
   }],
