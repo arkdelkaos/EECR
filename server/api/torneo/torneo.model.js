@@ -7,7 +7,7 @@ var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 var TorneoSchema = new mongoose.Schema({
   name: String,
   owner: {
-    _id: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
     name: String
@@ -28,7 +28,7 @@ var TorneoSchema = new mongoose.Schema({
     enum: config.torneoSize
   },
   users: [{
-    _id: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
     name: String
@@ -39,13 +39,13 @@ var TorneoSchema = new mongoose.Schema({
       type: Date, default: Date.now
     },
     user1: {
-      _id: {
+      userId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
       },
       name: String
     },
     user2: {
-      _id: {
+      userId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
       },
       name: String
@@ -61,6 +61,16 @@ var TorneoSchema = new mongoose.Schema({
     scoreFinal: {
       user1: Number,
       user2: Number
+    }
+  }],
+  chat: [{
+    date: {
+      type: Date, default: Date.now
+    },
+    msg: String,
+    nick: String,
+    userId: {
+      type: mongoose.Schema.Types.ObjectId, ref: 'User'
     }
   }]
 });

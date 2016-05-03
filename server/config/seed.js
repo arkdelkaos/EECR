@@ -53,7 +53,7 @@ Infoclan.find({}).removeAsync()
       nombre: 'Elite España',
       twitter: 'EliteEspanaCR',
       homeTexto: "<p></p><h1>Estamos en BETA!...</h1><h3>Bienvenido a nuestra Web App</h3><p>Aquí podrás encontrar toda la <b>información sobre nuestro clan, sus normas y funcionamiento</b></p><p>Aún no está preparado para ser testado nuestro ranking de mazos, así como el sistema de torneos, pero será abierto en breve <i>(si al vago del dev le da por trabajar, en vez de buscar reproducirse (• ε •) )</i></p><p>Si quieres recomendar mejoras, dínoslas en <a href=\"http://feathub.com/arkdelkaos/EECR\">FeatHub</a>. Si has encontrado errores en la app, el diseño, o quieres ayudarnos con el código, usa <a href=\"https://github.com/arkdelkaos/EECR/issues\">Github - EECR/issues</a></p><p></p>",
-      clanTexto : "Nuestro clan fue creado el primer día, *siendo el primer clan Español de juego*.  \nPretendemos ser una **comunidad de jugadores, multi-clan**, con igualdad entre nuestros jugadores *(ver normas)*    \n**Cada clan puede decidir un sistema de organización diferente**, si sus líderes así lo deciden. Por ejemplo, **EE1** fue creado con la intención de ser en **top1 de nuestro país**. Este objetivo es el fin último del clan, y su sistema de organización busca lograrlo. A su vez, **EE3** prefiere un sistema que mantenga la comunidad antes que las coronas.  \nEstas decisiones son avisadas a los miembros de cada clan, con tiempo para ser comentadas y votadas por la comunidad.  \nActualmente tenemos 3 modelos organizativos:\n\n  - **Sistema 49** [EE1, EE4]: El clan se mantiene en 49 jugadores, y si se recibe una petición de ingreso cuyas coronas sean superiores  las del top25 del clan, se saca al jugador número 49 para hacer hueco al fichaje.  \nEste sistema es el mas duro, y supone que TODOS LOS JUGADORES ENTIENDEN QUE EN CUALQUIER MOMENTO SE LES PUEDE SACAR, así como que el hecho de ser expulsado no significa dejar de ser parte de la comunidad EE; pueden unirse a otro de nuestros clanes, y, si recuperan coronas, pedir entrar tantas veces como necesiten.  \nPara ser **elder**, hay que estar en nuestro grupo de telegram, y pedir ser ascendido a uno de los co-líderes del clan. Siempre se preferirá sacar un miembro a un elder, si la diferencia de copas es pequeña.\nLa única excepción al sistema 49 son los **co-líderes**, a los que en caso de quedarse rezagados se les daría un tiempo para recuperarse (pero en caso de no lograrlo, se les sacaría como a los demás)\n  - **Comunidad** [EE3]: El sistema clásico donde donar, participar *(charlar in-game, telegram, luchar en torneos)*, y ser fiel al clan, es lo principal.  \nLos **ascensos van ligados a la participación**, y serán otorgados por los co-líderes según estimen oportuno. Por ejemplo, Elder puede significar tener un **buen ratio de donaciones semanal**, y revisar dicho ratio cada domingo. Quienes no lleguen a un mínimo, pueden bajar a miembro (o incluso ser expulsado); las donaciones son un gran indicativo del grado de actividad diaria que tiene un jugador.\n  - **Cantera** [EE2]: Para ayudar y aprender sobre el juego. La finalidad del clan es que los jugadores mejoren lo antes posible, de la manera mas óptima.  \n\nSobre las **donaciones**: Debemos intentar pedir con cabeza; **si un compañero está en cola para recibir su donación**, no **debemos pedir mas de lo mismo hasta que él lo reciba**. Este caso se ha hado bastante con magos y bárbaros, por ejemplo.  \n\n## Normas\nLas normas del clan son simples, y su ejecución también: **No habrá un segundo aviso**.  \nEstá **prohibido**...\n\n- Hacer **comentarios despectivos hacia un compañero,** por cualquiera de los medios de clan. \n- Hacer **comentarios Fascistas, Xenófobos, Homófobos**.\n- Desobedecer una orden directa de un líder, entre las que incluimos:\n  - Peticiones por el bien del clan, como, por ejemplo, dejar de hacer spam.\n  - Peticiones de mejora del esfuerzo, como, por ejemplo, subida de los números de donación.  \n  \nEstas normas se aplicarán a todo el mundo, tenga el grado que tenga.\n\n## Herramientas\nEl clan cuenta con varios grupos de **Telegram**, siendo 'el bar' el canal público desde el que puedes pedir entrar a los demás.  \nUsa este link para unirte: <http://j.mp/EEtelegram>\n\nTambién tenemos la **cuenta oficial** del clan en **twitter**, **@EliteEspanaCR**"
+      clanTexto : "Nuestro clan fue creado el primer día, *siendo el primer clan Español de juego*.  \nPretendemos ser una **comunidad de jugadores, multi-clan**, con igualdad entre nuestros jugadores *(ver normas)*    \n**Cada clan puede decidir un sistema de organización diferente**, si sus líderes así lo deciden. Por ejemplo, **EE1** fue creado con la intención de ser en **top1 de nuestro país**. Este objetivo es el fin último del clan, y su sistema de organización busca lograrlo. A su vez, **VIP** prefiere un sistema que mantenga la comunidad antes que las coronas.  \nEstas decisiones son avisadas a los miembros de cada clan, con tiempo para ser comentadas y votadas por la comunidad.  \n\n### Herramientas\nEl clan cuenta con varios grupos de **Telegram**, siendo 'el bar' el canal público desde el que puedes pedir entrar a los demás.  \nUsa este link para unirte: <https://telegram.me/EEtelegram>\n\nTambién tenemos la **cuenta oficial** del clan en **twitter**, **@EliteEspanaCR**\n\n##Clanes y Organización  \n\n - **[SISTEMA 3000]**:  \nEste sistema es la evolución del sistema 49 que se usa en los demás clanes, y que se queda corto cuando se tiene todo el clan en *'leyenda'*.  \n**Elite España (#LGJQ) y Elite España 2 (#2YGP9)**  se convierten en un solo clan, con un solo grupo de administradores, y un solo canal de chat de telegram (obligatorio).  \nLos jugadores con mas copas de EE2 subirán a reemplazar a los que tengan menos en EE1, siempre que la diferencia sea superior a 150 copas. Buscamos tener la mayor cantidad posible de copas en el clan principal.  \nEE1 siempre tendrá 50 jugadores. **EE2 será la puerta de entrada de nuevos fichajes**, y siempre rodará los 45 jugadores.\nLos ascensos y descensos se harán manualmente mediante la interacción de nuestros colideres, cada día. Una vez avisado, el jugador tiene 24h para pedir la entrada en el clan correspondiente. En caso de aparecer tarde, volvería a EE2 en condición de *'fichaje'*.  \nLos *'fichajes'* estarán mínimo una semana en EE2 antes de poder ascender, estando a  prueba (edad, comportamiento, numero de copas, etc).  \nCualquier jugador que no siga el ritmo o de problemas, independientemente de copas o nivel, será trasladado a otro de nuestros clanes, o expulsado.  \nSi un jugador requiere salir para jugar torneos, ir de visita, o semejante, a la vuelta entrará en EE2 en condición de fichaje, salvo permiso expreso de un colider.  \n - **[SISTEMA VS]**  \nEste sistema busca ayudar a avanzar a los jugares, incluyendo un sistema de mini juegos (*desde ahora, simplemente 'VS'*) entre los clanes. Telegram es obligatorio para poder participar en *VS*.  \n**EliteEspaña EVO (#YPPVUJR)**, **EliteEspaña GEN (#8QRQ9CY)**, y **EliteEspaña ZEN (#JJ9G)** 'se enfrentan entre si' por ser el clan que mas avanza. Una semana se hace *'49'*, y la siguiente '*vs*'.  \n    - **Semana 49**: El clan queda abierto a fichajes mediante solicitud, sacando al mas bajo para hacer sitio al fichaje. El mínimo para entrar al clan será mayor que el numero de copas del top25 del clan. Se tendrá en cuenta antigüedad, actividad (donaciones), y membresía en telegram, para ascender a veterano. Siempre se sacará un miembro antes que un veterano.\n    - **Semana VS**:  El clan queda cerrado, y se tomará nota del numero de copas y donaciones de todos los miembros. Durante la semana se instará a mejorar las puntuaciones, ya que llegado el fin de la semana se calculará el clan ganador.  \nLas puntuaciones son *(este sistema será retocado según se estime conveniente)*:  \n      - Las copas de los 10 primeros [2p]  \n      - Las copas de los 10 últimos [2p]  \n      - Donaciones de los 10 primeros [1p]  \n      - Donaciones de los 10 últimos [1p]  \n      - Incremento de copas generales del clan [2p]  \n - **[SISTEMA VIP]**  \nEn el clan **EliteEspaña VIP (#Y2JVPJ2)** se tiene un ritmo mas pausado, y se le a mas importancia a la antigüedad (vip) y a ser adulto, que a ninguna otra opción. Aquí puede tomarse un descanso los jugadores veteranos que por falta de tiempo, problemas familiares o laborales, etc, lo necesitan.  \nSe tiene en cuenta un mínimo de actividad, pero solo se sacaría un compañero en casos extremos.\n\nSobre las **donaciones**, en general: Debemos intentar pedir con cabeza; **si un compañero está en cola para recibir su donación**, no **debemos pedir mas de lo mismo hasta que él lo reciba**. Este caso se ha hado bastante con magos y bárbaros, por ejemplo. Además es lógico pesar que si hay algo en cola, probablemente hay mucha demanda y/o poca oferta, por lo que pedir de lo mismo es contraproducente.  \n\n## Normas\nLas normas del clan son simples, y su ejecución también: **No habrá un segundo aviso**.  \nEstá **prohibido**...\n\n- Hacer **comentarios despectivos hacia un compañero,** por cualquiera de los medios de clan. \n- Hacer **comentarios Fascistas, Xenófobos, Homófobos**.\n- Desobedecer una orden directa de un líder, entre las que incluimos:\n  - Peticiones por el bien del clan, como, por ejemplo, dejar de hacer spam.\n  - Peticiones de mejora del esfuerzo, como, por ejemplo, subida de los números de donación.  \n  \nEstas normas se aplicarán a todo el mundo, tenga el grado que tenga."
     })
     .then(() => {
       console.log('finished populating infoclan');
@@ -480,7 +480,7 @@ Card.find({}).removeAsync()
                         Torneo.createAsync({
                           name: 'Prueba 1',
                           owner: {
-                            _id: usr1._id,
+                            userId: usr1._id,
                             name: usr1.name
                           },
                           info: 'Prueba 1',
@@ -490,58 +490,58 @@ Card.find({}).removeAsync()
                           size: '16',
                           clan: 'EE1',
                           users: [{
-                            _id: usr1._id,
+                            userId: usr1._id,
                             name: usr1.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           }],
                         },{
                           name: 'Prueba 2',
                           owner: {
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },
                           info: 'Prueba 2',
@@ -550,83 +550,100 @@ Card.find({}).removeAsync()
                           size: '32',
                           official: true,
                           clan: 'EE2',
+                          chat: [{
+                            userId: usr1._id,
+                            nick: usr1.name,
+                            msg: 'Prueba 1'
+                          },{
+                            userId: usr2._id,
+                            nick: usr2.name,
+                            msg: 'Prueba 2'
+                          },{
+                            userId: usr3._id,
+                            nick: usr3.name,
+                            msg: 'Prueba 3'
+                          },{
+                            userId: usr1._id,
+                            nick: usr1.name,
+                            msg: 'Prueba 1-2 ojfgafgiabfiwbfawfiwfiwvfiwafvliawfvaiwlfvfvawlfvalwifvwaif                             fwabfiawfvilawfvwailfv\nawilfvwailfvawilfvawfliwavf'
+                          }],
                           users: [{
-                            _id: usr2._id,
+                            userId: usr3._id,
+                            name: usr3.name
+                          },{
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr3._id,
+                            name: usr3.name
+                          },{
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr3._id,
+                            name: usr3.name
+                          },{
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
-                            name: usr2.name
+                            userId: usr3._id,
+                            name: usr3.name
                           },{
-                            _id: usr2._id,
-                            name: usr2.name
-                          },{
-                            _id: usr2._id,
-                            name: usr2.name
-                          },{
-                            _id: usr2._id,
-                            name: usr2.name
-                          },{
-                            _id: usr2._id,
-                            name: usr2.name
+                            userId: usr1._id,
+                            name: usr1.name
                           }],
                         },{
                           name: 'Prueba 1.2',
                           owner: {
-                            _id: usr3._id,
+                            userId: usr3._id,
                             name: usr3.name
                           },
                           info: 'Prueba 1.2',
@@ -636,46 +653,46 @@ Card.find({}).removeAsync()
                           official: true,
                           clan: 'EE1',
                           users: [{
-                            _id: usr3._id,
+                            userId: usr3._id,
                             name: usr3.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           }],
                         },{
                           name: 'Inactivo 1',
                           owner: {
-                            _id: usr3._id,
+                            userId: usr3._id,
                             name: usr3.name
                           },
                           info: 'Inactivo 1',
@@ -685,31 +702,31 @@ Card.find({}).removeAsync()
                           official: true,
                           clan: 'EE4',
                           users: [{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           }],
                         },{
                           name: 'No Oficial 1',
                           owner: {
-                            _id: usr3._id,
+                            userId: usr3._id,
                             name: usr3.name
                           },
                           info: 'Prueba No Oficial 1',
@@ -719,106 +736,106 @@ Card.find({}).removeAsync()
                           official: false,
                           clan: 'EE3',
                           users: [{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
-                            name: usr2.name
+                            userId: usr1._id,
+                            name: usr1.name
                           },{
-                            _id: usr3._id,
+                            userId: usr3._id,
                             name: usr3.name
                           }],
                         },{
                           name: 'Aserejéjadejémejebeedurejebere',
                           owner: {
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },
                           info: 'Prueba Borjonuda Tocahuevos 1',
@@ -828,22 +845,22 @@ Card.find({}).removeAsync()
                           official: true,
                           clan: 'EE2',
                           users: [{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           },{
-                            _id: usr2._id,
+                            userId: usr2._id,
                             name: usr2.name
                           }],
                         })

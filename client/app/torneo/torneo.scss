@@ -76,6 +76,10 @@
     }
   }
 
+  .torneo-vista{
+    min-height: 350px;
+  }
+
   .torneo-vista,.torneo-vista-info{
     padding: 15px;
   }
@@ -480,6 +484,36 @@
           }
         }
       }
+    }
+  }
+
+  .chat-box{
+    padding: 5px 5px 5px 15px;
+    display: block;
+    overflow-y: scroll;
+    min-height: 316px;
+    max-height: 500px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    .owner {
+      color: $rojo;
+    }
+    .mensaje{
+      padding-left: 8px;
+      border-left: 1px solid #ddd;
+      margin-top: -10px;
+      margin-left: 4px;
+    }
+    .mensajePlayer {
+      border-color: #ddd;
+    }
+    .mensajeOwner {
+      border-color: $rojo;
+    }
+    form {
+      height: 35px;
     }
   }
 }

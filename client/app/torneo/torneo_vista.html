@@ -1,28 +1,47 @@
 <navbar></navbar>
 <div class="container torneos" ng-init="torneo.getTorneo()">
   <div class="row" ng-show="torneo.validCurretId">
-    <div class="panel panel-default torneo-vista">
-      <h2>
-        <label>Torneo:</label> {{ torneo.currentTorneo.name }}
-      </h2>
-      <h3>
-        <span class="label label-success" ng-show="torneo.currentTorneo.official"><i class="fa fa-star"></i></span>
+    <div class="col-md-6">
+      <div class="panel panel-default torneo-vista">
+        <h2>
+          <label>Torneo:</label> {{ torneo.currentTorneo.name }}
+        </h2>
+        <h3>
+          <span class="label label-success" ng-show="torneo.currentTorneo.official"><i class="fa fa-star"></i></span>
         Clan: {{ torneo.currentTorneo.clan }}
-      </h3>
-      <h4>
-        <span class="label label-info" ng-show="torneo.currentTorneo.active">Activo</span>
-        <span class="label label-danger" ng-hide="torneo.currentTorneo.active">Finalizado</span>
-        <span class="label label-warning">Tamaño: {{ torneo.currentTorneo.size }}</span>
-        <span class="label label-primary" ng-show="torneo.currentTorneo.open">Inscripción Abierta</span>
-        <span class="label label-danger" ng-hide="torneo.currentTorneo.open">Inscripción Cerrada</span>
-      </h4>
+        </h3>
+        <h4>
+          <span class="label label-info" ng-show="torneo.currentTorneo.active">Activo</span>
+          <span class="label label-danger" ng-hide="torneo.currentTorneo.active">Finalizado</span>
+          <span class="label label-warning">Tamaño: {{ torneo.currentTorneo.size }}</span>
+          <span class="label label-primary" ng-show="torneo.currentTorneo.open">Inscripción Abierta</span>
+          <span class="label label-danger" ng-hide="torneo.currentTorneo.open">Inscripción Cerrada</span>
+        </h4>
         <p>Fecha de inicio: <strong ng-bind="torneo.currentTorneo.date | date:'dd/MM/yy HH:mm'"></strong></p>
         <p>Árbitro: <strong>{{ torneo.currentTorneo.owner.name }}</strong></p>
         <p><strong>Información:</strong></p>
         <div class="panel panel-default torneo-vista-info">
           {{ torneo.currentTorneo.info }}
         </div>
-
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="chat-box" id="chat-box-torneo-{{ torneo.currentTorneo._id }}">
+        <div ng-repeat="mensaje in torneo.currentTorneo.chat track by $index">
+          <p><strong ng-class="torneo.chatOwner(mensaje.nick) ? 'owner' : ''">{{ mensaje.nick }}</strong>
+          <i ng-bind="mensaje.date | date:'HH:mm:ss'"></i></p>
+          <p class="mensaje" ng-class="torneo.chatOwner(mensaje.nick) ? 'mensajeOwner' : 'mensajePlayer'">{{mensaje.msg}}
+          <button type="button" class="close" ng-click="torneo.deleteChatMensaje(mensaje)" ng-show="torneo.isOwner() || torneo.isAdmin()">&times;</button></p>
+        </div>
+      </div>
+      <form class="torneo-chat-form">
+        <p class="input-group">
+          <input type="text" class="form-control" placeholder="Añade un nuevo mensaje" ng-model="torneo.nuevoMensaje.msg">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" ng-click="torneo.addChatMensaje()">Enviar</button>
+          </span>
+        </p>
+      </form>
     </div>
   </div>
   <div class="ronda" id="minimal" ng-hide="!torneo.validCurretId && torneo.currentTorneo.open">

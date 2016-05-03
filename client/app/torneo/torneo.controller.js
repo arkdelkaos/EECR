@@ -6,9 +6,11 @@ class TorneoCtrl {
     this.$log = $log;
     this.$filter = $filter;
     this.torneos = Torneos.query();
+    this.socket = socket;
     socket.syncUpdates('torneo', this.torneos);
     this.appConfig = appConfig;
     this.user = Auth.getCurrentUser();
+    this.isAdmin = Auth.isAdmin;
     this._ = lodash;
 
     // this.users = User.query();
@@ -88,6 +90,29 @@ class TorneoCtrl {
     this.myTorneos = [];
     this.actualizarMyTorneo();
 
+    //Nuevo Mesaje Chat
+    this.nuevoMensaje = {
+      userID: "",
+      nick: "",
+      msg: "",
+    }
+
+  }
+
+  isOwner(){
+    if(this.user._id == this.currentTorneo.owner.userId){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  chatOwner(nick){
+    if(nick == this.currentTorneo.owner.name){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   //Actualiza myTorneos
@@ -198,21 +223,37 @@ class TorneoCtrl {
     this.validCurretId = false;
     this.torneos.$promise.then(torneo => {
          this.currentTorneo = this.$filter('filter')(torneo,{_id: this.currentId})[0];
-         this.validCurretId = true;
-        //  this.users.$promise.then(users => {
-        //    var owner = this.$filter('filter')(users,{_id: this.currentTorneo.owner})[0];
-        //    this.currentTorneoOwner = owner.name + ' (' + owner.nickJuego +')';
-         //
-        //    for(var i in this.currentTorneo.users){
-        //      this.currentTorneoUsers.push(this.$filter('filter')(users,{_id: this.currentTorneo.users[i]})[0]);
-        //    }
-        //   //  this.currentTorneoUsers = _.shuffle(this.currentTorneoUsers);
-        //
-        //  });
-         if(!this.currentTorneo.open){
-           this.initJQueryBrackets();
+         if(this.currentTorneo!={}){
+           this.validCurretId = true;
+          //  this.users.$promise.then(users => {
+          //    var owner = this.$filter('filter')(users,{_id: this.currentTorneo.owner})[0];
+          //    this.currentTorneoOwner = owner.name + ' (' + owner.nickJuego +')';
+          //
+          //    for(var i in this.currentTorneo.users){
+          //      this.currentTorneoUsers.push(this.$filter('filter')(users,{_id: this.currentTorneo.users[i]})[0]);
+          //    }
+          //   //  this.currentTorneoUsers = _.shuffle(this.currentTorneoUsers);
+          //
+          //  });
+           if(!this.currentTorneo.open){
+             this.initJQueryBrackets();
+           }
          }
     });
+  }
+  addChatMensaje() {
+    if (this.nuevoMensaje.msg.length>0) {
+      this.nuevoMensaje.userID = this.user._id;
+      this.nuevoMensaje.nick = this.user.name;
+      // this.currentTorneo.chat.push(this.nuevoMensaje);
+      this.currentTorneo.$addChatMsg(this.nuevoMensaje);
+    }
+  }
+
+  deleteChatMensaje(mensaje) {
+    this.$log.info(mensaje);
+    // this.currentTorneo.chat.push(mensaje);
+    // this.currentTorneo.$save;
   }
 
 }

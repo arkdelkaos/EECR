@@ -83,6 +83,7 @@ export function create(req, res) {
 
 // Updates an existing Torneo in the DB
 export function update(req, res) {
+  console.log(req.body);
   if (req.body._id) {
     delete req.body._id;
   }
@@ -95,6 +96,28 @@ export function update(req, res) {
 
 // Deletes a Torneo from the DB
 export function destroy(req, res) {
+  Torneo.findByIdAsync(req.params.id)
+    .then(handleEntityNotFound(res))
+    .then(removeEntity(res))
+    .catch(handleError(res));
+}
+
+// Creates a new Msg in a Torneo in the DB
+export function createMsg(req, res) {
+  if (req.body._id) {
+    delete req.body._id;
+  }
+  Torneo.findByIdAsync(req.params.id)
+    .then(res => {
+      res.chat.push(req.query);
+      res.save();
+    })
+    .then(respondWithResult(res, 201))
+    .catch(handleError(res));
+}
+
+// Creates a new Msg in a Torneo in the DB
+export function destroyMsg(req, res) {
   Torneo.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
