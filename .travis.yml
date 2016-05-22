@@ -15,3 +15,5 @@ before_install:
   - pip install codecov
 after_success:
   - codecov
+notifications:
+  slack: eecr:6jvPRxT579QoiP7YW28iMc3V
