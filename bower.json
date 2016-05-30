@@ -1,6 +1,6 @@
 {
   "name": "eecr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
     "angular": "~1.4.0",
     "json3": "~3.3.1",

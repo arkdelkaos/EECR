@@ -1,6 +1,6 @@
 {
   "name": "eecr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "server/app.js",
   "dependencies": {
     "babel-runtime": "^5.8.20",
