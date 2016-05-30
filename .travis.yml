@@ -9,11 +9,10 @@ before_script:
   - npm install -g bower grunt-cli
   - gem install sass
   - bower install
-  - pip install codecov
 services: mongodb
 before_install:
   - pip install codecov
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 notifications:
   slack: eecr:6jvPRxT579QoiP7YW28iMc3V
