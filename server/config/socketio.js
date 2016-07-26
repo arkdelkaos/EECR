@@ -17,9 +17,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/torneo/torneo.socket').register(socket);
-  require('../api/card/card.socket').register(socket);
-  require('../api/deck/deck.socket').register(socket);
+  require('../api/pgo/pgo.socket').register(socket);
   require('../api/infoclan/infoclan.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 

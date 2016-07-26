@@ -24,7 +24,7 @@ function handleError(res, statusCode) {
  * restriction: 'admin'
  */
 export function index(req, res) {
-  User.findAsync({}, '-salt -password')
+  return User.find({}, '-salt -password').exec()
     .then(users => {
       res.status(200).json(users);
     })
@@ -38,8 +38,8 @@ export function create(req, res, next) {
   var newUser = new User(req.body);
   newUser.provider = 'local';
   newUser.role = 'user';
-  newUser.saveAsync()
-    .spread(function(user) {
+  newUser.save()
+    .then(function(user) {
       var token = jwt.sign({ _id: user._id }, config.secrets.session, {
         expiresIn: 60 * 60 * 5
       });
@@ -54,7 +54,7 @@ export function create(req, res, next) {
 export function show(req, res, next) {
   var userId = req.params.id;
 
-  User.findByIdAsync(userId)
+  return User.findById(userId).exec()
     .then(user => {
       if (!user) {
         return res.status(404).end();
@@ -69,7 +69,7 @@ export function show(req, res, next) {
  * restriction: 'admin'
  */
 export function destroy(req, res) {
-  User.findByIdAndRemoveAsync(req.params.id)
+  return User.findByIdAndRemove(req.params.id).exec()
     .then(function() {
       res.status(204).end();
     })
@@ -84,11 +84,11 @@ export function changePassword(req, res, next) {
   var oldPass = String(req.body.oldPassword);
   var newPass = String(req.body.newPassword);
 
-  User.findByIdAsync(userId)
+  return User.findById(userId).exec()
     .then(user => {
       if (user.authenticate(oldPass)) {
         user.password = newPass;
-        return user.saveAsync()
+        return user.save()
           .then(() => {
             res.status(204).end();
           })
@@ -100,24 +100,12 @@ export function changePassword(req, res, next) {
 }
 
 /**
- * Guarda cambios en el usuario
- */
-export function update(req, res, next) {
-  var userId = req.body._id;
-  console.log(req.body);
-
-  User.findByIdAndUpdateAsync(userId, req.body)
-    .then(() => res.status(204).end())
-    .catch(validationError(res));
-}
-
-/**
  * Get my info
  */
 export function me(req, res, next) {
   var userId = req.user._id;
 
-  User.findOneAsync({ _id: userId }, '-salt -password')
+  return User.findOne({ _id: userId }, '-salt -password').exec()
     .then(user => { // don't ever give out the password or salt
       if (!user) {
         return res.status(401).end();

@@ -9,6 +9,8 @@ import mongoose from 'mongoose';
 mongoose.Promise = require('bluebird');
 import config from './config/environment';
 import http from 'http';
+import pgo_napi from 'pokemon-go-node-api';
+
 
 // Connect to MongoDB
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -27,9 +29,9 @@ var socketio = require('socket.io')(server, {
   serveClient: config.env !== 'production',
   path: '/socket.io-client'
 });
-require('./config/socketio')(socketio);
-require('./config/express')(app);
-require('./routes')(app);
+require('./config/socketio').default(socketio);
+require('./config/express').default(app);
+require('./routes').default(app);
 
 // Start server
 function startServer() {

@@ -25,7 +25,7 @@ describe('Thing API:', function() {
     });
 
     it('should respond with JSON array', function() {
-      things.should.be.instanceOf(Array);
+      expect(things).to.be.instanceOf(Array);
     });
 
   });
@@ -50,8 +50,8 @@ describe('Thing API:', function() {
     });
 
     it('should respond with the newly created thing', function() {
-      newThing.name.should.equal('New Thing');
-      newThing.info.should.equal('This is the brand new thing!!!');
+      expect(newThing.name).to.equal('New Thing');
+      expect(newThing.info).to.equal('This is the brand new thing!!!');
     });
 
   });
@@ -78,8 +78,8 @@ describe('Thing API:', function() {
     });
 
     it('should respond with the requested thing', function() {
-      thing.name.should.equal('New Thing');
-      thing.info.should.equal('This is the brand new thing!!!');
+      expect(thing.name).to.equal('New Thing');
+      expect(thing.info).to.equal('This is the brand new thing!!!');
     });
 
   });
@@ -110,8 +110,8 @@ describe('Thing API:', function() {
     });
 
     it('should respond with the updated thing', function() {
-      updatedThing.name.should.equal('Updated Thing');
-      updatedThing.info.should.equal('This is the updated thing!!!');
+      expect(updatedThing.name).to.equal('Updated Thing');
+      expect(updatedThing.info).to.equal('This is the updated thing!!!');
     });
 
   });

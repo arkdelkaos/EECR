@@ -5,7 +5,7 @@
 'use strict';
 
 import {EventEmitter} from 'events';
-var Thing = require('./thing.model');
+import Thing from './thing.model';
 var ThingEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)

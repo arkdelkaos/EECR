@@ -31,15 +31,15 @@ var thingIndex = proxyquire('./index.js', {
 describe('Thing API Router:', function() {
 
   it('should return an express router instance', function() {
-    thingIndex.should.equal(routerStub);
+    expect(thingIndex).to.equal(routerStub);
   });
 
   describe('GET /api/things', function() {
 
     it('should route to thing.controller.index', function() {
-      routerStub.get
+      expect(routerStub.get
         .withArgs('/', 'thingCtrl.index')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -47,9 +47,9 @@ describe('Thing API Router:', function() {
   describe('GET /api/things/:id', function() {
 
     it('should route to thing.controller.show', function() {
-      routerStub.get
+      expect(routerStub.get
         .withArgs('/:id', 'thingCtrl.show')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -57,9 +57,9 @@ describe('Thing API Router:', function() {
   describe('POST /api/things', function() {
 
     it('should route to thing.controller.create', function() {
-      routerStub.post
+      expect(routerStub.post
         .withArgs('/', 'thingCtrl.create')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -67,9 +67,9 @@ describe('Thing API Router:', function() {
   describe('PUT /api/things/:id', function() {
 
     it('should route to thing.controller.update', function() {
-      routerStub.put
+      expect(routerStub.put
         .withArgs('/:id', 'thingCtrl.update')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -77,9 +77,9 @@ describe('Thing API Router:', function() {
   describe('PATCH /api/things/:id', function() {
 
     it('should route to thing.controller.update', function() {
-      routerStub.patch
+      expect(routerStub.patch
         .withArgs('/:id', 'thingCtrl.update')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
 
   });
@@ -87,9 +87,9 @@ describe('Thing API Router:', function() {
   describe('DELETE /api/things/:id', function() {
 
     it('should route to thing.controller.destroy', function() {
-      routerStub.delete
+      expect(routerStub.delete
         .withArgs('/:id', 'thingCtrl.destroy')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
 
   });

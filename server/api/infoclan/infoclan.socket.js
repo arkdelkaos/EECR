@@ -4,7 +4,7 @@
 
 'use strict';
 
-var InfoclanEvents = require('./infoclan.events');
+import InfoclanEvents from './infoclan.events';
 
 // Model events to emit
 var events = ['save', 'remove'];

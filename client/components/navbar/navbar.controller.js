@@ -1,23 +1,9 @@
 'use strict';
 
 class NavbarController {
-  //start-non-standard
-  menu = [{
-  //   'title': 'Top',
-  //   'link': '/'
-  // },
-  // {
-    'title': 'Clan',
-    'link': '/clan'
-  // },
-  // {
-  //   'title': 'Mazos',
-  //   'link': '/deck'
-  }];
-
-  isCollapsed = true;
   //end-non-standard
 
+  //start-non-standard
   constructor($scope, $location, Auth, infoclan) {
     this.$location = $location;
     this.isLoggedIn = Auth.isLoggedIn;

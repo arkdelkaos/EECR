@@ -1,30 +1,18 @@
 'use strict';
 
-angular.module('eecrApp', [
-  'eecrApp.auth',
-  'eecrApp.admin',
-  'eecrApp.deck',
-  'eecrApp.constants',
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute',
-  'btford.socket-io',
-  'ui.bootstrap',
-  'validation.match',
-  'btford.markdown',
-  'duScroll',
-  'ui.scrollpoint',
-  'ngParallax',
-  'ngLodash',
-  'ngtweet',
-  'eecrFilters'
-])
-  .config(function($routeProvider, $locationProvider) {
-    $routeProvider
-      .otherwise({
-        redirectTo: '/'
-      });
+angular.module('eecrApp', ['eecrApp.auth', 'eecrApp.admin', 'eecrApp.constants', 'ngCookies',
+    'ngResource', 'ngSanitize', 'btford.socket-io', 'ui.router', 'ui.bootstrap',
+    'validation.match',
+    'ngParallax',
+    'ngtweet',
+    'btford.markdown',
+    'duScroll',
+    'ui.scrollpoint',
+    'eecrFilters',
+    'ngLodash'
+  ])
+  .config(function($urlRouterProvider, $locationProvider) {
+    $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
   });

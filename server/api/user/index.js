@@ -11,7 +11,6 @@ router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.get('/:id', auth.isAuthenticated(), controller.show);
-router.put('/:id', auth.hasRole('admin'), controller.update);
 router.post('/', controller.create);
 
-export default router;
+module.exports = router;

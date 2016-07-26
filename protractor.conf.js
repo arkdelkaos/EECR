@@ -43,14 +43,13 @@ var config = {
   // Jasmine and Cucumber are fully supported as a test and assertion framework.
   // Mocha has limited beta support. You will need to include your own
   // assertion framework if working with mocha.
-  framework: 'jasmine2',
+  framework: 'mocha',
 
-  // ----- Options to be passed to minijasminenode -----
-  //
-  // See the full list at https://github.com/jasmine/jasmine-npm
-  jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000,
-    print: function() {}  // for jasmine-spec-reporter
+  // ----- Options to be passed to mocha -----
+  mochaOpts: {
+    reporter: 'spec',
+    timeout: 30000,
+    defaultTimeoutInterval: 30000
   },
 
   // Prepare environment for tests
@@ -59,10 +58,16 @@ var config = {
   },
 
   onPrepare: function() {
-    require('babel-core/register');
-    var SpecReporter = require('jasmine-spec-reporter');
-    // add jasmine spec reporter
-    jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
+    require('babel-register');
+    // Load Mocha and Chai + plugins
+    require('./mocha.conf');
+
+    // Expose should assertions (see https://github.com/angular/protractor/issues/633)
+    Object.defineProperty(
+      protractor.promise.Promise.prototype,
+      'should',
+      Object.getOwnPropertyDescriptor(Object.prototype, 'should')
+    );
 
     var serverConfig = config.params.serverConfig;
 

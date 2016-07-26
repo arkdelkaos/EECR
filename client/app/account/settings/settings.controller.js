@@ -1,20 +1,9 @@
 'use strict';
 
 class SettingsController {
-  constructor(Auth, $log, $scope, appConfig) {
-    this.errors = {};
-    this.submitted = false;
-    $scope.appConfig = appConfig;
-    this.$log = $log;
 
-
+  constructor(Auth) {
     this.Auth = Auth;
-    $scope.user = Auth.getCurrentUser();
-    this.$log.info($scope.user);
-
-    $scope.status = {
-            isopen: false
-          };
   }
 
   changePassword(form) {
@@ -31,17 +20,6 @@ class SettingsController {
           this.message = '';
         });
     }
-  }
-
-  setClan(user,clan) {
-    user.clan = clan;
-  }
-
-  enviar(user){
-    if(user.clanConfirmado){
-      user.clanConfirmado = false;
-    }
-    user.$update();
   }
 }
 

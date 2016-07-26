@@ -3,6 +3,7 @@
 /**
  * Removes server error when user updates input
  */
+
 angular.module('eecrApp')
   .directive('mongooseError', function() {
     return {

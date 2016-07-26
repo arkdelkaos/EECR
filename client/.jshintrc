@@ -26,7 +26,6 @@
     "$": true,
     "_": true,
     "moment": true,
-    "jasmine": true,
     "describe": true,
     "beforeEach": true,
     "module": true,

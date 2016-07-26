@@ -7,51 +7,28 @@ module.exports = function(config) {
     basePath: '',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'chai', 'sinon-chai', 'chai-as-promised', 'chai-things'],
+
+    client: {
+      mocha: {
+        timeout: 5000 // set default mocha spec timeout
+      }
+    },
 
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'client/bower_components/jquery/dist/jquery.js',
-      'client/bower_components/angular/angular.js',
-      'client/bower_components/angular-resource/angular-resource.js',
-      'client/bower_components/angular-cookies/angular-cookies.js',
-      'client/bower_components/angular-sanitize/angular-sanitize.js',
-      'client/bower_components/angular-route/angular-route.js',
-      'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'client/bower_components/lodash/dist/lodash.compat.js',
-      'client/bower_components/angular-socket-io/socket.js',
-      'client/bower_components/angular-validation-match/dist/angular-validation-match.min.js',
-      'client/bower_components/rangy/rangy-core.js',
-      'client/bower_components/rangy/rangy-classapplier.js',
-      'client/bower_components/rangy/rangy-highlighter.js',
-      'client/bower_components/rangy/rangy-selectionsaverestore.js',
-      'client/bower_components/rangy/rangy-serializer.js',
-      'client/bower_components/rangy/rangy-textrange.js',
-      'client/bower_components/textAngular/dist/textAngular.js',
-      'client/bower_components/textAngular/dist/textAngular-sanitize.js',
-      'client/bower_components/textAngular/dist/textAngularSetup.js',
-      'client/bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js',
-      'client/bower_components/showdown/src/showdown.js',
-      'client/bower_components/angular-markdown-directive/markdown.js',
-      'client/bower_components/angular-scroll/angular-scroll.js',
-      'client/bower_components/angular-ui-scrollpoint/dist/scrollpoint.js',
-      'client/bower_components/ng-simple-parallax/js/ngParallax.js',
-      'client/bower_components/ng-lodash/build/ng-lodash.js',
-      'client/bower_components/ngtweet/dist/ngtweet.min.js',
-      'client/bower_components/device.js/lib/device.js',
-      'client/bower_components/jquery-bracket/dist/jquery.bracket.min.js',
-      'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',
       'client/app/app.js',
       'client/{app,components}/**/*.module.js',
       'client/{app,components}/**/*.js',
-      'client/{app,components}/**/*.html'
+      'client/{app,components}/**/*.{jade,html}'
     ],
 
     preprocessors: {
       '**/*.html': 'ng-html2js',
+      '**/*.jade': 'ng-jade2js',
       'client/{app,components}/**/*.js': 'babel'
     },
 
@@ -59,12 +36,13 @@ module.exports = function(config) {
       stripPrefix: 'client/'
     },
 
+    ngJade2JsPreprocessor: {
+      stripPrefix: 'client/'
+    },
+
     babelPreprocessor: {
       options: {
-        sourceMap: 'inline',
-        optional: [
-          'es7.classProperties'
-        ]
+        sourceMap: 'inline'
       },
       filename: function (file) {
         return file.originalPath.replace(/\.js$/, '.es5.js');

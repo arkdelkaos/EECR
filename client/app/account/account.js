@@ -1,31 +1,31 @@
 'use strict';
 
 angular.module('eecrApp')
-  .config(function($routeProvider) {
-    $routeProvider
-      .when('/login', {
+  .config(function($stateProvider) {
+    $stateProvider.state('login', {
+        url: '/login',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginController',
         controllerAs: 'vm'
       })
-      .when('/logout', {
-        name: 'logout',
-        referrer: '/',
+      .state('logout', {
+        url: '/logout?referrer',
+        referrer: 'main',
         template: '',
-        controller: function($location, $route, Auth) {
-          var referrer = $route.current.params.referrer ||
-                          $route.current.referrer ||
-                          '/';
+        controller: function($state, Auth) {
+          var referrer = $state.params.referrer || $state.current.referrer || 'main';
           Auth.logout();
-          $location.path(referrer);
+          $state.go(referrer);
         }
       })
-      .when('/signup', {
+      .state('signup', {
+        url: '/signup',
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupController',
         controllerAs: 'vm'
       })
-      .when('/settings', {
+      .state('settings', {
+        url: '/settings',
         templateUrl: 'app/account/settings/settings.html',
         controller: 'SettingsController',
         controllerAs: 'vm',
@@ -33,9 +33,9 @@ angular.module('eecrApp')
       });
   })
   .run(function($rootScope) {
-    $rootScope.$on('$routeChangeStart', function(event, next, current) {
-      if (next.name === 'logout' && current && current.originalPath && !current.authenticate) {
-        next.referrer = current.originalPath;
+    $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {
+      if (next.name === 'logout' && current && current.name && !current.authenticate) {
+        next.referrer = current.name;
       }
     });
   });

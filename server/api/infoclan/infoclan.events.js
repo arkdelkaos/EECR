@@ -5,7 +5,7 @@
 'use strict';
 
 import {EventEmitter} from 'events';
-var Infoclan = require('./infoclan.model');
+import Infoclan from './infoclan.model';
 var InfoclanEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)

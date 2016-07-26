@@ -1,6 +1,6 @@
 {
   "generator-angular-fullstack": {
-    "generatorVersion": "3.3.0-beta.0",
+    "generatorVersion": "3.7.6",
     "endpointDirectory": "server/api/",
     "insertRoutes": true,
     "registerRoutesFile": "server/routes.js",
@@ -16,9 +16,10 @@
     "filters": {
       "js": true,
       "babel": true,
-      "html": true,
+      "flow": false,
+      "jade": true,
       "sass": true,
-      "ngroute": true,
+      "uirouter": true,
       "bootstrap": true,
       "uibootstrap": true,
       "socketio": true,
@@ -30,30 +31,33 @@
       "googleAuth": true,
       "facebookAuth": true,
       "twitterAuth": true,
-      "grunt": true,
-      "gulp": false,
-      "jasmine": true,
-      "mocha": false,
+      "gulp": true,
+      "mocha": true,
+      "jasmine": false,
       "should": false,
-      "expect": false
+      "expect": true
     }
   },
   "generator-ng-component": {
     "routeDirectory": "client/app/",
     "directiveDirectory": "client/app/",
+    "componentDirectory": "client/app/components/",
     "filterDirectory": "client/app/",
     "serviceDirectory": "client/app/",
     "basePath": "client",
     "moduleName": "",
+    "modulePrompt": true,
     "filters": [
-      "ngroute",
-      "jasmine",
-      "ngroute"
+      "uirouter",
+      "mocha",
+      "expect",
+      "uirouter",
+      "es6"
     ],
     "extensions": [
       "babel",
       "js",
-      "html",
+      "jade",
       "scss"
     ],
     "directiveSimpleTemplates": "",
@@ -62,6 +66,7 @@
     "serviceTemplates": "",
     "factoryTemplates": "",
     "controllerTemplates": "",
+    "componentTemplates": "",
     "decoratorTemplates": "",
     "providerTemplates": "",
     "routeTemplates": ""

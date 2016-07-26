@@ -19,6 +19,7 @@ describe('Controller: OauthButtonsCtrl', function() {
   }));
 
   it('should attach loginOauth', function() {
-    expect(OauthButtonsCtrl.loginOauth).toEqual(jasmine.any(Function));
+    expect(OauthButtonsCtrl.loginOauth)
+      .to.be.a('function');
   });
 });

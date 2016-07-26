@@ -1,0 +1,57 @@
+.row
+  .col-lg-1
+  .col-lg-10
+    h2 Información General
+    p Ante todo, nada de malos rollos: 
+      strong  Usa esta herramienta bajo tu cuenta y riesgo
+    p No hay forma de saber como reaccionarán en el futuro ni Niantic ni Pokemon Company; así que no puedo deciros que el uso de esta app sea seguro
+    p Pon una dirección lo mas cercana a donde estés, para que si abres el juego con esa cuenta no parezca "que te has teleportado". Hoy por hoy los bans se detectan por teleportacion, principalmente.
+    p La picadora de momento no funciona automáticamente. Estoy esperando a que actualicen la API...de mientras, a mano ;)
+    
+    h1.page-header Cuenta de PokemonGO:
+    form.form.pokesalchichasForm(name='form', ng-submit='pokesalchichas.getPokemons()', novalidate='')
+
+      div.input-group.input-group-lg
+        span.input-group-addon
+          span.glyphicon.glyphicon-user
+        input.form-control(type="text", placeholder="Usuario", aria-describedby="basic-addon1", ng-model='pokesalchichas.user.user')
+
+      div.input-group.input-group-lg
+        span.input-group-addon
+          span.glyphicon.glyphicon-barcode
+        input.form-control(type="password", placeholder="Contraseña", aria-describedby="basic-addon1", ng-model='pokesalchichas.user.password')
+
+      div.btn-group
+        label.btn.btn-primary(ng-model="pokesalchichas.user.proveedor", uib-btn-radio="'ptc'") PTC
+        label.btn.btn-primary(ng-model="pokesalchichas.user.proveedor", uib-btn-radio="'google'") Google
+
+      div.input-group.input-group-lg
+        span.input-group-addon
+          span.glyphicon.glyphicon-globe
+        input.form-control(type="text", placeholder="Plaza del Sol 1, Madrid, 28013 Spain", aria-describedby="basic-addon1", ng-model='pokesalchichas.user.localization')
+
+      div.alert.alert-danger(ng-show='pokesalchichas.error')
+        p Hay algún tipo de error con los datos que has introducido.
+        p Comprueba que el nombre de usuario y contraseña sean correctos
+        p Has de seleccionar el proveedor entre "Pokemon Trainer Club" y "Google"
+        p Es mejor que selecciones una localización cercana a donde estés, por seguridad; Así no parecerá que te has "teleportado" si abres el juego a continuación
+
+      div
+        button.btn.btn-success.btn-lg.btn-login(type='submit')
+          | Conectarse
+
+    ul.nav.nav-tabs.nav-stacked.col-md-2.col-lg-2.col-sm-2.col-xs-4.pokeLista(ng-repeat='pokemon in pokesalchichas.pokeLista')
+      li
+        img.text-center.img-responsive.center-block(src='{{ pokemon.info.img }}')
+        h5.text-center {{ pokemon.info.name }}
+        p.text-center CP {{ pokemon.cp }}
+        p.text-center(ng-class="(pokemon.indAttack == 15) ? 'bg-success' : ((pokemon.indAttack >= 12) ? 'bg-warning' : '')") ATK {{ pokemon.indAttack }}
+        p.text-center(ng-class="(pokemon.indDefense == 15) ? 'bg-success' : ((pokemon.indDefense >= 12) ? 'bg-warning' : '')") DEF {{ pokemon.indDefense }}
+        p.text-center(ng-class="(pokemon.indStamina == 15) ? 'bg-success' : ((pokemon.indStamina >= 12) ? 'bg-warning' : '')") STA {{ pokemon.indStamina }}
+        p.text-center(ng-class="((((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) == 100) ? 'bg-success' : (((((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) >= 80) ? 'bg-warning' : (((((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) <= 60) ? 'bg-danger' : ''))")
+          strong {{(((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45)| number:0}}%
+        button.btn.btn-danger.disabled.btn-lg.center-block(type='button', ng-click='pokesalchichas.picaPokemon(pokemon)', ng-show='(((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) <= 60')
+          span.glyphicon.glyphicon-erase
+          | Picadora
+        div.cubreBoton(ng-show='(((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) > 60')
+  .col-lg-1

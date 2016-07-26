@@ -10,8 +10,8 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 @font-face {
-  font-family: sc;
-  src: url(../assets/fonts/sc.ttf);
+ font-family: sc;
+ src: url(../assets/fonts/sc.ttf);
 }
 
 .browserupgrade {
@@ -96,28 +96,15 @@ $fondo-negro-semitrans: rgba(51,51,51,0.75);
 }
 
 // Component styles are injected through grunt
-// injector
-@import 'account/admin/admin.scss';
-@import 'account/colider/colider.scss';
-@import 'account/login/login.scss';
-@import 'account/settings/settings.scss';
-@import 'account/signup/signup.scss';
-@import 'clan/clan.scss';
-@import 'cofres/cofres.scss';
-@import 'deck/deck.scss';
-@import 'main/main.scss';
-@import 'rrss/rrss.scss';
-@import 'torneo/torneo.scss';
-@import '../components/footer/footer.scss';
-@import '../components/modal/modal.scss';
-@import '../components/navbar/navbar.scss';
-@import '../components/oauth-buttons/oauth-buttons.scss';
-// endinjector
-@import 'account/login/login.scss';
-@import 'account/admin/admin.scss';
-@import 'deck/deck.scss';
-@import 'main/main.scss';
-@import '../components/footer/footer.scss';
-@import '../components/modal/modal.scss';
-@import '../components/oauth-buttons/oauth-buttons.scss';
-// endinjector
+/* inject:scss */
+@import 'admin/admin';
+@import 'clan/clan';
+@import 'cofres/cofres';
+@import 'main/main';
+@import 'pokesalchichas/pokesalchichas';
+@import 'rrss/rrss';
+@import '../components/footer/footer';
+@import '../components/modal/modal';
+@import '../components/navbar/navbar';
+@import '../components/oauth-buttons/oauth-buttons';
+/* endinject */

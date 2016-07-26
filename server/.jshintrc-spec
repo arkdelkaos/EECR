@@ -1,7 +1,6 @@
 {
   "extends": ".jshintrc",
   "globals": {
-    "jasmine": true,
     "describe": true,
     "it": true,
     "before": true,
