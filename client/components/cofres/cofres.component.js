@@ -2,11 +2,10 @@ import angular from 'angular';
 
 export class cofresComponent {
 
-  isAdmin: Function;
+  constructor(Auth, $scope, socket, $log) {
+    'ngInject';
 
-  constructor(Auth, $scope, socket, $log, lodash) {
     this.isAdmin = Auth.isAdmin;
-    this._ = lodash;
     this.log = $log;
 
 
@@ -33,14 +32,14 @@ export class cofresComponent {
       sig = true;
       var k = i;
       for(var j in this.miCiclo) {
-        if (!this._.isEqual(this.ciclo[k], this.miCiclo[j].num)) {
+        if (!_.isEqual(this.ciclo[k], this.miCiclo[j].num)) {
           sig = false;
           break;
         }
         k++;
       }
       if (sig) {
-        this.resultados.push({'pos': i, 'res': ''});
+        this.resultados.push({pos: i, res: ''});
       }
     }
 
@@ -57,11 +56,12 @@ export class cofresComponent {
     }
   }
 
-  addCofre(cofre) {
-    if (cofre === 1) {
-      this.miCiclo.push({calidad: 'plata', num: cofre});
+  addCofre(n) {
+    if (n == 1) {
+      console.log(n);
+      this.miCiclo.push({calidad: 'plata', num: n});
     } else {
-      this.miCiclo.push({calidad: 'oro', num: cofre});
+      this.miCiclo.push({calidad: 'oro', num: n});
     }
     this.log.info(this.miCiclo);
     if (this.miCiclo.length > 2) {

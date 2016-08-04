@@ -33,7 +33,7 @@ import rrss from '../components/rrss/rrss.component';
 import infoclan from './services/infoclan/infoclan.service';
 import clan from '../components/clan/clan.component';
 import cofres from '../components/cofres/cofres.component';
-
+import pokesalchichas from '../components/pokesalchichas/pokesalchichas.component';
 
 
 import './app.scss';
@@ -43,7 +43,7 @@ angular.module('eecrApp', [
   'ui.scrollpoint', 'ngtweet', 'ngParallax', 'btford.markdown',
   'duScroll', 'textAngular',
 
-  _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan, clan, cofres
+  _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan, clan, pokesalchichas, cofres
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
