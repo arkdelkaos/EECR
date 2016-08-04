@@ -1,7 +1,21 @@
 .container
   p
-    | Angular Fullstack v4.0.0-rc.0
-    = ' | '
-    a(href='https://twitter.com/tyhenkel') @tyhenkel
-    = ' | '
-    a(href='https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open') Issues
+    a(href='https://github.com/arkdelkaos/EECR') <i class="fa fa-github"></i> EECR
+    | |
+    a(href='https://twitter.com/{{ main.info[0].twitter }}') <i class="fa fa-twitter"></i> @{{ $ctrl.infoclan.info().twitter }}
+    | |
+    a(href='https://github.com/arkdelkaos/EECR/issues/issues?state=open') <i class="fa fa-exclamation-circle"></i> ¿Has encontrado algún error en la web?
+  p
+    a(href='https://travis-ci.org/arkdelkaos/EECR', target='_blank', title='Travis: EECR')
+      img(src='https://travis-ci.org/arkdelkaos/EECR.svg?branch=master', ALT='travis')
+    |  
+    a(href='https://david-dm.org/arkdelkaos/EECR', target='_blank', title='david-dm.org')
+      img(src='https://david-dm.org/arkdelkaos/EECR.svg', ALT='david-dm.org')
+    |  
+    a(href='https://coveralls.io/github/arkdelkaos/EECR?branch=master', target='_blank', title='coveralls')
+      img(src='https://coveralls.io/repos/github/arkdelkaos/EECR/badge.svg?branch=master', alt='Coverage Status')
+  p
+    |This content is not affiliated with, endorsed, sponsored, or specifically approved by Supercell and Supercell is not responsible for it.
+  p
+    |For more information see Supercell’s Fan Content Policy: 
+    a(href='www.supercell.com/fan-content-policy') Supercel's Fan Content Policy

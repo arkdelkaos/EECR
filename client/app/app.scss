@@ -6,15 +6,96 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Exo+2:200,900");
+
 /**
  * App-wide Styles
  */
+@font-face {
+ font-family: sc;
+ src: url(../assets/fonts/sc.ttf);
+}
 
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+.navbar {
+  .navbar-brand {
+    margin-top: -22px;
+  }
+}
+
+body {
+  background: #fff;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1{
+  font-size: 48px;
+  // text-shadow: 0 10px 0 rgba(0, 0, 0, 0.75);
+}
+
+p,li {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 500px){
+  h1{
+    font-size: 42px;
+  }
+  h2{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 16px;
+  }
+  h4{
+    font-size: 14px;
+  }
+  h5{
+    font-size: 12px;
+  }
+  p,li{
+    font-size: 12px;
+  }
+}
+
+
+$amarillo: #ff9600;
+$rojo: #ff0054;
+$fondo-boton-rojo: #d9534f;
+$fondo-boton-amarillo: #d9ce4f;
+$twitter: rgb(135, 194, 237);
+$fondo-negro: #333;
+$fondo-negro-semitrans: rgba(51,51,51,0.75);
+
+.whiteBox{
+  background: #fff;
+  border: 1px lightgray solid;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.semitransBox{
+  background: $fondo-negro-semitrans;
+  border: 1px $rojo solid;
+  padding: 15px;
+  border-radius: 4px;
+
+  h1,h2,h3,h4 {
+    color: $amarillo;
+  }
 }
 
 // Component styles are injected through gulp
@@ -24,4 +105,5 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
 @import '../components/oauth-buttons/oauth-buttons';
+@import '../components/rrss/rrss';
 /* endinject */

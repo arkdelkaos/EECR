@@ -12,6 +12,9 @@ import uiBootstrap from 'angular-ui-bootstrap';
 // import ngMessages from 'angular-messages';
 //import ngValidationMatch from 'angular-validation-match';
 
+// import ngParallax from 'ng-parallax';
+// import ngtweet from 'ngtweet';
+
 
 import {
   routeConfig
@@ -26,16 +29,19 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import rrss from '../components/rrss/rrss.component';
+import infoclan from './services/infoclan/infoclan.service';
 
 import './app.scss';
 
 angular.module('eecrApp', [
     // ngAnimate,
     ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
+    // 'ngParallax', ngtweet,
     // ngMessages,
 
     // ngValidationMatch,
-    _Auth, account, admin, navbar, footer, main, constants, socket, util
+    _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan
   ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

@@ -1,8 +1,138 @@
-header#banner.hero-unit
-  .container
-    h1 'Allo, 'Allo!
-    p.lead Kick-start your next web app with Angular Fullstack
-    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+header.hero-unit#banner
+  div.parallax.hidden-xs.hidden-sd(ng-parallax, pattern='assets/images/bg/esp.jpg', speed='10', reverse='false')
+  div.titulo
+    h2 Comunidad de jugadores de
+      a(href='http://clashroyale.com', target='_blank')
+        img#logo_cr(src='assets/images/ClashRoyale_logo_version_02.png')
+    p
+      img#logo(src='assets/images/eeavatarborjonudo.png', alt='@EliteEspanaCR')
+      |ELITE
+      strong ESPAÑA
+    h3 Generador y Ranking de Mazos
+    h3 Herramienta de gestión de Torneos
+    
+//- navbar
+    
+
+section#info
+  div.container(ng-bind-html='main.infoclan.info().homeTexto')
+
+section#mazos
+  div.tapa_arriba
+  div.subheader#mazos_sh
+    div.container#mazos_ban
+      h3 Ranking: Usadas y Votadas
+      p Generador de
+        strong Mazos
+      h2 Comentarios y estadísticas, en cada mazo
+  div.tapa_abajo
+  div#mazos_content
+    div.container
+      h1 En obras
+      p Aún no está en condiciones de ser testado
+      p La RC incluirá las siguientes opciones:
+      ul
+        li Editor de mazo própio, filtrable por cada característica de las cartas
+        li Visor de TOP25, de mazos mas usados, con estadísticas
+        li Visor de TOP25, de mazos mas votados, con estadísticas
+        li Visor de TOP10, de cartas mas y menos usadas, con estadísticas
+        li Lista completa de mazos, ordenable por cada criterio
+        li Vista de cada mazo, con chat-foro en tiempo real
+        li Imágenes de alta definición de las cartas
+
+section#torneos
+  div.tapa_arriba
+  div.subheader#torneos_sh
+    div.container#torneos_ban
+      p Gestor de
+        strong Torneos
+      h3 Creación, inscripción, y disputa
+      h2 ¡Ranking de los mejores guerreros!
+  div.tapa_abajo
+  div.torneos_content(accesskey='', ng-hide='main.isAdmin()')
+    div.container
+      h1 En obras
+      p Aún no está en condiciones de ser testado
+      p La RC incluirá las siguientes opciones:
+      ul 
+        li Generador de torneos, de inscripción abierta
+        li Chat/foro en tiempo real, individual para cada torneo
+        li Sistema de logros y trofeos
+        li Lista de torneos activos
+        li Lista de torneos finalizados
+  div#torneos_content(ng-show='main.isAdmin()')
+    torneo
+
+section#cofres
+  div.tapa_arriba
+  div.subheader#cofres_sh
+    div.container#cofres_ban
+      h2 La bola mágica dice...
+      p Calculadora de
+        strong Cofres
+      h3 ¿Cuanto te falta para el cofre morado?
+  div.tapa_abajo
+  div#cofres_content
+    div.container
+      cofres
+
+section#rrss
+  div.tapa_arriba
+  div.subheader#rrss_sh
+    div.container#rrss_ban
+      p Redes
+        strong Sociales
+      h3 
+        i.fa.fa-twitter 
+        |Twitter: {{ main.infoclan.info().twitter }}
+      h2 ...y mas en breve!
+  div.tapa_abajo
+  div#rrss_content
+    rrss
+
+section#pokesalchichas
+  div.tapa_arriba
+  div.subheader#pokesalchichas_sh
+    div.container#pokesalchichas_ban
+      h2 "¡Carne pa' la Picadora!"
+      p 
+        strong Poke
+        |Salchichas
+      h3 ¿Que pokemons he de salvar, y cuales son basura?  
+  div.tapa_abajo
+  div#pokesalchichas_content
+    pokesalchichas
+
+section#clan
+  div.tapa_arriba
+  div.subheader#about_us_sh
+    div.container#about_us_ban
+      h2 Sobre nosotros...
+      p Normas del
+        strong Clan
+      h3 Organización de nuestros clanes
+      h3 Herramientas y Redes Sociales
+  div.tapa_abajo
+  div#about_us
+    div.container
+      clan
+
+
+div.container#chat(ng-show='main.isAdmin()')
+    div.row
+      div.col-lg-12
+        h1.page-header Test de chat en tiempo real:
+        div.chat-box#chat-box-main
+          p(ng-repeat='thing in main.awesomeThings') {{thing.name}}
+            button(type='button', class='close', ng-click='main.deleteThing(thing)', ng-show='main.isAdmin()') &times;
+    form.thing-form
+      label Los mensajes se trasmiten en tiempo real entre todos los clientes ;)
+      p.input-group
+        input.form-control(type='text', placeholder='Añade un nuevo mensaje', ng-model='main.newThing')
+        span.input-group-btn
+          button.btn.btn-primary(type='submit', ng-click='main.addThing()') Add New
+          
+
 
 .container
   .row
@@ -20,3 +150,5 @@ header#banner.hero-unit
       input.form-control(type='text', placeholder='Add a new thing here.', ng-model='$ctrl.newThing')
       span.input-group-btn
         button.btn.btn-primary(type='submit', ng-click='$ctrl.addThing()') Add New
+        
+//- footer

@@ -1,0 +1,23 @@
+#tweets {
+  h1 {
+    text-align: center;
+    color: $amarillo;
+    text-shadow: 0 5px 0 rgba(0, 0, 0, 0.75);
+  }
+}
+
+#likes {
+  h1 {
+    text-align: center;
+    color: $rojo;
+    text-shadow: 0 5px 0 rgba(0, 0, 0, 0.75);
+  }
+}
+
+#oficial {
+  h1 {
+    text-align: center;
+    color: $twitter;
+    text-shadow: 0 5px 0 rgba(0, 0, 0, 0.75);
+  }
+}
