@@ -1,0 +1,29 @@
+div.row.cofres
+  div.col-xs-6.col-xs-offset-3
+    
+    div.row
+      div#miCiclo(ng-hide='!$ctrl.miCiclo.length')
+        img(ng-repeat='cofre in $ctrl.miCiclo', src='assets/images/cofres/{{ cofre.calidad }}.png')
+          
+    div.row
+      div(ng-show='!$ctrl.resultados.length')
+        h2 Instrucciones
+        p Debes introduir una combinación valida.
+        p Al hacerlo, 
+          strong el sistema te responderá cuantos cofres tendrás que esperar
+          | en el mejor de los casos, y en el peor de los casos.
+        p El orden de los cofres es siempre el mismo (lista), por lo que se cosideran 'no-validas' aquellas combinaciones que no existan en dicha lista. Si introduces una combinación demasiado larga (>7) se reiniciará automáticamente
+      button.btn.btn-default(ng-click='$ctrl.addCofre("1")', type='button') Silver
+      button.btn.btn-warning(ng-click='$ctrl.addCofre("2")', type='button') Gold
+      button.btn.btn-danger(ng-click='$ctrl.limpiarCofre()', type='button') Reset
+
+    div.row
+      div#resultado(ng-repeat='res in $ctrl.resultados | orderBy:"res"')
+        div#mejor.panel.panel-success(ng-show='$first && !$middle && !$last')
+          h3 En el mejor de los casos solo tendrás que esperar
+          h1 {{ res.res }}
+          h3 cofres mas
+        div#peor.panel.panel-danger(ng-show='!$first && !$middle && $last')
+          h3 En el peor de los casos aún tendrás que esperar
+          h1 {{ res.res }}
+          h3 cofres mas
