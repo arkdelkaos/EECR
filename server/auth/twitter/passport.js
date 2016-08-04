@@ -10,7 +10,7 @@ export function setup(User, config) {
   function(token, tokenSecret, profile, done) {
     User.findOne({'twitter.id': profile.id}).exec()
       .then(user => {
-        if (user) {
+        if(user) {
           return done(null, user);
         }
 
@@ -22,7 +22,7 @@ export function setup(User, config) {
           twitter: profile._json
         });
         user.save()
-          .then(user => done(null, user))
+          .then(savedUser => done(null, savedUser))
           .catch(err => done(err));
       })
       .catch(err => done(err));

@@ -3,37 +3,40 @@
  * GET     /api/things              ->  index
  * POST    /api/things              ->  create
  * GET     /api/things/:id          ->  show
- * PUT     /api/things/:id          ->  update
+ * PUT     /api/things/:id          ->  upsert
+ * PATCH   /api/things/:id          ->  patch
  * DELETE  /api/things/:id          ->  destroy
  */
 
 'use strict';
 
-import _ from 'lodash';
+import jsonpatch from 'fast-json-patch';
 import Thing from './thing.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
-    if (entity) {
+    if(entity) {
       res.status(statusCode).json(entity);
     }
   };
 }
 
-function saveUpdates(updates) {
+function patchUpdates(patches) {
   return function(entity) {
-    var updated = _.merge(entity, updates);
-    return updated.save()
-      .then(updated => {
-        return updated;
-      });
+    try {
+      jsonpatch.apply(entity, patches, /*validate*/ true);
+    } catch(err) {
+      return Promise.reject(err);
+    }
+
+    return entity.save();
   };
 }
 
 function removeEntity(res) {
   return function(entity) {
-    if (entity) {
+    if(entity) {
       return entity.remove()
         .then(() => {
           res.status(204).end();
@@ -44,7 +47,7 @@ function removeEntity(res) {
 
 function handleEntityNotFound(res) {
   return function(entity) {
-    if (!entity) {
+    if(!entity) {
       res.status(404).end();
       return null;
     }
@@ -81,14 +84,25 @@ export function create(req, res) {
     .catch(handleError(res));
 }
 
+// Upserts the given Thing in the DB at the specified ID
+export function upsert(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  return Thing.findOneAndUpdate(req.params.id, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 // Updates an existing Thing in the DB
-export function update(req, res) {
-  if (req.body._id) {
+export function patch(req, res) {
+  if(req.body._id) {
     delete req.body._id;
   }
   return Thing.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
+    .then(patchUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

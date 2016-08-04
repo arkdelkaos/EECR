@@ -1,7 +1,6 @@
 'use strict';
 
-var mongoose = require('bluebird').promisifyAll(require('mongoose'));
-import {Schema} from 'mongoose';
+import mongoose from 'mongoose';
 
 var InfoclanSchema = new mongoose.Schema({
   identificador: { //Para que siempre se guarde en el mismo
@@ -65,6 +64,5 @@ InfoclanSchema
   }
   return twitter.length;
 }, 'Twitter cannot be blank');
-
 
 export default mongoose.model('Infoclan', InfoclanSchema);

@@ -1,7 +1,26 @@
 'use strict';
+// @flow
 
-class SettingsController {
+type User = {
+  oldPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+};
 
+export default class SettingsController {
+  user: User = {
+    oldPassword: '',
+    newPassword: '',
+    confirmPassword: ''
+  };
+  errors = {
+    other: undefined
+  };
+  message = '';
+  submitted = false;
+  Auth;
+
+  /*@ngInject*/
   constructor(Auth) {
     this.Auth = Auth;
   }
@@ -22,6 +41,3 @@ class SettingsController {
     }
   }
 }
-
-angular.module('eecrApp')
-  .controller('SettingsController', SettingsController);

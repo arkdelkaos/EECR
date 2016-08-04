@@ -40,9 +40,9 @@ Thing.find({}).remove()
     });
   });
 
-Infoclan.find({}).removeAsync()
+Infoclan.find({}).remove()
 .then(() => {
-  Infoclan.createAsync({
+  Infoclan.create({
     identificador: '1',
     nombre: 'Elite España',
     twitter: 'EliteEspanaCR',

@@ -1,26 +1,22 @@
 'use strict';
 
-(function() {
+export function UserResource($resource) {
+  'ngInject';
 
-  function UserResource($resource) {
-    return $resource('/api/users/:id/:controller', {
-      id: '@_id'
-    }, {
-      changePassword: {
-        method: 'PUT',
-        params: {
-          controller: 'password'
-        }
-      },
-      get: {
-        method: 'GET',
-        params: {
-          id: 'me'
-        }
+  return $resource('/api/users/:id/:controller', {
+    id: '@_id'
+  }, {
+    changePassword: {
+      method: 'PUT',
+      params: {
+        controller: 'password'
       }
-    });
-  }
-
-  angular.module('eecrApp.auth')
-    .factory('User', UserResource);
-})();
+    },
+    get: {
+      method: 'GET',
+      params: {
+        id: 'me'
+      }
+    }
+  });
+}

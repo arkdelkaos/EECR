@@ -1,19 +1,16 @@
 'use strict';
 
-(function() {
+export default class AdminController {
+  users: Object[];
 
-  class AdminController {
-    constructor(User) {
-      // Use the User $resource to fetch all users
-      this.users = User.query();
-    }
-
-    delete(user) {
-      user.$remove();
-      this.users.splice(this.users.indexOf(user), 1);
-    }
+  /*@ngInject*/
+  constructor(User) {
+    // Use the User $resource to fetch all users
+    this.users = User.query();
   }
 
-  angular.module('eecrApp.admin')
-    .controller('AdminController', AdminController);
-})();
+  delete(user) {
+    user.$remove();
+    this.users.splice(this.users.indexOf(user), 1);
+  }
+}

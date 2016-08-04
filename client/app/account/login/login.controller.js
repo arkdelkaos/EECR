@@ -1,11 +1,27 @@
 'use strict';
+// @flow
 
-class LoginController {
+type User = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+export default class LoginController {
+  user: User = {
+    name: '',
+    email: '',
+    password: ''
+  };
+  errors = {
+    login: undefined
+  };
+  submitted = false;
+  Auth;
+  $state;
+
+  /*@ngInject*/
   constructor(Auth, $state) {
-    this.user = {};
-    this.errors = {};
-    this.submitted = false;
-
     this.Auth = Auth;
     this.$state = $state;
   }
@@ -23,11 +39,8 @@ class LoginController {
           this.$state.go('main');
         })
         .catch(err => {
-          this.errors.other = err.message;
+          this.errors.login = err.message;
         });
     }
   }
 }
-
-angular.module('eecrApp')
-  .controller('LoginController', LoginController);

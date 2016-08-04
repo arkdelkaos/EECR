@@ -1,20 +1,34 @@
 'use strict';
+// @flow
 
-class SignupController {
-  //end-non-standard
+type User = {
+  name: string;
+  email: string;
+  password: string;
+};
 
+export default class SignupController {
+  user: User = {
+    name: '',
+    email: '',
+    password: ''
+  };
+  errors = {};
+  submitted = false;
+  Auth;
+  $state;
+
+  /*@ngInject*/
   constructor(Auth, $state) {
-      this.Auth = Auth;
-      this.$state = $state;
-    }
-    //start-non-standard
-
+    this.Auth = Auth;
+    this.$state = $state;
+  }
 
   register(form) {
     this.submitted = true;
 
     if (form.$valid) {
-      this.Auth.createUser({
+      return this.Auth.createUser({
           name: this.user.name,
           email: this.user.email,
           password: this.user.password
@@ -26,7 +40,6 @@ class SignupController {
         .catch(err => {
           err = err.data;
           this.errors = {};
-
           // Update validity of form fields that match the mongoose errors
           angular.forEach(err.errors, (error, field) => {
             form[field].$setValidity('mongoose', false);
@@ -36,6 +49,3 @@ class SignupController {
     }
   }
 }
-
-angular.module('eecrApp')
-  .controller('SignupController', SignupController);

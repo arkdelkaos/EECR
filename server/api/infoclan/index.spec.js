@@ -4,70 +4,51 @@ var proxyquire = require('proxyquire').noPreserveCache();
 
 var infoclanCtrlStub = {
   index: 'infoclanCtrl.index',
-  update: 'infoclanCtrl.update',
-  create: 'infoclanCtrl.create'
-};
-
-var authServiceStub = {
-  isAuthenticated() {
-    return 'authService.isAuthenticated';
-  },
-  hasRole(role) {
-    return 'authService.hasRole.' + role;
-  }
+  create: 'infoclanCtrl.create',
+  upsert: 'infoclanCtrl.upsert',
 };
 
 var routerStub = {
   get: sinon.spy(),
-  put: sinon.spy(),
-  post: sinon.spy()
+  post: sinon.spy(),
 };
 
 // require the index with our stubbed out modules
 var infoclanIndex = proxyquire('./index.js', {
-  'express': {
-    Router: function() {
+  express: {
+    Router() {
       return routerStub;
     }
   },
-  './infoclan.controller': infoclanCtrlStub,
-  '../../auth/auth.service': authServiceStub
+  './infoclan.controller': infoclanCtrlStub
 });
 
 describe('Infoclan API Router:', function() {
-
   it('should return an express router instance', function() {
-    infoclanIndex.should.equal(routerStub);
+    expect(infoclanIndex).to.equal(routerStub);
   });
 
   describe('GET /api/infoclan', function() {
-
     it('should route to infoclan.controller.index', function() {
-      routerStub.get
+      expect(routerStub.get
         .withArgs('/', 'infoclanCtrl.index')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
-
-  });
-
-  describe('POST /api/infoclan/update', function() {
-
-    it('should route to infoclan.controller.update', function() {
-      routerStub.post
-        .withArgs('/update', 'authService.hasRole.admin', 'infoclanCtrl.update')
-        .should.have.been.calledOnce;
-    });
-
   });
 
   describe('POST /api/infoclan', function() {
-
     it('should route to infoclan.controller.create', function() {
-      routerStub.post
+      expect(routerStub.post
         .withArgs('/', 'infoclanCtrl.create')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
-
   });
 
+  describe('POST /api/infoclan/update', function() {
+    it('should route to infoclan.controller.upsert', function() {
+      expect(routerStub.put
+        .withArgs('', 'infoclanCtrl.upsert')
+        ).to.have.been.calledOnce;
+    });
+  });
 });

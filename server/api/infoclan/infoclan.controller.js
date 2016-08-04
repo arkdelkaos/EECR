@@ -1,37 +1,45 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
  * GET     /api/infoclan              ->  index
- * PUT     /api/infoclan              ->  update
+ * POST    /api/infoclan              ->  create
+ * GET     /api/infoclan/:id          ->  show
+ * PUT     /api/infoclan/:id          ->  upsert
+ * PATCH   /api/infoclan/:id          ->  patch
+ * DELETE  /api/infoclan/:id          ->  destroy
  */
 
 'use strict';
 
-import _ from 'lodash';
+import jsonpatch from 'fast-json-patch';
 import Infoclan from './infoclan.model';
+import _ from 'lodash';
+
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
-    if (entity) {
+    if(entity) {
       res.status(statusCode).json(entity);
     }
   };
 }
 
-function saveUpdates(updates) {
+function patchUpdates(patches) {
   return function(entity) {
-    var updated = _.merge(entity, updates);
-    return updated.saveAsync()
-      .spread(updated => {
-        return updated;
-      });
+    try {
+      jsonpatch.apply(entity, patches, /*validate*/ true);
+    } catch(err) {
+      return Promise.reject(err);
+    }
+
+    return entity.save();
   };
 }
 
 function removeEntity(res) {
   return function(entity) {
-    if (entity) {
-      return entity.removeAsync()
+    if(entity) {
+      return entity.remove()
         .then(() => {
           res.status(204).end();
         });
@@ -41,7 +49,7 @@ function removeEntity(res) {
 
 function handleEntityNotFound(res) {
   return function(entity) {
-    if (!entity) {
+    if(!entity) {
       res.status(404).end();
       return null;
     }
@@ -56,36 +64,34 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets Infoclans
+// Gets a list of Infoclans
 export function index(req, res) {
-  Infoclan.findOneAsync({'identificador': '1'})
-    .then(handleEntityNotFound(res))
+  return Infoclan.findOne({'identificador': '1'}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Updates an existing Infoclan in the DB
-export function update(req, res) {
-  if (req.body._id) {
-    delete req.body._id;
-  }
-  Infoclan.findOneAsync({'identificador': '1'})
-    .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
-    .then(respondWithResult(res))
-    .catch(handleError(res));
-}
-
-/**
- * Creates a new infoclan
- */
-export function create(req, res, next) {
+// Creates a new Infoclan in the DB
+export function create(req, res) {
   var newInfoclan = new Infoclan(req.body);
   newInfoclan.identificador = '1';
   newInfoclan.nombre = 'Elite España';
   newInfoclan.twitter = 'EliteEspanaCR';
   newInfoclan.homeTexto = 'Cambiar!test';
   newInfoclan.clanTexto = 'Cambiar!test';
-  newInfoclan.saveAsync()
-    .catch(validationError(res));
+
+  return newInfoclan.saveAsync()
+    .then(respondWithResult(res, 201))
+    .catch(handleError(res));
+}
+
+// Upserts the given Infoclan in the DB at the specified ID
+export function upsert(req, res) {
+  if (req.body._id) {
+    delete req.body._id;
+  }
+  var id = 1;
+  return Infoclan.findOneAndUpdate(id, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
 }
