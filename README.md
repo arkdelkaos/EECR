@@ -1,6 +1,32 @@
-# eecr
+# EECR  
+[![codecov](https://codecov.io/gh/arkdelkaos/EECR/branch/master/graph/badge.svg)](https://codecov.io/gh/arkdelkaos/EECR)
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.0.0-rc.0.
+Home/App para el clan **Elite España** de **Clash Royale**  
+Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.  
+
+## TO-DO
+- [x] Home Design
+- [ ] Clan Module
+- [ ] Deck Module
+- [ ] Tournaments Module
+- [ ] Forum Module
+- [x] RRSS Module
+- [ ] i18n
+
+[![Feature Requests](http://feathub.com/arkdelkaos/EECR?format=svg)](http://feathub.com/arkdelkaos/EECR)
+
+____
+#TLDR Tech  
+- JS:Babel+Polyfill
+- Gulp+Webpack
+- Markup:Jade  
+- Style:Sass+UIBootstrap  
+- Router:uiRouter  
+- BBDD:Mongoose  
+- Auth:Passport  
+- socket.io  
+- Test:Mocha+Chai+Sinon  
+____
 
 ## Getting Started
 
@@ -26,3 +52,6 @@ Run `gulp build` for building and `gulp serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+## Yeoman
+This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.0.0-rc.0.
