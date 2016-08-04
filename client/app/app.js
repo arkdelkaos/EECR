@@ -1,7 +1,6 @@
 'use strict';
 
 import angular from 'angular';
-// import ngAnimate from 'angular-animate';
 import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
@@ -9,8 +8,6 @@ import 'angular-socket-io';
 
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
-// import ngMessages from 'angular-messages';
-//import ngValidationMatch from 'angular-validation-match';
 import 'ng-parallax';
 import 'ngtweet';
 import 'angular-ui-scrollpoint';
@@ -34,19 +31,17 @@ import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 import rrss from '../components/rrss/rrss.component';
 import infoclan from './services/infoclan/infoclan.service';
+import clan from '../components/clan/clan.component';
+
 
 import './app.scss';
 
 angular.module('eecrApp', [
-  // ngAnimate,
   ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
   'ui.scrollpoint', 'ngtweet', 'ngParallax', 'btford.markdown',
   'duScroll', 'textAngular',
-  // 'ngParallax', ngtweet,
-  // ngMessages,
 
-  // ngValidationMatch,
-  _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan
+  _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan, clan
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

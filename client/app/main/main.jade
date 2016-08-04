@@ -1,5 +1,5 @@
 header.hero-unit#banner
-  div.parallax.hidden-xs.hidden-sd(ng-parallax, pattern='assets/images/bg/esp.jpg', speed='10', reverse='false')
+  div.parallax.hidden-xs.hidden-sd(ng-parallax, pattern='"assets/images/bg/esp.jpg"', speed='10', reverse='false')
   div.titulo
     h2 Comunidad de jugadores de
       a(href='http://clashroyale.com', target='_blank')
@@ -131,24 +131,6 @@ div.container#chat(ng-show='main.isAdmin()')
         input.form-control(type='text', placeholder='Añade un nuevo mensaje', ng-model='main.newThing')
         span.input-group-btn
           button.btn.btn-primary(type='submit', ng-click='main.addThing()') Add New
-          
 
-
-.container
-  .row
-    .col-lg-12
-      h1.page-header Features:
-      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='thing in $ctrl.awesomeThings')
-        li
-          a(href='#', uib-tooltip='{{thing.info}}')
-            | {{thing.name}}
-            button.close(type='button', ng-click='$ctrl.deleteThing(thing)') &times;
-
-  form.thing-form
-    label Syncs in realtime across clients
-    p.input-group
-      input.form-control(type='text', placeholder='Add a new thing here.', ng-model='$ctrl.newThing')
-      span.input-group-btn
-        button.btn.btn-primary(type='submit', ng-click='$ctrl.addThing()') Add New
-        
+  
 footer

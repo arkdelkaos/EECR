@@ -103,6 +103,7 @@ $fondo-negro-semitrans: rgba(51,51,51,0.75);
 /* inject:scss */
 @import 'admin/admin';
 @import 'main/main';
+@import '../components/clan/clan';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
 @import '../components/navbar/navbar';
