@@ -1,5 +1,7 @@
 # EECR  
-[![codecov](https://codecov.io/gh/arkdelkaos/EECR/branch/master/graph/badge.svg)](https://codecov.io/gh/arkdelkaos/EECR)
+[![travis](https://travis-ci.org/arkdelkaos/EECR.svg?branch=dev)](https://travis-ci.org/arkdelkaos/EECR)
+[![david-dm](https://david-dm.org/arkdelkaos/EECR.svg)](https://david-dm.org/arkdelkaos/EECR)
+[![coveralls](https://coveralls.io/repos/github/arkdelkaos/EECR/badge.svg?branch=dev)](https://coveralls.io/github/arkdelkaos/EECR?branch=dev)  
 
 Home/App para el clan **Elite España** de **Clash Royale**  
 Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.  
