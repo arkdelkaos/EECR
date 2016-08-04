@@ -52,7 +52,12 @@ module.exports = function makeWebpackConfig(options) {
         'angular-ui-router',
         'lodash',
         'ng-parallax',
-        'ngtweet'
+        'ngtweet',
+        'angular-ui-scrollpoint',
+        'angular-scroll',
+        'device.js',
+        'angular-markdown-directive',
+        'textAngular'
       ]
     };
   }

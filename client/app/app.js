@@ -11,9 +11,12 @@ import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 // import ngMessages from 'angular-messages';
 //import ngValidationMatch from 'angular-validation-match';
-
-// import ngParallax from 'ng-parallax';
-// import ngtweet from 'ngtweet';
+import 'ng-parallax';
+import 'ngtweet';
+import 'angular-ui-scrollpoint';
+import 'angular-scroll';
+import 'angular-markdown-directive';
+import 'textAngular';
 
 
 import {
@@ -35,14 +38,16 @@ import infoclan from './services/infoclan/infoclan.service';
 import './app.scss';
 
 angular.module('eecrApp', [
-    // ngAnimate,
-    ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
-    // 'ngParallax', ngtweet,
-    // ngMessages,
+  // ngAnimate,
+  ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter, uiBootstrap,
+  'ui.scrollpoint', 'ngtweet', 'ngParallax', 'btford.markdown',
+  'duScroll', 'textAngular',
+  // 'ngParallax', ngtweet,
+  // ngMessages,
 
-    // ngValidationMatch,
-    _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan
-  ])
+  // ngValidationMatch,
+  _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan
+])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
     'ngInject';
