@@ -59,6 +59,7 @@ module.exports = function makeWebpackConfig(options) {
         'angular-markdown-directive',
         'textAngular',
         'showdown'
+        // 'pokemon-go-node-api'
       ]
     };
   }

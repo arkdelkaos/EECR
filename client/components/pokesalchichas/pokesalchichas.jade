@@ -9,38 +9,45 @@
     p La picadora de momento no funciona automáticamente. Estoy esperando a que actualicen la API...de mientras, a mano ;)
     
     h1.page-header Cuenta de PokemonGO:
-    form.form.pokesalchichasForm(name='form', ng-submit='pokesalchichas.getPokemons()', novalidate='')
+    form.form.pokesalchichasForm(name='form', ng-submit='$ctrl.getPokemons()', novalidate='')
 
       div.input-group.input-group-lg
         span.input-group-addon
           span.glyphicon.glyphicon-user
-        input.form-control(type="text", placeholder="Usuario", aria-describedby="basic-addon1", ng-model='pokesalchichas.user.user')
+        input.form-control(type="text", placeholder="Usuario", aria-describedby="basic-addon1", ng-model='$ctrl.user.user')
 
       div.input-group.input-group-lg
         span.input-group-addon
           span.glyphicon.glyphicon-barcode
-        input.form-control(type="password", placeholder="Contraseña", aria-describedby="basic-addon1", ng-model='pokesalchichas.user.password')
+        input.form-control(type="password", placeholder="Contraseña", aria-describedby="basic-addon1", ng-model='$ctrl.user.password')
 
       div.btn-group
-        label.btn.btn-primary(ng-model="pokesalchichas.user.proveedor", uib-btn-radio="'ptc'") PTC
-        label.btn.btn-primary(ng-model="pokesalchichas.user.proveedor", uib-btn-radio="'google'") Google
+        label.btn.btn-primary(ng-model="$ctrl.user.proveedor", uib-btn-radio="'ptc'") PTC
+        label.btn.btn-primary(ng-model="$ctrl.user.proveedor", uib-btn-radio="'google'") Google
 
       div.input-group.input-group-lg
         span.input-group-addon
           span.glyphicon.glyphicon-globe
-        input.form-control(type="text", placeholder="Plaza del Sol 1, Madrid, 28013 Spain", aria-describedby="basic-addon1", ng-model='pokesalchichas.user.localization')
+        input.form-control(type="text", placeholder="Plaza del Sol 1, Madrid, 28013 Spain", aria-describedby="basic-addon1", ng-model='$ctrl.user.localization')
 
-      div.alert.alert-danger(ng-show='pokesalchichas.error')
+      div.alert.alert-danger(ng-show='$ctrl.error')
         p Hay algún tipo de error con los datos que has introducido.
         p Comprueba que el nombre de usuario y contraseña sean correctos
         p Has de seleccionar el proveedor entre "Pokemon Trainer Club" y "Google"
-        p Es mejor que selecciones una localización cercana a donde estés, por seguridad; Así no parecerá que te has "teleportado" si abres el juego a continuación
+        
+      div.alert.alert-danger
+        p Hasta que la API vuelva a funcionar, <strong>esta herramienta no es segura</strong>
+        p Por lo tanto estará <strong>deshabilitada</strong> hasta que la comunidad de con la tecla
+        p Si quieres <strong>mas info</strong>, búscala en 
+          a(href='https://www.reddit.com/r/TheSilphRoad') r/TheSilphRoad
+          | y 
+          a(href='https://www.reddit.com/r/pokemongodev') r/pokemongodev
 
       div
-        button.btn.btn-success.btn-lg.btn-login(type='submit')
+        button.btn.btn-success.btn-lg.btn-login.disabled(type='submit')
           | Conectarse
 
-    ul.nav.nav-tabs.nav-stacked.col-md-2.col-lg-2.col-sm-2.col-xs-4.pokeLista(ng-repeat='pokemon in pokesalchichas.pokeLista')
+    ul.nav.nav-tabs.nav-stacked.col-md-2.col-lg-2.col-sm-2.col-xs-4.pokeLista(ng-repeat='pokemon in $ctrl.pokeLista')
       li
         img.text-center.img-responsive.center-block(src='{{ pokemon.info.img }}')
         h5.text-center {{ pokemon.info.name }}
@@ -50,7 +57,7 @@
         p.text-center(ng-class="(pokemon.indStamina == 15) ? 'bg-success' : ((pokemon.indStamina >= 12) ? 'bg-warning' : '')") STA {{ pokemon.indStamina }}
         p.text-center(ng-class="((((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) == 100) ? 'bg-success' : (((((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) >= 80) ? 'bg-warning' : (((((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) <= 60) ? 'bg-danger' : ''))")
           strong {{(((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45)| number:0}}%
-        button.btn.btn-danger.disabled.btn-lg.center-block(type='button', ng-click='pokesalchichas.picaPokemon(pokemon)', ng-show='(((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) <= 60')
+        button.btn.btn-danger.disabled.btn-lg.center-block(type='button', ng-click='$ctrl.picaPokemon(pokemon)', ng-show='(((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) <= 60')
           span.glyphicon.glyphicon-erase
           | Picadora
         div.cubreBoton(ng-show='(((pokemon.indAttack+pokemon.indDefense+pokemon.indStamina)*100)/45) > 60')
