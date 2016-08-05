@@ -171,7 +171,7 @@
     "test": "gulp test",
     "flow": "flow",
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
-    "start": " NODE_ENV=production node server"
+    "start": "NODE_ENV=production node server"
   },
   "private": true
 }
