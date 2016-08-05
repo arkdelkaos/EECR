@@ -18,7 +18,7 @@ import _ from 'lodash';
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
-    if(entity) {
+    if (entity) {
       res.status(statusCode).json(entity);
     }
   };
@@ -38,7 +38,7 @@ function patchUpdates(patches) {
 
 function removeEntity(res) {
   return function(entity) {
-    if(entity) {
+    if (entity) {
       return entity.remove()
         .then(() => {
           res.status(204).end();
@@ -49,7 +49,7 @@ function removeEntity(res) {
 
 function handleEntityNotFound(res) {
   return function(entity) {
-    if(!entity) {
+    if (!entity) {
       res.status(404).end();
       return null;
     }
@@ -66,7 +66,7 @@ function handleError(res, statusCode) {
 
 // Gets a list of Infoclans
 export function index(req, res) {
-  return Infoclan.findOne({'identificador': '1'}).exec()
+  return Infoclan.findOne({identificador: '1'}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
