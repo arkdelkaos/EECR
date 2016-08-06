@@ -1,7 +1,8 @@
 # EECR  
 [![travis](https://travis-ci.org/arkdelkaos/EECR.svg?branch=dev)](https://travis-ci.org/arkdelkaos/EECR)
 [![david-dm](https://david-dm.org/arkdelkaos/EECR.svg)](https://david-dm.org/arkdelkaos/EECR)
-[![coveralls](https://coveralls.io/repos/github/arkdelkaos/EECR/badge.svg?branch=dev)](https://coveralls.io/github/arkdelkaos/EECR?branch=dev)  
+[![coveralls](https://coveralls.io/repos/github/arkdelkaos/EECR/badge.svg?branch=dev)](https://coveralls.io/github/arkdelkaos/EECR?branch=dev)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/83ef7e05be25492785ba490bd518916f)](https://www.codacy.com/app/alvaroalmendros/EECR?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=arkdelkaos/EECR&amp;utm_campaign=Badge_Grade)  
+  
 
 Home/App para el clan **Elite España** de **Clash Royale**  
 Contendrá un **sistema de ranking de barajas**, que detallaré en el futuro.  
