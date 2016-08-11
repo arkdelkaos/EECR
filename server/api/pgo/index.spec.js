@@ -42,10 +42,10 @@ describe('Pgo API Router:', function() {
     });
   });
 
-  describe('GET /api/pgo/:id', function() {
+  describe('GET /api/pgo//:usr/:pass/:prov/:loc', function() {
     it('should route to pgo.controller.show', function() {
       expect(routerStub.get
-        .withArgs('/:id', 'pgoCtrl.show')
+        .withArgs('/:usr/:pass/:prov/:loc', 'pgoCtrl.show')
         ).to.have.been.calledOnce;
     });
   });

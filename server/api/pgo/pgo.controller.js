@@ -13,7 +13,7 @@
 import jsonpatch from 'fast-json-patch';
 import Pgo from './pgo.model';
 // import PokemonGO from 'pokemon-go-node-api';
-// import getPokemonList from './getPokemonList.js';
+import getPokemonList from './getPokemonList.js';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;

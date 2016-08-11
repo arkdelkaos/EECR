@@ -3,9 +3,9 @@
 exports = module.exports = {
   // List of user roles
   userRoles: ['guest', 'user', 'admin'],
-  userRangos: ['invitado', 'miembro', 'elder', 'colider', 'lider'],
+  userRangos: ['invitado', 'miembro', 'vet', 'colider', 'lider'],
   trofeoCalidades: ['bronce', 'plata', 'oro'],
-  clanes: ['none', 'EE1', 'EE2', 'EE3', 'EE4'],
   torneoSize: ['8', '16', '32'],
-  tipoNota: ['aviso', 'cambio', 'lista negra', 'ban']
+  tipoNota: ['aviso', 'cambio', 'lista negra', 'ban'],
+  niveles: ['no', 'vip', 'vs', '1']
 };

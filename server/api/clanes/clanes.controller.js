@@ -1,17 +1,17 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/things              ->  index
- * POST    /api/things              ->  create
- * GET     /api/things/:id          ->  show
- * PUT     /api/things/:id          ->  upsert
- * PATCH   /api/things/:id          ->  patch
- * DELETE  /api/things/:id          ->  destroy
+ * GET     /api/clanes              ->  index
+ * POST    /api/clanes              ->  create
+ * GET     /api/clanes/:id          ->  show
+ * PUT     /api/clanes/:id          ->  upsert
+ * PATCH   /api/clanes/:id          ->  patch
+ * DELETE  /api/clanes/:id          ->  destroy
  */
 
 'use strict';
 
 import jsonpatch from 'fast-json-patch';
-import Thing from './thing.model';
+import Clanes from './clanes.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -62,54 +62,54 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Things
+// Gets a list of Claness
 export function index(req, res) {
-  return Thing.find().exec()
+  return Clanes.find().exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Thing from the DB
+// Gets a single Clanes from the DB
 export function show(req, res) {
-  return Thing.findById(req.params.id).exec()
+  return Clanes.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Thing in the DB
+// Creates a new Clanes in the DB
 export function create(req, res) {
-  return Thing.create(req.body)
+  return Clanes.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Upserts the given Thing in the DB at the specified ID
+// Upserts the given Clanes in the DB at the specified ID
 export function upsert(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return Thing.findOneAndUpdate(req.params.id, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+  return Clanes.findOneAndUpdate(req.params.id, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
 
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Updates an existing Thing in the DB
+// Updates an existing Clanes in the DB
 export function patch(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return Thing.findById(req.params.id).exec()
+  return Clanes.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(patchUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Thing from the DB
+// Deletes a Clanes from the DB
 export function destroy(req, res) {
-  return Thing.findById(req.params.id).exec()
+  return Clanes.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

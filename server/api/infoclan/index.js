@@ -8,6 +8,6 @@ var router = new Router();
 
 router.get('/', controller.index);
 router.post('/update', auth.hasRole('admin'), controller.upsert);
-router.post('/', controller.create);
+router.post('/', auth.hasRole('admin'), controller.create);
 
 module.exports = router;

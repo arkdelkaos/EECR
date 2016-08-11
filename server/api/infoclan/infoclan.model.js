@@ -34,10 +34,10 @@ InfoclanSchema
   .virtual('info')
   .get(function() {
     return {
-      'nombre': this.nombre,
-      'twitter': this.twitter,
-      'homeTexto': this.homeTexto,
-      'clanTexto': this.clanTexto
+      nombre: this.nombre,
+      twitter: this.twitter,
+      homeTexto: this.homeTexto,
+      clanTexto: this.clanTexto
     };
   });
 

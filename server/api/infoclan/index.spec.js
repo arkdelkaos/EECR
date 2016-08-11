@@ -8,6 +8,15 @@ var infoclanCtrlStub = {
   upsert: 'infoclanCtrl.upsert',
 };
 
+var authServiceStub = {
+  isAuthenticated() {
+    return 'authService.isAuthenticated';
+  },
+  hasRole(role) {
+    return `authService.hasRole.${role}`;
+  }
+};
+
 var routerStub = {
   get: sinon.spy(),
   post: sinon.spy(),
@@ -20,7 +29,8 @@ var infoclanIndex = proxyquire('./index.js', {
       return routerStub;
     }
   },
-  './infoclan.controller': infoclanCtrlStub
+  './infoclan.controller': infoclanCtrlStub,
+  '../../auth/auth.service': authServiceStub
 });
 
 describe('Infoclan API Router:', function() {
@@ -37,17 +47,17 @@ describe('Infoclan API Router:', function() {
   });
 
   describe('POST /api/infoclan', function() {
-    it('should route to infoclan.controller.create', function() {
+    it('should verify admin role and route to infoclan.controller.create', function() {
       expect(routerStub.post
-        .withArgs('/', 'infoclanCtrl.create')
+        .withArgs('/', 'authService.hasRole.admin', 'infoclanCtrl.create')
         ).to.have.been.calledOnce;
     });
   });
 
   describe('POST /api/infoclan/update', function() {
-    it('should route to infoclan.controller.upsert', function() {
-      expect(routerStub.put
-        .withArgs('', 'infoclanCtrl.upsert')
+    it('should verify admin role and route to infoclan.controller.upsert', function() {
+      expect(routerStub.post
+        .withArgs('/update', 'authService.hasRole.admin', 'infoclanCtrl.upsert')
         ).to.have.been.calledOnce;
     });
   });
