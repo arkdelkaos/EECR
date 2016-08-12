@@ -1,0 +1,88 @@
+.clanBanner {
+  position: relative;
+  background-repeat: no-repeat !important;
+  background-position: center;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  display: table;
+  width: 100%;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  vertical-align: middle;
+
+  @media (max-width: 767px){
+    height: 200px;
+  }
+
+  //Fix 4 cover+fixed = shit on iOS
+  .ios & {
+    min-height: 200px;
+  }
+
+  .titulo {
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 40px;
+    z-index: 999;
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    overflow: auto;
+    position: relative;
+    height: 340px;
+    transition: all 900ms cubic-bezier(1, 0, 0, 1);
+    @media (max-width: 767px){
+      padding-top: 20px;
+
+    }
+    p {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 900;
+      font-size: 72px;
+      text-shadow: 0 10px 0 rgba(0, 0, 0, 0.75);
+      transform: scale(1);
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      -o-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      @media (max-width: 767px){
+        font-size: 42px;
+        text-shadow: 0 6px 0 rgba(0, 0, 0, 0.75);
+      }
+    }
+
+    h2 {
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 200;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
+      @media (max-width: 767px){
+        font-size: 20px;
+      }
+    }
+    #logo {
+      margin-bottom: -22px;
+      @media (max-width: 767px){
+        margin-bottom: -11px;
+        height: 150px;
+      }
+    }
+  }
+}
+
+.clan {
+  .clanVista {
+
+  }
+
+  .clanVistaAdmin {
+
+  }
+}

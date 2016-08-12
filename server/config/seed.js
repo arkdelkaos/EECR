@@ -87,10 +87,11 @@ User.find({}).remove()
                   normas: 'Prueba de normas de **EE1**, con texto *en cursiva*.  \nTambién añado un salto de línea'
                 },
                 media: {
-                  color1: 'ff0048',
-                  color2: 'ff0000',
-                  logo: 'logo_1_claro_cuadrado.png',
+                  color1: '#ff0048',
+                  color2: '#ff0000',
+                  logo: 'logo_1_claro_250.png',
                   icono: '',
+                  fondo: 'fondo_ee1.jpg',
                   telegram: '',
                   telegramLogo: 'telegram_1.jpg',
                   telegramLogoAdmins: 'telegram_admin_1.jpg'
@@ -106,10 +107,11 @@ User.find({}).remove()
                   normas: 'Prueba de normas de **EEEVO**, con texto *EN CURSIVA*.  \nTambién añado un salto de línea'
                 },
                 media: {
-                  color1: 'c620f6',
-                  color2: '982395',
-                  logo: 'logo_1_claro_cuadrado.png',
+                  color1: '#c620f6',
+                  color2: '#982395',
+                  logo: 'logo_1_claro_250.png',
                   icono: '',
+                  fondo: 'fondo_evo.jpg',
                   telegram: '',
                   telegramLogo: 'telegram_evo.jpg',
                   telegramLogoAdmins: 'telegram_admin_evo.jpg'

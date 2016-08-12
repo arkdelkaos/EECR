@@ -131,11 +131,15 @@
       }
     }
     #logo {
-      width: 150px;
-      height: 150px;
+      width: 165px;
+      height: 165px;
+      margin-right: -15px;
+      margin-top: -20px;
       @media (max-width: 767px){
-        width: 75px;
-        height: 75px;
+        margin-right: -8px;
+        margin-top: -15px;
+        width: 85px;
+        height: 85px;
       }
     }
     #logo_cr{
@@ -763,8 +767,8 @@ section#rrss {
 }
 
 
-section#clan {
-  #about_us_sh{
+section#aboutUs {
+  #aboutUs_sh{
     position: relative;
     display: table;
     height: 500px !important;
@@ -794,7 +798,7 @@ section#clan {
       background-color: #600091;
     }
 
-    #about_us_ban{
+    #aboutUs_ban{
       vertical-align: middle;
       display: table-cell;
       text-align: center;
@@ -870,7 +874,7 @@ section#clan {
     margin-top: 0px;
   }
 
-  #about_us{
+  #aboutUs_content{
     margin-top: -100px;
     position: relative;
     z-index: 999;

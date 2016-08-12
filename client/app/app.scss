@@ -102,8 +102,9 @@ $fondo-negro-semitrans: rgba(51,51,51,0.75);
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
+@import 'clan/clan';
 @import 'main/main';
-@import '../components/clan/clan';
+@import '../components/aboutUs/aboutUs';
 @import '../components/cofres/cofres';
 @import '../components/footer/footer';
 @import '../components/modal/modal';

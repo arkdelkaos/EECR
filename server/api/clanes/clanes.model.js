@@ -21,6 +21,7 @@ var ClanesSchema = new mongoose.Schema({
     color2: String,
     logo: String,
     icono: String,
+    fondo: String,
     telegram: String,
     telegramLogo: String,
     telegramLogoAdmins: String

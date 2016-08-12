@@ -8,9 +8,9 @@ div#affix(ui-scrollpoint='', ui-scrollpoint-edge='["top"]',  ui-scrollpoint-clas
           span.icon-bar
           span.icon-bar
         a.navbar-brand(href='#banner', du-smooth-scroll,  ng-show='$ctrl.isActive("/")')
-          img(alt='Brand', src='assets/images/eeavatarborjonudo.png', width='50px', height='50px')
+          img(alt='Brand', src='assets/images/eelogo.png', width='45px', height='45px')
         a.navbar-brand(href='/', du-smooth-scroll, ng-hide='$ctrl.isActive("/")')
-          img(alt='Brand', src='assets/images/eeavatarborjonudo.png', width='50px', height='50px')
+          img(alt='Brand', src='assets/images/eelogo.png', width='45px', height='45px')
       
       div.navbar-collapse.collapse#navbar-main(uib-collapse='$ctrl.isCollapsed')
         ul.nav.navbar-nav
@@ -26,7 +26,14 @@ div#affix(ui-scrollpoint='', ui-scrollpoint-edge='["top"]',  ui-scrollpoint-clas
           li
             a(href='#pokesalchichas', ng-show='$ctrl.isActive("/")', du-smooth-scroll) Pokemon
           li
-            a(href='#clan', ng-show='$ctrl.isActive("/")', du-smooth-scroll) Clan
+            a(href='#aboutUs', ng-show='$ctrl.isActive("/")', du-smooth-scroll) Clan
+          // CLAN
+          li
+            a(href='#info', ng-hide='$ctrl.isActive("/")', du-smooth-scroll) Información
+          li
+            a(href='#normas', ng-hide='$ctrl.isActive("/")', du-smooth-scroll) Normas
+          li
+            a(href='#miembros', ng-hide='$ctrl.isActive("/")', du-smooth-scroll) Miembros
         ul.nav.navbar-nav.navbar-right
           li(ng-show='$ctrl.isLoggedIn()', uib-dropdown, on-toggle='toggled(open)')
             a(href='#',uib-dropdown-toggle) Hola, {{ $ctrl.getCurrentUser().name }} 

@@ -4,5 +4,6 @@
         "browser": true,
         "commonjs": true,
         "mocha": true
-    }
+    },
+    "rules": {}
 }

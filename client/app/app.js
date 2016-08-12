@@ -26,12 +26,13 @@ import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
+import clan from './clan';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 import rrss from '../components/rrss/rrss.component';
 import infoclan from './services/infoclan/infoclan.service';
-import clan from '../components/clan/clan.component';
+import aboutUs from '../components/aboutUs/aboutUs.component';
 import cofres from '../components/cofres/cofres.component';
 import pokesalchichas from '../components/pokesalchichas/pokesalchichas.component';
 
@@ -43,7 +44,7 @@ angular.module('eecrApp', [
   'ui.scrollpoint', 'ngtweet', 'ngParallax', 'btford.markdown',
   'duScroll', 'textAngular',
 
-  _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan, clan, pokesalchichas, cofres
+  _Auth, account, admin, navbar, footer, main, constants, socket, util, rrss, infoclan, aboutUs, pokesalchichas, cofres, clan
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

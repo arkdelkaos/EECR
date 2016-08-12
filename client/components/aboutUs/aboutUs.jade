@@ -1,0 +1,10 @@
+div.row.aboutUs
+ div.col-sm-12.pull-right
+  div#md_visor_aboutUsTexto(btf-markdown='$ctrl.infoclan.info().clanTexto')
+  div.clanTexto(ng-show='$ctrl.isAdmin()')
+    div#md_editor_aboutUsTexto
+      h1 Editor de Normas
+      textarea(rows='15', ng-model='$ctrl.infoclan.info().clanTexto')
+      button.btn.btn-success(aria-haspopup='true', aria-expanded='false', ng-click='$ctrl.save()')
+        i.fa.fa-floppy-o 
+        |  Guardar
