@@ -85,7 +85,7 @@
     "gulp-util": "^3.0.5",
     "gulp-watch": "^4.3.5",
     "isparta": "^4.0.0",
-    "istanbul": "~0.4.1",
+    "istanbul": "~0.4.5",
     "jshint": "2.9.2",
     "jshint-stylish": "^2.2.0",
     "karma": "~0.13.3",
