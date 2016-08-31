@@ -97,7 +97,7 @@
     "karma-mocha": "^1.0.1",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-ng-jade2js-preprocessor": "^0.2.0",
-    "karma-phantomjs-launcher": "~1.0.0",
+    "karma-phantomjs-launcher": "~1.0.2",
     "karma-script-launcher": "^1.0.0",
     "karma-spec-reporter": "~0.0.20",
     "lazypipe": "^1.0.1",
