@@ -8,3 +8,25 @@ div.row.aboutUs
       button.btn.btn-success(aria-haspopup='true', aria-expanded='false', ng-click='$ctrl.save()')
         i.fa.fa-floppy-o 
         |  Guardar
+  
+  div.row
+    div.col-lg-3.col-md-2.col-sm-1
+    div.col-lg-6.col-md-8.col-sm-10
+      div.discordwidget
+        div.widgetheader
+          a.widget-logo(href="https://discordapp.com?utm_source=Discord%20Widget&amp;utm_medium=Logo", target="_blank")
+          span.widget-header-count <strong>20</strong> miembros Online
+        div.widgetbody
+          div.widget-members-online
+            div.widget-member(ng-repeat="miembro in $ctrl.discord.members")
+              div.widget-member-avatar
+                img(src="{{ miembro.avatar_url }}")
+                span.widget-member-status(ng-class="( miembro.status === 'online') ? 'widget-member-status-online' : 'widget-member-status-idle'")
+              span.widget-member-username {{ miembro.username }}
+              span.widget-member-game {{ miembro.game.name }}
+        div.widget-footer
+          span.widget-footer-info ¡Únete a nuestro Discord!
+          a.widget-btn-connect(href="https://discordapp.com/invite/Ra8R7?utm_source=Discord%20Widget&amp;utm_medium=Connect", target="_blank") Conéctate
+    div.col-lg-3.col-md-2.col-sm-1
+
+    

@@ -114,4 +114,222 @@
       }
     }
   }
+
+  .discordwidget{
+    width: auto;
+    height: auto;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .widgetheader{
+      background-color: #738bd7;
+      padding: 20px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: box;
+      display: flex;
+      -webkit-box-align: center;
+      -o-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+
+      .widget-logo {
+            background: url(https://discordapp.com/assets/35d75407bd75d70e84e945c9f879bab8.svg) 50% no-repeat;
+            width: 124px;
+            height: 34px;
+            background-size: 124px 34px;
+            display: inline-block;
+            -webkit-transition: opacity .25s ease-out;
+            transition: opacity .25s ease-out;
+      }
+
+      .widget-header-count {
+        -webkit-box-flex: 1;
+        -o-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: right;
+      }
+    }
+
+    .widgetbody{
+      background-color: #1e2124;
+      background-image: url(https://discordapp.com/assets/db9fd9dac08621e31b06609781c8851c.png),url(https://discordapp.com/assets/1c7d080332a1c9778182bc19c2f407bc.png);
+      background-size: 200px 180px,110px 130px;
+      background-position: 0 100%,100% 100%;
+      background-repeat: no-repeat,no-repeat;
+      -webkit-box-flex: 1;
+      -o-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      box-shadow: 0 1px 0 rgba(0,0,0,.2);
+      padding: 20px;
+
+      .widget-members-online{
+        color: #8a8e94;
+        margin-bottom: 12px;
+
+        .widget-member{
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: box;
+          display: flex;
+          -webkit-box-align: center;
+          -o-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+          padding-left: 10px;
+          margin: 6px 0;
+
+          .widget-member-avatar, img{
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            position: relative;
+            margin-right: 4px;
+            vertical-align: baseline;
+
+            .widget-member-status {
+              width: 6px;
+              height: 6px;
+              border-radius: 3px;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+            }
+            .widget-member-status-online{
+              background-color: #43b581;
+            }
+            .widget-member-status-idle{
+              background-color: orange;
+            }
+          }
+
+          .widget-member-username {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-flex: 1;
+            -o-box-flex: 1;
+            box-flex: 1;
+            -webkit-flex: 0.5;
+            -ms-flex: 0.5;
+            flex: 0.5;
+            color: #8a8e94;
+            vertical-align: baseline;
+          }
+          .widget-member-game {
+            text-align: right;
+            color: #4f545c;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-flex: 1;
+            -o-box-flex: 1;
+            box-flex: 1;
+            -webkit-flex: 0.5;
+            -ms-flex: 0.5;
+            flex: 0.5;
+          }
+        }
+      }
+    }
+    .widget-footer {
+      box-shadow: 0 -1px 18px rgba(0,0,0,.2),0 -1px 0 rgba(0,0,0,.2);
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      background-color: #1e2124;
+      padding: 6px;
+      padding-left: 20px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: box;
+      display: flex;
+      -webkit-box-align: center;
+      -o-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      min-height: 30px;
+
+      .widget-footer-info {
+        display: inline-block;
+        font-weight: 500;
+        opacity: .1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+        filter: alpha(opacity=10);
+        -webkit-box-flex: 1;
+        -o-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .widget-btn-connect {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: box;
+        display: flex;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+        -webkit-box-pack: center;
+        -o-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 120px;
+        height: 30px;
+        border: 1px solid #212325;
+        border-radius: 4px;
+        background-clip: padding-box;
+        background-color: hsla(0,0%,100%,.1);
+        box-shadow: inset 0 1px 0 hsla(0,0%,100%,.04);
+        -webkit-transition: opacity .25s ease-out;
+        transition: opacity .25s ease-out;
+        &:hover{
+          opacity: .6;
+        }
+      }
+    }
+  }
 }
