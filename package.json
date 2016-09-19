@@ -108,7 +108,7 @@
     "phantomjs-prebuilt": "^2.1.4",
     "proxyquire": "^1.0.1",
     "run-sequence": "^1.1.0",
-    "sinon": "^1.16.1",
+    "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
     "supertest": "^1.1.0",
     "utile": "~0.3.0",
