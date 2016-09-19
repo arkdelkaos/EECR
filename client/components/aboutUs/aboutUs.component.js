@@ -14,7 +14,6 @@ export class aboutUsComponent {
     this.discord = {};
     $http.get('https://discordapp.com/api/servers/142056318889361408/widget.json').then(response => {
       this.discord = response.data;
-      this.log.info(this.discord);
     });
   }
 

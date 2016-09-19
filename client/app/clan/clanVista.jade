@@ -1,117 +1,101 @@
-header.clanBanner(ng-style='{"background-image": "url(./assets/images/clanes/"+vm.clanInfo.media.fondo+")"}')
+header.clanBanner(class="{{ vm.clan.banner }}")
   div.titulo
     
     p(ng-style='{color: vm.clanInfo.media.color2}') 
-      img#logo(src='./assets/images/clanes/{{ vm.clanInfo.media.logo }}')
+      div.shake#logo(class="{{ vm.clan.logo }}")
     //- h2 Clan <strong>{{ vm.clanInfo.info.nivel }}</strong>
     
-navbar
+div.clanVistaNavbar#affix(ui-scrollpoint='', ui-scrollpoint-edge='["top"]',  ui-scrollpoint-class='affixed')
+  div.navbar.navbar-default 
+    div.container
+      div.navbar-header
+        button.navbar-toggle(type='button', ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/', du-smooth-scroll)
+          div.pulse#icon(class="{{ vm.clan.logo }}")
+      
+      div.navbar-collapse.collapse#navbar-main(uib-collapse='$ctrl.isCollapsed')
+        ul.nav.navbar-nav
+          li
+            a(href='#info', ng-hide='$ctrl.isActive("/")', du-smooth-scroll) Información
+          li
+            a(href='#normas', ng-hide='$ctrl.isActive("/")', du-smooth-scroll) Normas
+          li
+            a(href='#miembros', ng-hide='$ctrl.isActive("/")', du-smooth-scroll) Miembros
+          li
+            a(href='#discord', ng-hide='$ctrl.isActive("/")', du-smooth-scroll) Discord
+        ul.nav.navbar-nav.navbar-right
+          li(ng-show='$ctrl.isLoggedIn()', uib-dropdown, on-toggle='toggled(open)')
+            a(href='#',uib-dropdown-toggle) Hola, {{ $ctrl.getCurrentUser().name }} 
+              span.glyphicon.glyphicon-user
+            ul(uib-dropdown-menu, aria-labelledby='simple-dropdown')
+              li(ng-class='{disabled: $ctrl.isActive("/settings")}')
+                a(href='/settings')
+                  span.glyphicon.glyphicon-cog
+                  | Opciones
+              li(ng-show='$ctrl.isColider()', ng-class='{disabled: $ctrl.isActive("/colider")}')
+                a(href='/colider')
+                  span.glyphicon.glyphicon-cog
+                  | Panel de Colider
+              li(ng-show='$ctrl.isAdmin()', ng-class='{disabled: $ctrl.isActive("/admin")}')
+                a(href='/admin')
+                  span.glyphico.glyphicon-cog
+                  | Panel de Admin
+              li.divider(role='separator')
+              li(ng-show='$ctrl.isLoggedIn()')
+              a(href='/logout')
+                span.glyphicon.glyphicon-log-out(aria-hidden='true')
+                | Salir
 
-div This is the clanVista view.
-div This is the clanVista view.
-
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-div This is the clanVista view.
-
+div.container.clanVistaContent
+  div.row
+    div.col-xs-12
+      h1#info(ng-style='{color: vm.clanInfo.media.color1}') Sobre <strong>{{ vm.clanInfo.info.nombre }}</strong>
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      h1#normas(ng-style='{color: vm.clanInfo.media.color1}') Normas
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      h1#miembros(ng-style='{color: vm.clanInfo.media.color1}') Miembros
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      h1#discord(ng-style='{color: vm.clanInfo.media.color1}') Discord
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+      p gsrgsfafwfawfafwf
+  
 footer

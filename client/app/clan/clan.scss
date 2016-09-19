@@ -1,3 +1,49 @@
+@-webkit-keyframes shake {
+    0%, 100% {-webkit-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+.shake {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    &:hover{
+      -webkit-animation-name: shake;
+      animation-name: shake;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.5); }
+    100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+.pulse {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
+  animation-iteration-count: 3;
+  &:hover{
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+}
+
+
 .clanBanner {
   position: relative;
   background-repeat: no-repeat !important;
@@ -69,6 +115,7 @@
     }
     #logo {
       margin-bottom: -22px;
+      display: inline-block;
       @media (max-width: 767px){
         margin-bottom: -11px;
         height: 150px;
@@ -77,12 +124,123 @@
   }
 }
 
-.clan {
-  .clanVista {
+.clanEE1banner{
+  background-image: url("../assets/images/clanes/fondo_1.jpg");
+}
+.clanEVObanner{
+  background-image: url("../assets/images/clanes/fondo_evo.jpg");
+}
+.clanGENbanner{
+  background-image: url("../assets/images/clanes/fondo_gen.jpg");
+}
+.clanZENbanner{
+  background-image: url("../assets/images/clanes/fondo_zen.jpg");
+}
+.clanR2Tbanner{
+  background-image: url("../assets/images/clanes/fondo_r2t.jpg");
+}
+.clanVIPbanner{
+  background-image: url("../assets/images/clanes/fondo_vip.jpg");
+}
 
+.clanEE1logo{
+  background-image: url("../assets/images/clanes/logo_1_claro_250.png");
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  @media (max-width: 767px){
+    margin-bottom: -11px;
+    width: 150px;
+    height: 150px;
+  }
+}
+.clanEVOlogo{
+  background-image: url("../assets/images/clanes/logo_evo_claro_250.png");
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  @media (max-width: 767px){
+    margin-bottom: -11px;
+    width: 150px;
+    height: 150px;
+  }
+}
+.clanGENlogo{
+  background-image: url("../assets/images/clanes/logo_gen_claro_250.png");
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  @media (max-width: 767px){
+    margin-bottom: -11px;
+    width: 150px;
+    height: 150px;
+  }
+}
+.clanZENlogo{
+  background-image: url("../assets/images/clanes/logo_zen_claro_250.png");
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  @media (max-width: 767px){
+    margin-bottom: -11px;
+    width: 150px;
+    height: 150px;
+  }
+}
+.clanR2Tlogo{
+  background-image: url("../assets/images/clanes/logo_r2t_claro_250.png");
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  @media (max-width: 767px){
+    margin-bottom: -11px;
+    width: 150px;
+    height: 150px;
+  }
+}
+.clanVIPlogo{
+  background-image: url("../assets/images/clanes/logo_vip_claro_250.png");
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  @media (max-width: 767px){
+    margin-bottom: -11px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+
+.clanVistaNavbar {
+  #icon {
+    height: 45px;
+    margin-top: 8px;
+    width: 45px;
+  }
+  #affix {
+    top: 0;
   }
 
-  .clanVistaAdmin {
+  #affix.affixed {
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
 
+    .navbar-default{
+      background: rgba(256,256,256,0.85);
+    }
+
+    img {
+      margin-top: 8px;
+    }
+  }
+}
+
+.clanVistaContent {
+  h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
   }
 }

@@ -18,7 +18,6 @@ function onConnect(socket) {
 
   // Insert sockets below
   require('../api/clanes/clanes.socket').register(socket);
-  require('../api/pgo/pgo.socket').register(socket);
   require('../api/infoclan/infoclan.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 
