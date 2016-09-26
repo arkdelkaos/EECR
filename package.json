@@ -133,7 +133,7 @@
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^0.5.3",
     "karma-firefox-launcher": "^1.0.0",
-    "karma-mocha": "^1.0.1",
+    "karma-mocha": "^1.2.0",
     "karma-phantomjs-launcher": "~1.0.0",
     "karma-script-launcher": "^1.0.0",
     "karma-sourcemap-loader": "~0.3.7",
