@@ -64,7 +64,7 @@
     "autoprefixer": "^6.4.0",
     "awesome-typescript-loader": "0.17.0",
     "babel-core": "^6.6.5",
-    "babel-eslint": "^6.0.4",
+    "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-syntax-flow": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.6.0",
