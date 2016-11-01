@@ -158,7 +158,7 @@
     "style-loader": "^0.13.0",
     "supertest": "^1.1.0",
     "through2": "^2.0.1",
-    "tiny-lr": "^0.2.1",
+    "tiny-lr": "^1.0.3",
     "utile": "~0.3.0",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.5.1",
