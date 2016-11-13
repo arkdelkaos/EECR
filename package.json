@@ -93,7 +93,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-cache": "^0.4.2",
     "gulp-clean-css": "^2.0.6",
-    "gulp-concat": "^2.6.0",
+    "gulp-concat": "^2.6.1",
     "gulp-env": "^0.4.0",
     "gulp-eslint": "^2.0.0",
     "gulp-filter": "^4.0.0",
