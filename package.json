@@ -98,7 +98,7 @@
     "gulp-eslint": "^2.0.0",
     "gulp-filter": "^4.0.0",
     "gulp-imagemin": "^3.0.3",
-    "gulp-inject": "^4.0.0",
+    "gulp-inject": "^4.2.0",
     "gulp-istanbul": "~0.10.3",
     "gulp-istanbul-enforcer": "^1.0.3",
     "gulp-jade": "^1.0.1",
