@@ -3,7 +3,7 @@
   "version": "0.4.3",
   "main": "server/index.js",
   "dependencies": {
-    "angular": "~1.5.5",
+    "angular": "~1.6.1",
     "angular-animate": "~1.5.5",
     "angular-aria": "~1.5.5",
     "angular-cookies": "~1.5.5",
