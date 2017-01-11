@@ -138,7 +138,7 @@
     "karma-script-launcher": "^1.0.0",
     "karma-sourcemap-loader": "~0.3.7",
     "karma-spec-reporter": "~0.0.20",
-    "karma-webpack": "^1.8.0",
+    "karma-webpack": "^2.0.0",
     "lazypipe": "^1.0.1",
     "mocha": "^3.0.2",
     "ng-annotate-loader": "~0.1.0",
