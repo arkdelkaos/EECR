@@ -13,7 +13,7 @@
     "angular-scroll": "^1.0.0",
     "angular-socket-io": "~0.7.0",
     "angular-ui-bootstrap": "~1.1.2",
-    "angular-ui-router": "~0.2.15",
+    "angular-ui-router": "~0.4.1",
     "angular-ui-scrollpoint": "^2.1.1",
     "angular-validation-match": "~1.5.2",
     "babel-polyfill": "^6.13.0",
