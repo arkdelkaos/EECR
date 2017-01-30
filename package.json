@@ -160,7 +160,7 @@
     "through2": "^2.0.1",
     "tiny-lr": "^0.2.1",
     "utile": "~0.3.0",
-    "webpack": "^1.12.14",
+    "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-dev-server": "~1.14.0",
     "webpack-stream": "^3.2.0"
