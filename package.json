@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.5.5",
-    "autoprefixer": "^6.4.0",
+    "autoprefixer": "^6.7.2",
     "awesome-typescript-loader": "0.17.0",
     "babel-core": "^6.6.5",
     "babel-eslint": "^6.0.4",
