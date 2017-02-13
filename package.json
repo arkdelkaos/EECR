@@ -151,7 +151,7 @@
     "pug-html-loader": "^1.0.8",
     "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.0",
-    "sass-loader": "^3.1.1",
+    "sass-loader": "^6.0.0",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
     "strip-ansi": "^3.0.1",
