@@ -103,7 +103,7 @@
     "gulp-istanbul-enforcer": "^1.0.3",
     "gulp-jade": "^1.0.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
-    "gulp-mocha": "^3.0.1",
+    "gulp-mocha": "^4.0.0",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-node-inspector": "^0.1.0",
     "gulp-plumber": "^1.0.1",
