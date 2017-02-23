@@ -34,7 +34,7 @@
     "express": "^4.13.3",
     "express-jwt": "^3.0.0",
     "express-session": "^1.11.3",
-    "fast-json-patch": "^1.0.0",
+    "fast-json-patch": "^1.1.7",
     "font-awesome": "^4.6.3",
     "jade": "^1.11.0",
     "jsonwebtoken": "^7.1.9",
