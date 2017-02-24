@@ -137,7 +137,7 @@
     "karma-phantomjs-launcher": "~1.0.0",
     "karma-script-launcher": "^1.0.0",
     "karma-sourcemap-loader": "~0.3.7",
-    "karma-spec-reporter": "~0.0.20",
+    "karma-spec-reporter": "~0.0.27",
     "karma-webpack": "^1.8.0",
     "lazypipe": "^1.0.1",
     "mocha": "^3.0.2",
